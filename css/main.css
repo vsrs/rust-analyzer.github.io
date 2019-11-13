@@ -4,19 +4,20 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    line-height: 1.5;
 }
 
 p {
-    margin-bottom: 1em;
+    margin-top: 1.5em;
 }
 pre {
-    margin-bottom: 1em;
+    margin-top: 1.5em;
 }
-ul {
-    margin-bottom: 1em;
+ul, ol {
+    margin-top: 1.5em;
 }
 h1, h2 {
-    margin-bottom: 1em;
+    margin-top: 1.5em;
 }
 ul, ol {
     margin-left: 1em;
@@ -139,10 +140,14 @@ section {
 
 .post-meta {
     color: #828282;
-    font-weight: 400;
+    font-weight: 300;
+    /* Help me! I know there should be some subgrid magic to align these spans... */
+    display: inline-block;
+    width: 13ch;
 }
 
 .post-link {
+    font-weight: 400;
     text-decoration: none;
 }
 
