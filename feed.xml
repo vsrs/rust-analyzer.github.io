@@ -5,29 +5,29 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 04 Dec 2019 08:03:40 +0000</pubDate>
-    <lastBuildDate>Wed, 04 Dec 2019 08:03:40 +0000</lastBuildDate>
+    <pubDate>Wed, 04 Dec 2019 13:34:41 +0000</pubDate>
+    <lastBuildDate>Wed, 04 Dec 2019 13:34:41 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>Find Usages</title>
         <pubDate>Wed, 13 Nov 2019 09:00:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//2019/11/13/find-usages.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//2019/11/13/find-usages.html</guid>
+        <link>https://rust-analyzer.github.io//blog/2019/11/13/find-usages.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2019/11/13/find-usages.html</guid>
       </item>
     
       <item>
         <title>Cost of rust-analyzer</title>
         <pubDate>Wed, 16 Oct 2019 09:00:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//2019/10/16/finance.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//2019/10/16/finance.html</guid>
+        <link>https://rust-analyzer.github.io//blog/2019/10/16/finance.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2019/10/16/finance.html</guid>
       </item>
     
       <item>
         <title>Changelog #0</title>
         <pubDate>Wed, 24 Jul 2019 12:34:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//2019/07/24/changelog-0.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//2019/07/24/changelog-0.html</guid>
+        <link>https://rust-analyzer.github.io//thisweek/2019/07/24/changelog-0.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/07/24/changelog-0.html</guid>
       </item>
     
   </channel>
