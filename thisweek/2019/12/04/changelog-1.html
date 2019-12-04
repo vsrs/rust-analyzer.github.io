@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Changelog #1</title>
+  <meta name="description"
+    content="Commit: c6e4cad">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rust-analyzer.github.io//thisweek/2019/12/04/changelog-1.html">
+  <link rel="alternate" type="application/rss+xml" title="rust-analyzer"
+    href="https://rust-analyzer.github.io//feed.xml">
+</head>
+
+<body>
+  
+  <header>
+    <a class="nav-link site-title" href="/">rust-analyzer</a>
+    <a class="nav-link" href="/blog">Blog</a>
+    <a class="nav-link" href="/thisweek">Changelog</a>
+    <a class="nav-link" href="https://opencollective.com/rust-analyzer/">Sponsor</a>
+  </header>
+  
+
+  <main>
+    <article>
+<h1>Changelog #1</h1>
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/c6e4cadfce300d14dccdb74e3d5f0e44008e7985"><code class="highlighter-rouge">c6e4cad</code></a></p>
+
+<h2 id="new-features">New Features</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2388"><code class="highlighter-rouge">#2388</code></a> added a more informative message for <code class="highlighter-rouge">missing fields</code> diagnostics.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2445"><code class="highlighter-rouge">#2445</code></a> added type inference for range expressions.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2018"><code class="highlighter-rouge">#2018</code></a> adds an initial version of <strong>add custom impl</strong> assist, which swtichs from a <code class="highlighter-rouge">#[derive]</code> to a manual impl.</li>
+</ul>
+
+<h2 id="fixes">Fixes</h2>
+
+<ul>
+  <li>Update chalk to fix infinite memory usage in some cases.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2406"><code class="highlighter-rouge">#2406</code></a> slightly better hygiene handling in macros.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2453"><code class="highlighter-rouge">#2453</code></a> employed salsa’s cycle-handling functionality to gracefully handle some error conditions instead of panicking.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2455"><code class="highlighter-rouge">#2455</code></a> add required special-casing for name-resolution of primitive types.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2463"><code class="highlighter-rouge">#2463</code></a> fixed method resolution order.</li>
+</ul>
+
+<h2 id="internal-improvements">Internal Improvements</h2>
+
+<ul>
+  <li>Extract <code class="highlighter-rouge">hir_ty</code> crate.</li>
+  <li>Separate compiler-internal <code class="highlighter-rouge">hir_ty::Ty</code> from IDE-visible <code class="highlighter-rouge">hir::Type</code>.
+This should more flexible evolving of type representation.</li>
+  <li>Rename “the IDE” crate from <code class="highlighter-rouge">ra_ide_api</code> to <code class="highlighter-rouge">ra_ide</code>: at 14k lines, it has much more stuff than just an API.</li>
+  <li>A lot of assorted refactorings in the type inference area.</li>
+</ul>
+
+</article>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="/feed.xml" class="footer-link">
+        <i class="fa fa-rss"></i> rss
+      </a>
+      <a href="https://github.com/rust-analyzer/rust-analyzer.github.io" class="footer-link">
+        <i class="fa fa-github"></i> src
+      </a>
+      <a href="https://opencollective.com/rust-analyzer/" class="footer-link">
+        <i class="fa fa-github"></i> sponsor
+      </a>
+    </p>
+  </footer>
+</body>
+
+</html>
