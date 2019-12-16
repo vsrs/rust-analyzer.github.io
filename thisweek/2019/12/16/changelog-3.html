@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Changelog #3</title>
+  <meta name="description"
+    content="Commit: 0ef8ace">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rust-analyzer.github.io//thisweek/2019/12/16/changelog-3.html">
+  <link rel="alternate" type="application/rss+xml" title="rust-analyzer"
+    href="https://rust-analyzer.github.io//feed.xml">
+</head>
+
+<body>
+  
+  <header>
+    <a class="nav-link site-title" href="/">rust-analyzer</a>
+    <a class="nav-link" href="/blog">Blog</a>
+    <a class="nav-link" href="/thisweek">Changelog</a>
+    <a class="nav-link" href="https://opencollective.com/rust-analyzer/">Sponsor</a>
+  </header>
+  
+
+  <main>
+    <article>
+<h1>Changelog #3</h1>
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/0ef8ace012b19b76ee99b283801d0d17a3b72b4b"><code class="highlighter-rouge">0ef8ace</code></a></p>
+
+<h2 id="new-features">New Features</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2511"><code class="highlighter-rouge">#2511</code></a> implement <code class="highlighter-rouge">ra_lsp_server --version</code>.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2523"><code class="highlighter-rouge">#2523</code></a> implement extend selection for tuple patterns.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2550"><code class="highlighter-rouge">#2550</code></a> type inference for unary <code class="highlighter-rouge">!</code>.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2548"><code class="highlighter-rouge">#2548</code></a> allow to select cargo features (by default, <code class="highlighter-rouge">--all-features</code> is used).</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2559"><code class="highlighter-rouge">#2559</code></a> use more fine-grained tags for syntax highlighting (<code class="highlighter-rouge">literal.byte</code>, <code class="highlighter-rouge">literal.char</code>, …)</li>
+</ul>
+
+<h2 id="fixes">Fixes</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2565"><code class="highlighter-rouge">#2565</code></a> fix bug with syntax highlighting not updating on windows.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2519"><code class="highlighter-rouge">#2519</code></a> fix name resolution for types in traits.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2535"><code class="highlighter-rouge">#2535</code></a> don’t trigger signature help on typing <code class="highlighter-rouge">)</code>.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2552"><code class="highlighter-rouge">#2552</code></a> fix goto definition target when the cursor is between tokens.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2567"><code class="highlighter-rouge">#2567</code></a> fix type inference for <code class="highlighter-rouge">impl Trait</code> syntax.</li>
+</ul>
+
+<h2 id="internal-improvements">Internal Improvements</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2510"><code class="highlighter-rouge">#2510</code></a> restore source maps for the typescript extension.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2525"><code class="highlighter-rouge">#2525</code></a> use ES2018 for VS Code extension.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2526"><code class="highlighter-rouge">#2526</code></a> upgrade to LSP 3.15.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2537"><code class="highlighter-rouge">#2537</code></a> lookup hir nodes by their parents, and not only by the source location.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2561"><code class="highlighter-rouge">#2561</code></a> split  <code class="highlighter-rouge">Path</code> into non-generic <code class="highlighter-rouge">ModPath</code> and generic <code class="highlighter-rouge">Path</code>.</li>
+</ul>
+
+</article>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="/feed.xml" class="footer-link">
+        <i class="fa fa-rss"></i> rss
+      </a>
+      <a href="https://github.com/rust-analyzer/rust-analyzer.github.io" class="footer-link">
+        <i class="fa fa-github"></i> src
+      </a>
+      <a href="https://opencollective.com/rust-analyzer/" class="footer-link">
+        <i class="fa fa-github"></i> sponsor
+      </a>
+    </p>
+  </footer>
+</body>
+
+</html>
