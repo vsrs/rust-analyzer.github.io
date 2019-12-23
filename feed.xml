@@ -5,9 +5,16 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Dec 2019 14:23:42 +0000</pubDate>
-    <lastBuildDate>Mon, 23 Dec 2019 14:23:42 +0000</lastBuildDate>
+    <pubDate>Mon, 23 Dec 2019 14:55:05 +0000</pubDate>
+    <lastBuildDate>Mon, 23 Dec 2019 14:55:05 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Changelog #4</title>
+        <pubDate>Mon, 23 Dec 2019 02:12:00 +0000</pubDate>
+        <link>https://rust-analyzer.github.io//thisweek/2019/12/23/changelog-4.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/12/23/changelog-4.html</guid>
+      </item>
     
       <item>
         <title>Changelog #3</title>

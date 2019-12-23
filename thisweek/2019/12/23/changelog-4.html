@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Changelog #4</title>
+  <meta name="description"
+    content="Commit: ce07a2d">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rust-analyzer.github.io//thisweek/2019/12/23/changelog-4.html">
+  <link rel="alternate" type="application/rss+xml" title="rust-analyzer"
+    href="https://rust-analyzer.github.io//feed.xml">
+</head>
+
+<body>
+  
+  <header>
+    <a class="nav-link site-title" href="/">rust-analyzer</a>
+    <a class="nav-link" href="/blog">Blog</a>
+    <a class="nav-link" href="/thisweek">Changelog</a>
+    <a class="nav-link" href="https://opencollective.com/rust-analyzer/">Sponsor</a>
+  </header>
+  
+
+  <main>
+    <article>
+<h1>Changelog #4</h1>
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/ce07a2daa9e53aa86a769f8641b14c2878444fbc"><code class="highlighter-rouge">ce07a2d</code></a></p>
+
+<h2 id="new-features">New Features</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2577"><code class="highlighter-rouge">#2577</code></a> by default for VS Code, rely on client-side file watching.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2568"><code class="highlighter-rouge">#2568</code></a> add option to disable <code class="highlighter-rouge">--all-targets</code> flag for <code class="highlighter-rouge">cargo watch</code>.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2594"><code class="highlighter-rouge">#2594</code></a> type hints don’t show default type arguments.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2592"><code class="highlighter-rouge">#2592</code></a> initial type-inference for index expressions.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2616"><code class="highlighter-rouge">#2616</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2619"><code class="highlighter-rouge">#2619</code></a> improve type-inference for closures.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2617"><code class="highlighter-rouge">#2617</code></a> don’t use approximate name resolution when computing hover.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2623"><code class="highlighter-rouge">#2623</code></a> expand macros in impls.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2628"><code class="highlighter-rouge">#2628</code></a> parse macros 2.0.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2641"><code class="highlighter-rouge">#2641</code></a> parse const generics.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2648"><code class="highlighter-rouge">#2648</code></a> rudimentary name resolution for local items.</li>
+</ul>
+
+<h2 id="fixes">Fixes</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2577"><code class="highlighter-rouge">#2577</code></a> better parser recovery for lambdas.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2562"><code class="highlighter-rouge">#2562</code></a> correctly compute goto target range for a target inside a macro.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2575"><code class="highlighter-rouge">#2575</code></a> correctly highlight <code class="highlighter-rouge">cargo watch</code> errors inside macros.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2595"><code class="highlighter-rouge">#2595</code></a> fix parsing of expressions expanded by macros.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2637"><code class="highlighter-rouge">#2637</code></a> optimize inlay hints.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2643"><code class="highlighter-rouge">#2643</code></a> optimize change tracking.</li>
+</ul>
+
+<h2 id="internal-improvements">Internal Improvements</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2581"><code class="highlighter-rouge">#2581</code></a> refactor <code class="highlighter-rouge">hir::Path</code> to separate paths with and without generic arguments on the type level.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2583"><code class="highlighter-rouge">#2583</code></a> better prettier config for TypeScript extension</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2545"><code class="highlighter-rouge">#2545</code></a> add ids to all tokens (this is groundwork for hygiene and better support for IDE features inside macro calls).</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2629"><code class="highlighter-rouge">#2629</code></a> remove imports from hir.</li>
+</ul>
+
+</article>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="/feed.xml" class="footer-link">
+        <i class="fa fa-rss"></i> rss
+      </a>
+      <a href="https://github.com/rust-analyzer/rust-analyzer.github.io" class="footer-link">
+        <i class="fa fa-github"></i> src
+      </a>
+      <a href="https://opencollective.com/rust-analyzer/" class="footer-link">
+        <i class="fa fa-github"></i> sponsor
+      </a>
+    </p>
+  </footer>
+</body>
+
+</html>
