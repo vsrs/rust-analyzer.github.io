@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Changelog #5</title>
+  <meta name="description"
+    content="Commit: 9cad88d">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rust-analyzer.github.io//thisweek/2019/12/30/changelog-5.html">
+  <link rel="alternate" type="application/rss+xml" title="rust-analyzer"
+    href="https://rust-analyzer.github.io//feed.xml">
+</head>
+
+<body>
+  
+  <header>
+    <a class="nav-link site-title" href="/">rust-analyzer</a>
+    <a class="nav-link" href="/blog">Blog</a>
+    <a class="nav-link" href="/thisweek">Changelog</a>
+    <a class="nav-link" href="https://opencollective.com/rust-analyzer/">Sponsor</a>
+  </header>
+  
+
+  <main>
+    <article>
+<h1>Changelog #5</h1>
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/9cad88dd95773f9ede6233fd7d0f3a076c5cda61"><code class="highlighter-rouge">9cad88d</code></a></p>
+
+<h2 id="new-features">New Features</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2668"><code class="highlighter-rouge">#2668</code></a> move <code class="highlighter-rouge">cargo watch</code> integration to the server side. Now it is available for every editor, and not only for VS Code.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2661"><code class="highlighter-rouge">#2661</code></a> type inference for <code class="highlighter-rouge">async</code> functions.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2663"><code class="highlighter-rouge">#2663</code></a> “add missing impl members” assists now substitutes type parameters.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2657"><code class="highlighter-rouge">#2657</code></a> type hints for closures are less verbose.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2667"><code class="highlighter-rouge">#2667</code></a> account for visibility modifiers during name resolution.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2061"><code class="highlighter-rouge">#2061</code></a> use existing TextMate scopes infrastructure for color theme customization.</li>
+</ul>
+
+<h2 id="fixes">Fixes</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2658"><code class="highlighter-rouge">#2658</code></a> don’t pass empty set of features to Cargo.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2673"><code class="highlighter-rouge">#2673</code></a> correctly don’t add parent item to the scope of a nested item.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2650"><code class="highlighter-rouge">#2650</code></a> correctly display types of macro call expressions.</li>
+</ul>
+
+<h2 id="internal-improvements">Internal Improvements</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2679"><code class="highlighter-rouge">#2679</code></a> use lang-items infrastructure for resolving known traits.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2684"><code class="highlighter-rouge">#2684</code></a> simplify build process for the TypeScript extension.</li>
+</ul>
+
+</article>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="/feed.xml" class="footer-link">
+        <i class="fa fa-rss"></i> rss
+      </a>
+      <a href="https://github.com/rust-analyzer/rust-analyzer.github.io" class="footer-link">
+        <i class="fa fa-github"></i> src
+      </a>
+      <a href="https://opencollective.com/rust-analyzer/" class="footer-link">
+        <i class="fa fa-github"></i> sponsor
+      </a>
+    </p>
+  </footer>
+</body>
+
+</html>
