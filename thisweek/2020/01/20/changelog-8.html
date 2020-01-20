@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Changelog #8</title>
+  <meta name="description"
+    content="Commit: de24097Release: 2020-01-20">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rust-analyzer.github.io//thisweek/2020/01/20/changelog-8.html">
+  <link rel="alternate" type="application/rss+xml" title="rust-analyzer"
+    href="https://rust-analyzer.github.io//feed.xml">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/fav/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="mask-icon" href="/assets/fav/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  
+  <header>
+    <div id="header-inner">
+      <a class="site-title" href="/">
+        <img src="/assets/rust-analyzer.svg" alt="rust analyzer" id="header-logo">
+      </a>
+      <a class="nav-link" href="/blog">Blog</a>
+      <a class="nav-link" href="/thisweek">Changelog</a>
+      <a class="nav-link" href="https://opencollective.com/rust-analyzer/">Sponsor</a>
+    </div>
+  </header>
+  
+
+  <main>
+    <article>
+<h1>Changelog #8</h1>
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/de2409702ba639f06cf340f5e3f3b7e671021d1b"><code class="highlighter-rouge">de24097</code></a>
+Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/tag/2020-01-20"><code class="highlighter-rouge">2020-01-20</code></a></p>
+
+<h2 id="new-features">New Features</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2824"><code class="highlighter-rouge">#2824</code></a> defer starting <code class="highlighter-rouge">cargo check</code> until workspace is loaded.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2843"><code class="highlighter-rouge">#2843</code></a> display inlay hints for function parameter names.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer.github.io/pull/24"><code class="highlighter-rouge">rust-analyzer.github.io#24</code></a> rust-analyzer has a new logo and a refreshed website.
+Thanks <a href="https://github.com/Aloso">@Aloso</a>!</li>
+</ul>
+
+<h2 id="fixes">Fixes</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2837"><code class="highlighter-rouge">#2837</code></a> syntax highlighting was <a href="https://accidentallyquadratic.tumblr.com/">accidentally quadratic</a>.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2852"><code class="highlighter-rouge">#2852</code></a> don’t parse child modules when computing diagnostics for a module.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2853"><code class="highlighter-rouge">#2853</code></a> reduce the amount of blocking <code class="highlighter-rouge">cargo check</code> does.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2827"><code class="highlighter-rouge">#2827</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2813"><code class="highlighter-rouge">#2813</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2867"><code class="highlighter-rouge">#2867</code></a> fix outer attributes on expressions in some cases.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2877"><code class="highlighter-rouge">#2877</code></a> more precise active range for “add explicit type” assist.</li>
+</ul>
+
+<h2 id="internal-improvements">Internal Improvements</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2818"><code class="highlighter-rouge">#2818</code></a> recover from panics inside of chalk.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2834"><code class="highlighter-rouge">#2834</code></a> remove code duplication from syntax validation routines.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2841"><code class="highlighter-rouge">#2841</code></a> use consistent style for assist labels.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2856"><code class="highlighter-rouge">#2856</code></a> more orthogonal design for <code class="highlighter-rouge">ast::Path</code> editing API.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2716"><code class="highlighter-rouge">#2716</code></a> groundwork for assists with multiple actions.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2862"><code class="highlighter-rouge">#2862</code></a> new infrastructure for mapping source code to internal hir representation, which should allow problems like quadratic syntax highlighting.</li>
+</ul>
+
+</article>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="/feed.xml" class="footer-link">
+        <i class="fa fa-rss"></i> rss
+      </a>
+      <a href="https://github.com/rust-analyzer/rust-analyzer.github.io" class="footer-link">
+        <i class="fa fa-github"></i> src
+      </a>
+      <a href="https://opencollective.com/rust-analyzer/" class="footer-link">
+        <i class="fa fa-github"></i> sponsor
+      </a>
+    </p>
+  </footer>
+</body>
+
+</html>
