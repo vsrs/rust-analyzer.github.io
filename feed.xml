@@ -5,9 +5,16 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Jan 2020 19:13:02 +0000</pubDate>
-    <lastBuildDate>Mon, 20 Jan 2020 19:13:02 +0000</lastBuildDate>
+    <pubDate>Mon, 27 Jan 2020 15:01:16 +0000</pubDate>
+    <lastBuildDate>Mon, 27 Jan 2020 15:01:16 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Changelog #9</title>
+        <pubDate>Mon, 27 Jan 2020 02:01:00 +0000</pubDate>
+        <link>https://rust-analyzer.github.io//thisweek/2020/01/27/changelog-9.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2020/01/27/changelog-9.html</guid>
+      </item>
     
       <item>
         <title>Changelog #8</title>
@@ -70,13 +77,6 @@
         <pubDate>Wed, 13 Nov 2019 09:00:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//blog/2019/11/13/find-usages.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2019/11/13/find-usages.html</guid>
-      </item>
-    
-      <item>
-        <title>Cost of rust-analyzer</title>
-        <pubDate>Wed, 16 Oct 2019 09:00:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//blog/2019/10/16/finance.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2019/10/16/finance.html</guid>
       </item>
     
   </channel>
