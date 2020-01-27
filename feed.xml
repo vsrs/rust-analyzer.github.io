@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Jan 2020 15:02:33 +0000</pubDate>
-    <lastBuildDate>Mon, 27 Jan 2020 15:02:33 +0000</lastBuildDate>
+    <pubDate>Mon, 27 Jan 2020 15:22:59 +0000</pubDate>
+    <lastBuildDate>Mon, 27 Jan 2020 15:22:59 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -14,6 +14,35 @@
         <pubDate>Mon, 27 Jan 2020 02:01:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2020/01/27/changelog-9.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2020/01/27/changelog-9.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/87e1baf2421d80bf6d6acd776e29827196931a32&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;87e1baf&lt;/code&gt;&lt;/a&gt;
+Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/tag/2020-01-27&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2020-01-27&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2887&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2887&lt;/code&gt;&lt;/a&gt; auto import assist.
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/73185119-cf89e800-411d-11ea-9213-d6eac89256c4.gif&quot; alt=&quot;auto-import&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2883&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2883&lt;/code&gt;&lt;/a&gt; enable semantic highlighting inside macros.
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/73185287-137ced00-411e-11ea-93ed-e415daa9c5dd.gif&quot; alt=&quot;semantic-highlighting&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2899&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2899&lt;/code&gt;&lt;/a&gt; detect popular macro-based test frameworks for the purposes of the “Run …” lenses/keybinding.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2901&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2901&lt;/code&gt;&lt;/a&gt; cancel pending requests when shutdown is initiated.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2907&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2907&lt;/code&gt;&lt;/a&gt; inline variable does not remove unused variables.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2906&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2906&lt;/code&gt;&lt;/a&gt; fix a bug on windows where main loop was starved by background tasks.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2893&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2893&lt;/code&gt;&lt;/a&gt; add a guided tour of lossless syntax trees to the dev docs.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2891&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2891&lt;/code&gt;&lt;/a&gt; remove code duplication in validation.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2898&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2898&lt;/code&gt;&lt;/a&gt; cleanup &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo watch&lt;/code&gt; state management.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
@@ -21,6 +50,39 @@
         <pubDate>Mon, 20 Jan 2020 04:01:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2020/01/20/changelog-8.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2020/01/20/changelog-8.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/de2409702ba639f06cf340f5e3f3b7e671021d1b&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;de24097&lt;/code&gt;&lt;/a&gt;
+Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/tag/2020-01-20&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2020-01-20&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2824&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2824&lt;/code&gt;&lt;/a&gt; defer starting &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo check&lt;/code&gt; until workspace is loaded.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2843&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2843&lt;/code&gt;&lt;/a&gt; display inlay hints for function parameter names.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer.github.io/pull/24&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rust-analyzer.github.io#24&lt;/code&gt;&lt;/a&gt; rust-analyzer has a new logo and a refreshed website.
+Thanks &lt;a href=&quot;https://github.com/Aloso&quot;&gt;@Aloso&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2837&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2837&lt;/code&gt;&lt;/a&gt; syntax highlighting was &lt;a href=&quot;https://accidentallyquadratic.tumblr.com/&quot;&gt;accidentally quadratic&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2852&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2852&lt;/code&gt;&lt;/a&gt; don’t parse child modules when computing diagnostics for a module.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2853&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2853&lt;/code&gt;&lt;/a&gt; reduce the amount of blocking &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo check&lt;/code&gt; does.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2827&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2827&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2813&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2813&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2867&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2867&lt;/code&gt;&lt;/a&gt; fix outer attributes on expressions in some cases.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2877&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2877&lt;/code&gt;&lt;/a&gt; more precise active range for “add explicit type” assist.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2818&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2818&lt;/code&gt;&lt;/a&gt; recover from panics inside of chalk.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2834&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2834&lt;/code&gt;&lt;/a&gt; remove code duplication from syntax validation routines.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2841&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2841&lt;/code&gt;&lt;/a&gt; use consistent style for assist labels.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2856&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2856&lt;/code&gt;&lt;/a&gt; more orthogonal design for &lt;code class=&quot;highlighter-rouge&quot;&gt;ast::Path&lt;/code&gt; editing API.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2716&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2716&lt;/code&gt;&lt;/a&gt; groundwork for assists with multiple actions.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2862&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2862&lt;/code&gt;&lt;/a&gt; new infrastructure for mapping source code to internal hir representation, which should prevent problems like quadratic syntax highlighting.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
@@ -28,6 +90,55 @@
         <pubDate>Mon, 13 Jan 2020 02:01:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2020/01/13/changelog-7.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2020/01/13/changelog-7.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/a30129be5ae8fd3dc698cc035339ed651b30de02&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a30129b&lt;/code&gt;&lt;/a&gt;
+Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/tag/2020-01-13&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2020-01-13&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We now publish binary releases to GitHub 🎁!
+Note that this is the first release, so things are expected to go wrong.
+Release process is orchestrated by &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/ab6e992c8719ed58c66309c5274f8a13807e6afa/.github/workflows/release.yaml&quot;&gt;this workflow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Additionally, the VS Code extension is renamed to &lt;code class=&quot;highlighter-rouge&quot;&gt;rust-analyzer&lt;/code&gt; (the old name was &lt;code class=&quot;highlighter-rouge&quot;&gt;ra-lsp&lt;/code&gt;).
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cargo xtask install&lt;/code&gt; should automatically remove the old extension, but, if you use the binary release, you’d have to uninstall manually.&lt;/p&gt;
+
+&lt;p&gt;We also got a new sponsor: &lt;a href=&quot;https://freiheit.com&quot;&gt;freiheit.com&lt;/a&gt;!
+If you use rust-analyzer at work, consider asking your company to support its development!&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2724&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2724&lt;/code&gt;&lt;/a&gt; basic support for const-generic parsing.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2738&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2738&lt;/code&gt;&lt;/a&gt; invoking reference search on &lt;code class=&quot;highlighter-rouge&quot;&gt;{&lt;/code&gt; searches for struct literals.
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/72264442-10acd300-361b-11ea-8d2d-0d48eff2f1c1.gif&quot; alt=&quot;search-curly&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2698&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2698&lt;/code&gt;&lt;/a&gt; initial support for call hierarchy.
+&lt;img src=&quot;https://user-images.githubusercontent.com/6868531/71634596-6d57c900-2beb-11ea-9957-d1bb1aa92d3b.png&quot; alt=&quot;call-hierarchy&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2732&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2732&lt;/code&gt;&lt;/a&gt; add configuration option to silence the error message about missing Cargo.toml.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2779&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2779&lt;/code&gt;&lt;/a&gt; support for parsing trait aliases.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2749&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2749&lt;/code&gt;&lt;/a&gt; initial support for read/write classification of accesses in reference search.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2727&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2727&lt;/code&gt;&lt;/a&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;add impl members&lt;/code&gt; assist now correctly qualifies paths.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2712&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2712&lt;/code&gt;&lt;/a&gt; extend selection works in macro calls.
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/72265573-025fb680-361d-11ea-82d1-ccf5fe524767.gif&quot; alt=&quot;extend-selection&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2753&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2753&lt;/code&gt;&lt;/a&gt; epic one-line change by @michalt which enables salsa fast-path for incremental validation of libraries.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2785&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2785&lt;/code&gt;&lt;/a&gt; fix macro expansion in expression positions.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2786&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2786&lt;/code&gt;&lt;/a&gt; fix hover for local variables.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2807&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2807&lt;/code&gt;&lt;/a&gt; fix goto implementation for derived implementations.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2788&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2788&lt;/code&gt;&lt;/a&gt; outline correctly displays &lt;code class=&quot;highlighter-rouge&quot;&gt;#[macro_export]&lt;/code&gt;ed macro rules.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2816&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2816&lt;/code&gt;&lt;/a&gt; add &lt;code class=&quot;highlighter-rouge&quot;&gt;macro_rules&lt;/code&gt; snippet.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2771&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2771&lt;/code&gt;&lt;/a&gt; make issues like &lt;code class=&quot;highlighter-rouge&quot;&gt;#2753&lt;/code&gt; less likely.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2768&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2768&lt;/code&gt;&lt;/a&gt; rename VS Code extension to &lt;code class=&quot;highlighter-rouge&quot;&gt;rust-analyzer&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2820&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2820&lt;/code&gt;&lt;/a&gt; publish binary releases.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-lang/compiler-team/issues/237&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;compiler-team/#237&lt;/code&gt;&lt;/a&gt; initial research for parser library-ification.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
@@ -35,6 +146,27 @@
         <pubDate>Mon, 06 Jan 2020 02:01:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2020/01/06/changelog-6.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2020/01/06/changelog-6.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/07340a62cc1b34efcebfc9f4cfc42f655edd2fc8&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;07340a6&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2672&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2672&lt;/code&gt;&lt;/a&gt; fix macro expansion of repetitions.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2722&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2722&lt;/code&gt;&lt;/a&gt; fix cargo watch tests on windows.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2734&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2734&lt;/code&gt;&lt;/a&gt; fix panic in type inference.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Restructure Vs Code extension&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2703&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2703&lt;/code&gt;&lt;/a&gt; remove support for old-style syntax highlighting.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2731&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2731&lt;/code&gt;&lt;/a&gt; improve internal profiling infrastructure.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2743&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2743&lt;/code&gt;&lt;/a&gt; use a declarative macro instead of an external &lt;code class=&quot;highlighter-rouge&quot;&gt;.ron&lt;/code&gt; file to describe input to AST code generation.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
@@ -42,6 +174,34 @@
         <pubDate>Mon, 30 Dec 2019 02:12:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2019/12/30/changelog-5.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/12/30/changelog-5.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/9cad88dd95773f9ede6233fd7d0f3a076c5cda61&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;9cad88d&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2668&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2668&lt;/code&gt;&lt;/a&gt; move &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo watch&lt;/code&gt; integration to the server side. Now it is available for every editor, and not only for VS Code.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2661&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2661&lt;/code&gt;&lt;/a&gt; type inference for &lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt; functions.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2663&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2663&lt;/code&gt;&lt;/a&gt; “add missing impl members” assists now substitutes type parameters.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2657&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2657&lt;/code&gt;&lt;/a&gt; type hints for closures are less verbose.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2667&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2667&lt;/code&gt;&lt;/a&gt; account for visibility modifiers during name resolution.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2061&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2061&lt;/code&gt;&lt;/a&gt; use existing TextMate scopes infrastructure for color theme customization.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2658&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2658&lt;/code&gt;&lt;/a&gt; don’t pass empty set of features to Cargo.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2673&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2673&lt;/code&gt;&lt;/a&gt; correctly don’t add parent item to the scope of a nested item.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2650&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2650&lt;/code&gt;&lt;/a&gt; correctly display types of macro call expressions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2679&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2679&lt;/code&gt;&lt;/a&gt; use lang-items infrastructure for resolving known traits.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2684&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2684&lt;/code&gt;&lt;/a&gt; simplify build process for the TypeScript extension.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
@@ -49,6 +209,43 @@
         <pubDate>Mon, 23 Dec 2019 02:12:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2019/12/23/changelog-4.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/12/23/changelog-4.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/ce07a2daa9e53aa86a769f8641b14c2878444fbc&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ce07a2d&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2577&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2577&lt;/code&gt;&lt;/a&gt; by default for VS Code, rely on client-side file watching.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2568&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2568&lt;/code&gt;&lt;/a&gt; add option to disable &lt;code class=&quot;highlighter-rouge&quot;&gt;--all-targets&lt;/code&gt; flag for &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo watch&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2594&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2594&lt;/code&gt;&lt;/a&gt; type hints don’t show default type arguments.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2592&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2592&lt;/code&gt;&lt;/a&gt; initial type-inference for index expressions.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2616&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2616&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2619&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2619&lt;/code&gt;&lt;/a&gt; improve type-inference for closures.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2617&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2617&lt;/code&gt;&lt;/a&gt; don’t use approximate name resolution when computing hover.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2623&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2623&lt;/code&gt;&lt;/a&gt; expand macros in impls.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2628&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2628&lt;/code&gt;&lt;/a&gt; parse macros 2.0.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2641&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2641&lt;/code&gt;&lt;/a&gt; parse const generics.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2648&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2648&lt;/code&gt;&lt;/a&gt; rudimentary name resolution for local items.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2577&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2577&lt;/code&gt;&lt;/a&gt; better parser recovery for lambdas.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2562&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2562&lt;/code&gt;&lt;/a&gt; correctly compute goto target range for a target inside a macro.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2575&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2575&lt;/code&gt;&lt;/a&gt; correctly highlight &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo watch&lt;/code&gt; errors inside macros.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2595&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2595&lt;/code&gt;&lt;/a&gt; fix parsing of expressions expanded by macros.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2637&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2637&lt;/code&gt;&lt;/a&gt; optimize inlay hints.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2643&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2643&lt;/code&gt;&lt;/a&gt; optimize change tracking.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2581&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2581&lt;/code&gt;&lt;/a&gt; refactor &lt;code class=&quot;highlighter-rouge&quot;&gt;hir::Path&lt;/code&gt; to separate paths with and without generic arguments on the type level.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2583&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2583&lt;/code&gt;&lt;/a&gt; better prettier config for TypeScript extension&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2545&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2545&lt;/code&gt;&lt;/a&gt; add ids to all tokens (this is groundwork for hygiene and better support for IDE features inside macro calls).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2629&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2629&lt;/code&gt;&lt;/a&gt; remove imports from hir.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
@@ -56,6 +253,38 @@
         <pubDate>Mon, 16 Dec 2019 02:12:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2019/12/16/changelog-3.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/12/16/changelog-3.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/0ef8ace012b19b76ee99b283801d0d17a3b72b4b&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0ef8ace&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2511&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2511&lt;/code&gt;&lt;/a&gt; implement &lt;code class=&quot;highlighter-rouge&quot;&gt;ra_lsp_server --version&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2523&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2523&lt;/code&gt;&lt;/a&gt; implement extend selection for tuple patterns.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2550&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2550&lt;/code&gt;&lt;/a&gt; type inference for unary &lt;code class=&quot;highlighter-rouge&quot;&gt;!&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2548&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2548&lt;/code&gt;&lt;/a&gt; allow to select cargo features (by default, &lt;code class=&quot;highlighter-rouge&quot;&gt;--all-features&lt;/code&gt; is used).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2559&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2559&lt;/code&gt;&lt;/a&gt; use more fine-grained tags for syntax highlighting (&lt;code class=&quot;highlighter-rouge&quot;&gt;literal.byte&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;literal.char&lt;/code&gt;, …)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2565&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2565&lt;/code&gt;&lt;/a&gt; fix bug with syntax highlighting not updating on windows.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2519&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2519&lt;/code&gt;&lt;/a&gt; fix name resolution for types in traits.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2535&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2535&lt;/code&gt;&lt;/a&gt; don’t trigger signature help on typing &lt;code class=&quot;highlighter-rouge&quot;&gt;)&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2552&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2552&lt;/code&gt;&lt;/a&gt; fix goto definition target when the cursor is between tokens.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2567&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2567&lt;/code&gt;&lt;/a&gt; fix type inference for &lt;code class=&quot;highlighter-rouge&quot;&gt;impl Trait&lt;/code&gt; syntax.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2510&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2510&lt;/code&gt;&lt;/a&gt; restore source maps for the typescript extension.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2525&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2525&lt;/code&gt;&lt;/a&gt; use ES2018 for VS Code extension.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2526&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2526&lt;/code&gt;&lt;/a&gt; upgrade to LSP 3.15.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2537&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2537&lt;/code&gt;&lt;/a&gt; lookup hir nodes by their parents, and not only by the source location.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2561&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2561&lt;/code&gt;&lt;/a&gt; split  &lt;code class=&quot;highlighter-rouge&quot;&gt;Path&lt;/code&gt; into non-generic &lt;code class=&quot;highlighter-rouge&quot;&gt;ModPath&lt;/code&gt; and generic &lt;code class=&quot;highlighter-rouge&quot;&gt;Path&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
@@ -63,6 +292,35 @@
         <pubDate>Mon, 09 Dec 2019 02:12:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2019/12/09/changelog-2.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/12/09/changelog-2.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/e3a9e806bae14fbeb5d7369d7b7871ba87353316&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;e3a9e80&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2500&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2500&lt;/code&gt;&lt;/a&gt; goto definition works inside &lt;code class=&quot;highlighter-rouge&quot;&gt;format!&lt;/code&gt;-like macros.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2477&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2477&lt;/code&gt;&lt;/a&gt; pass the right &lt;code class=&quot;highlighter-rouge&quot;&gt;--edition&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;rustfmt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2479&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2479&lt;/code&gt;&lt;/a&gt; support some build-in derives&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2492&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2492&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2494&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2494&lt;/code&gt;&lt;/a&gt; goto definition and syntax highlighting work properly for type parameters&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2487&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2487&lt;/code&gt;&lt;/a&gt; fix type inference for references&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2466&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2466&lt;/code&gt;&lt;/a&gt; fix imports being considered resolved to early&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2474&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2474&lt;/code&gt;&lt;/a&gt; more cleanly separate inline and out-of-line module&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2480&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2480&lt;/code&gt;&lt;/a&gt; discover the relevant hir for AST more reliably&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2484&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2484&lt;/code&gt;&lt;/a&gt; implement &lt;code class=&quot;highlighter-rouge&quot;&gt;DynMap&lt;/code&gt; – a dynamically typed heterogeneous map to
+make it easy to plumb stuff through compiler layers&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2499&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2499&lt;/code&gt;&lt;/a&gt; refactor &lt;code class=&quot;highlighter-rouge&quot;&gt;code_model&lt;/code&gt; module, which is the API for accessing
+compiler’s data from the IDE.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
@@ -70,6 +328,36 @@
         <pubDate>Wed, 04 Dec 2019 01:12:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2019/12/04/changelog-1.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/12/04/changelog-1.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/c6e4cadfce300d14dccdb74e3d5f0e44008e7985&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;c6e4cad&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2388&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2388&lt;/code&gt;&lt;/a&gt; added a more informative message for &lt;code class=&quot;highlighter-rouge&quot;&gt;missing fields&lt;/code&gt; diagnostics.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2445&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2445&lt;/code&gt;&lt;/a&gt; added type inference for range expressions.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2018&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2018&lt;/code&gt;&lt;/a&gt; adds an initial version of &lt;strong&gt;add custom impl&lt;/strong&gt; assist, which switches from a &lt;code class=&quot;highlighter-rouge&quot;&gt;#[derive]&lt;/code&gt; to a manual impl.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Update chalk to fix infinite memory usage in some cases.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2406&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2406&lt;/code&gt;&lt;/a&gt; slightly better hygiene handling in macros.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2453&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2453&lt;/code&gt;&lt;/a&gt; employed salsa’s cycle-handling functionality to gracefully handle some error conditions instead of panicking.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2455&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2455&lt;/code&gt;&lt;/a&gt; add required special-casing for name-resolution of primitive types.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2463&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2463&lt;/code&gt;&lt;/a&gt; fixed method resolution order.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Extract &lt;code class=&quot;highlighter-rouge&quot;&gt;hir_ty&lt;/code&gt; crate.&lt;/li&gt;
+  &lt;li&gt;Separate compiler-internal &lt;code class=&quot;highlighter-rouge&quot;&gt;hir_ty::Ty&lt;/code&gt; from IDE-visible &lt;code class=&quot;highlighter-rouge&quot;&gt;hir::Type&lt;/code&gt;.
+This should allow more flexible evolution of type representation.&lt;/li&gt;
+  &lt;li&gt;Rename “the IDE” crate from &lt;code class=&quot;highlighter-rouge&quot;&gt;ra_ide_api&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;ra_ide&lt;/code&gt;: at 14k lines, it has much more stuff than just an API.&lt;/li&gt;
+  &lt;li&gt;A lot of assorted refactorings in the type inference area.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
@@ -77,6 +365,204 @@
         <pubDate>Wed, 13 Nov 2019 09:00:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//blog/2019/11/13/find-usages.html</link>
         <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2019/11/13/find-usages.html</guid>
+        <description>&lt;p&gt;Last month, rust-analyzer gained an exciting new feature: find usages. It was implemented by &lt;a href=&quot;https://github.com/viorina&quot;&gt;@viorina&lt;/a&gt; in &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/1892&quot;&gt;#1892&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This post describes how the feature works under the hood.
+It’s an excellent case study to compare approaches of traditional compilers with IDE-oriented compilers (shortened to IDE from now on).&lt;/p&gt;
+
+&lt;h2 id=&quot;definitions-and-usages&quot;&gt;Definitions and Usages&lt;/h2&gt;
+
+&lt;p&gt;Let’s start with a simple example:&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;92&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;62&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Suppose that a user invoked &lt;em&gt;find usages&lt;/em&gt; (also known as &lt;em&gt;reference search&lt;/em&gt;) on &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;.
+An IDE should highlight &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt; as a usage.&lt;/p&gt;
+
+&lt;p&gt;But lets start with a simpler problem: &lt;em&gt;goto definition&lt;/em&gt; (which is the reverse of &lt;em&gt;find usages&lt;/em&gt;).
+How does a compiler or an IDE understands that &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt; refers to &lt;code class=&quot;highlighter-rouge&quot;&gt;let x = 92;&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;Terminology Note: we will call the &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;let x = 92&lt;/code&gt; a &lt;strong&gt;definition&lt;/strong&gt;, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt; a &lt;strong&gt;reference&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note: the following presentation is oversimplified and is not based directly on any existing compiler or IDE.
+Consider it a text-book illustration, and not a fossil specimen.&lt;/p&gt;
+
+&lt;h2 id=&quot;compilers-approach&quot;&gt;Compiler’s Approach&lt;/h2&gt;
+
+&lt;p&gt;A typical compiler works by building a symbol table.
+It does a depth-first traversal of the syntax tree of a program, maintaining a hash-map of definitions.
+For the above example, the compiler does the following steps, in order:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create an empty map.&lt;/li&gt;
+  &lt;li&gt;Visit &lt;code class=&quot;highlighter-rouge&quot;&gt;let x = 92&lt;/code&gt;. Records this definition in the map under the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;x&quot;&lt;/code&gt; key.&lt;/li&gt;
+  &lt;li&gt;Visit &lt;code class=&quot;highlighter-rouge&quot;&gt;let y = 62&lt;/code&gt;. Records this definition in the map under the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;y&quot;&lt;/code&gt; key.&lt;/li&gt;
+  &lt;li&gt;Visit &lt;code class=&quot;highlighter-rouge&quot;&gt;condition&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Visit “then” branch of the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; expression. Lookup &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;y&quot;&lt;/code&gt; in the map and record association between a reference and a definition.&lt;/li&gt;
+  &lt;li&gt;Visit “else” branch of the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; expression. Lookup &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;x&quot;&lt;/code&gt; in the map and record association between a reference and a definition.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;After the end of the traversal, the compiler knows, for each reference, what definition this reference points to.
+If a reference is unresolved, the compiler emits an error.&lt;/p&gt;
+
+&lt;p&gt;We may say that a compiler processes a program &lt;strong&gt;top-down&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ide-approach&quot;&gt;IDE Approach&lt;/h2&gt;
+
+&lt;p&gt;To figure out where the &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt; points to, a typical IDE does something different.
+Instead of starting from the root of the tree, it starts from the usage, and proceeds upwards.&lt;/p&gt;
+
+&lt;p&gt;So, the IDE would do the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Start at &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Look at the parent “else” branch, notice that there are no definitions there.&lt;/li&gt;
+  &lt;li&gt;Look at the parent “if” expression.&lt;/li&gt;
+  &lt;li&gt;Look at the parent block, notice that it has &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; defined, return this definition as an answer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The crucial point here is that IDE skips “then” branch completely.
+It doesn’t look like a big deal with this small branch which contains a single expression only.
+However, the real world programs are much more complicated, and an IDE can skip quite a lot of code by only climbing the tree up.&lt;/p&gt;
+
+&lt;p&gt;This is the &lt;strong&gt;bottom-up&lt;/strong&gt; approach.&lt;/p&gt;
+
+&lt;h2 id=&quot;which-way-is-better&quot;&gt;Which Way is Better?&lt;/h2&gt;
+
+&lt;p&gt;It depends!
+Let’s do a quick estimation of work required to find, for each reference, a definition it points to.&lt;/p&gt;
+
+&lt;p&gt;The compiler’s case is easy: we just traverse a program once, doing hashmap operations along the way.
+That would be &lt;code class=&quot;highlighter-rouge&quot;&gt;O(program_size)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The IDE’s case is more tricky: we still need to traverse a program to find all references.
+Then, for each reference, we need to launch the “traverse tree upwards” procedure.
+Which gives us &lt;code class=&quot;highlighter-rouge&quot;&gt;O(program_size + n_references * program_depth)&lt;/code&gt;.
+This is clearly worse!&lt;/p&gt;
+
+&lt;p&gt;But let’s now look at the time we need to resolve one specific reference.
+A compiler still has to construct the symbol table, so it’s still &lt;code class=&quot;highlighter-rouge&quot;&gt;O(program_size)&lt;/code&gt;.
+An IDE, however, can launch only a single upward traversal, and that would be only &lt;code class=&quot;highlighter-rouge&quot;&gt;O(program_depth)&lt;/code&gt;!&lt;/p&gt;
+
+&lt;p&gt;These observations are exactly the reason why compilers prefer the first approach, while IDEs favor the second one.
+A compiler has to check and compile all the code anyway, so it’s important to do all the work as efficiently as possible.
+For IDEs however, the main trick is to ignore as much code as feasible.
+An IDE needs to know only about usages under one specific reference under the cursor in the currently opened file.
+It doesn’t care what is the definition of a &lt;code class=&quot;highlighter-rouge&quot;&gt;spam&lt;/code&gt; variable used in the &lt;code class=&quot;highlighter-rouge&quot;&gt;frobnicate&lt;/code&gt; function somewhere in the guts of the standard library.&lt;/p&gt;
+
+&lt;p&gt;More generally, an IDE would like&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;to know everything about a small droplet of code that is currently on the screen and&lt;/li&gt;
+  &lt;li&gt;to know nothing about the vast ocean of code that is off-screen.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;find-usages&quot;&gt;Find Usages&lt;/h2&gt;
+
+&lt;p&gt;Let’s get back to the original problem, find usages.&lt;/p&gt;
+
+&lt;p&gt;If a compiler has already constructed a symbol table, the solution is trivial: just enumerate all the usages.
+It might need a little bit of extra bookkeeping (storing the list of usages in the symbol table), but basically this is just “print the answer we already have”.&lt;/p&gt;
+
+&lt;p&gt;For an IDE, something else is required.
+The trivial solution of doing a bottom-up traversal from every reference is worse than just launching  the compiler from scratch.&lt;/p&gt;
+
+&lt;p&gt;Instead, IDEs do a cute trick, which can be called a hack even!
+IntelliJ, Type Script, and, since last month, rust-analyzer work like this.&lt;/p&gt;
+
+&lt;p&gt;First thing an IDE does is a &lt;em&gt;text&lt;/em&gt; search across all files, which finds the set of potential matches.
+As text search is much simpler than code analysis, this phase finishes relatively quickly.
+Then the IDE filters out false positives, by doing bottom-up traversal from candidate matches.&lt;/p&gt;
+
+&lt;p&gt;The text-based pre filtering again allows the IDE to skip over most of the code, and complete find-usages in less time than it would the compiler to build a symbol table.&lt;/p&gt;
+
+&lt;h2 id=&quot;incrementality-vs-laziness&quot;&gt;Incrementality vs Laziness&lt;/h2&gt;
+
+&lt;p&gt;Can we make the top-down approach as effective as bottom-up (and maybe even more so), by just making the calculation of symbol table incremental?
+The idea is to maintain a data structure that connects references and definitions and, when a user changes a piece of code, apply the diff to the data structure, instead of re-computing it from scratch.&lt;/p&gt;
+
+&lt;p&gt;The fundamental issue with this approach is that it solves the problem an IDE doesn’t have in the first place.
+From that symbol data structure, only a tiny part is interesting for an IDE at any given moment of time.
+Most of the code is private implementation details of dependencies, and they are completely irrelevant for IDE tasks, unless a user invokes “go to definition” on a symbol from library and actively studies these details.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, building and updating such data structure takes time.
+Specifically, because the data is intricate and depends on the language semantics, small changes to the source code (change of a module name, for example) might necessitate big rearrangement of computed result.&lt;/p&gt;
+
+&lt;p&gt;In general, laziness (ability to ignore most of the code) and incrementality (ability to quickly update derived data based on source changes) are orthogonal features.
+First and foremost, an IDE requires laziness, although incrementality can be used as well to speed some things up.&lt;/p&gt;
+
+&lt;p&gt;In particular, it is possible to make the text-based phase of reference search incremental.
+An IDE can maintain a trigram index: for each three-byte sequence, a list of files and positions where this sequence occurs.
+Unlike symbol tables, such index is easy to maintain, as any change in a file can only affect trigrams from this file.
+The index can then be used to speedup text search.
+The result is the following &lt;em&gt;find usages&lt;/em&gt; funnel:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First, an IDE finds all positions where identifier’s  trigrams match,&lt;/li&gt;
+  &lt;li&gt;Then, the IDE checks if a trigram match is in fact a full identifier match,&lt;/li&gt;
+  &lt;li&gt;Finally, IDE uses semantic analysis to prune away remaining false-positives.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is optimization is not implemented in rust-analyzer yet.
+It definitely is planned, but not for the immediate future.&lt;/p&gt;
+
+&lt;h2 id=&quot;tricks&quot;&gt;Tricks&lt;/h2&gt;
+
+&lt;p&gt;Let’s look at a couple of additional tricks an IDE can employ.&lt;/p&gt;
+
+&lt;p&gt;First, the IDE can add yet another step to the funnel: pruning the set of files worth searching.
+These restrictions can originate from the language semantics: it doesn’t make sense to look for &lt;code class=&quot;highlighter-rouge&quot;&gt;pub(crate)&lt;/code&gt; declaration outside of the current crate or for &lt;code class=&quot;highlighter-rouge&quot;&gt;pub&lt;/code&gt; declaration among crate dependencies.
+They also can originate from the user: it’s often convenient to exclude tests from search results, for example.&lt;/p&gt;
+
+&lt;p&gt;The second trick is about implementing warnings for unused declarations effectively.
+This is a case where a top-down approach is generally better, as an IDE needs to process every declaration, and that would be slow with top-down approach.
+However, with a trigram index the IDE can apply an interesting optimization: only check those declarations which have few textual matches.
+This will miss an used declaration with a popular name, like &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt;, but will work ok for less-popular names, with a relatively good performance.&lt;/p&gt;
+
+&lt;h2 id=&quot;real-world&quot;&gt;Real World&lt;/h2&gt;
+
+&lt;p&gt;Now it’s time to look at what actually happens in rust-analyzer. First of all, I must confess, it doesn’t use the bottom-up approach :)&lt;/p&gt;
+
+&lt;p&gt;Rust type-inference works at a function granularity: statements near the end of a function can affect statements at the beginning.
+So, it doesn’t make sense to do name resolution at the granularity of an expression, and indeed rust-analyzer builds a per-function &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/d523366299c8d4813e9845c9402b8dd7b779856a/crates/ra_hir/src/expr/scope.rs&quot;&gt;symbol table&lt;/a&gt;.
+This is still done lazily though: we don’t look into the function body unless the text search tells us to do so.&lt;/p&gt;
+
+&lt;p&gt;Name resolution on the module/item level in Rust is pretty complex as well.
+The interaction between macros, which can bring new names into the scope, and glob imports, which can tie together namespaces of two modules, requires not only top-down processing, but a repeated top-down processing (until a fixed point is reached).
+For this reason, module-level name resolution in rust-analyzer is also implemented using the top-down approach.
+We use &lt;a href=&quot;https://github.com/salsa-rs/salsa&quot;&gt;salsa&lt;/a&gt; to make this phase of name resolution incremental, as a substitute for laziness (see &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/d523366299c8d4813e9845c9402b8dd7b779856a/crates/ra_hir_def/src/nameres.rs&quot;&gt;this module&lt;/a&gt; for details).
+The results look promising so far: by processing function bodies lazy, we greatly reduce the amount of data the fixed-point iteration algorithm has to look at.
+By adding salsa on-top, we avoid re-running this algorithm most of the time.&lt;/p&gt;
+
+&lt;p&gt;However, the general search funnel is there!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Here’s the &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/d523366299c8d4813e9845c9402b8dd7b779856a/crates/ra_ide_api/src/lib.rs#L383-L390&quot;&gt;entry point&lt;/a&gt; for find usages.
+Callee can restrict the &lt;code class=&quot;highlighter-rouge&quot;&gt;SearchScope&lt;/code&gt;.
+For example, when the editor asks to highlight all usages of the identifier under the cursor, the scope is restricted to a single file.&lt;/li&gt;
+  &lt;li&gt;The first step of find usages is figuring out what to find in the first place.
+This is handled by &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L106-L120&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find_name&lt;/code&gt;&lt;/a&gt; functions.
+There are two cases to consider: the cursor can be either on the reference, or on the definition.
+We handle the first case by resolving the reference to the definition and converging to the second case.&lt;/li&gt;
+  &lt;li&gt;Once we’ve figured out the definition, we compute it’s search scope and intersect it with the provided scope: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L93-L99&quot;&gt;source&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;After that, we do a simple text search over all files in the scope: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L137&quot;&gt;source&lt;/a&gt;.
+This is the place where trigram index should be added.&lt;/li&gt;
+  &lt;li&gt;If there’s a match, we parse the file, to make sure that it is indeed a reference, and not a comment or a string literal: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L135&quot;&gt;source&lt;/a&gt;.
+Note how we use a local &lt;a href=&quot;https://docs.rs/once_cell/1.2.0/once_cell/unsync/struct.Lazy.html&quot;&gt;Lazy&lt;/a&gt; value to parse only those files, which have at least one match.&lt;/li&gt;
+  &lt;li&gt;Finally, we check that the candidate reference indeed resolves to the definition we have started with: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L150&quot;&gt;source&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That’s all for the find usages, thank you for reading!&lt;/p&gt;
+</description>
       </item>
     
   </channel>
