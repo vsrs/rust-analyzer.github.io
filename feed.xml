@@ -5,9 +5,57 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Jan 2020 15:22:59 +0000</pubDate>
-    <lastBuildDate>Mon, 27 Jan 2020 15:22:59 +0000</lastBuildDate>
+    <pubDate>Mon, 03 Feb 2020 14:52:52 +0000</pubDate>
+    <lastBuildDate>Mon, 03 Feb 2020 14:52:52 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Changelog #10</title>
+        <pubDate>Mon, 03 Feb 2020 02:02:00 +0000</pubDate>
+        <link>https://rust-analyzer.github.io//thisweek/2020/02/03/changelog-10.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2020/02/03/changelog-10.html</guid>
+        <description>&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/c57ed0cfb29bc2b311299eebb4f7820a31068a37&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;c57ed0c&lt;/code&gt;&lt;/a&gt;
+Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/tag/2020-02-03&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2020-02-03&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2963&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2963&lt;/code&gt;&lt;/a&gt; add auto-import support to Emacs.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2978&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2978&lt;/code&gt;&lt;/a&gt; support auto-import for functions.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2982&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2982&lt;/code&gt;&lt;/a&gt; merge imports when auto-importing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2933&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2933&lt;/code&gt;&lt;/a&gt; don’t compute diagnostics on the main thread.
+That fixes a long-standing issue with peformance degradation due to &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo check&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2810&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2810&lt;/code&gt;&lt;/a&gt; make magical search of struct literals work in more contexts.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2916&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2916&lt;/code&gt;&lt;/a&gt; fix slow &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo check&lt;/code&gt; performance due to unbuffered reads.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2924&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2924&lt;/code&gt;&lt;/a&gt; avoid spawning more than one Cargo for &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo check&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2917&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2917&lt;/code&gt;&lt;/a&gt; prefer imports starting with &lt;code class=&quot;highlighter-rouge&quot;&gt;std&lt;/code&gt; for auto import.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2937&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2937&lt;/code&gt;&lt;/a&gt; fix an issue where &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo check&lt;/code&gt; got stuck in an infinite loop if some procedural macro printed to stdout.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2970&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2970&lt;/code&gt;&lt;/a&gt; fix some clint-side bugs with syntax highlighting.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2972&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2972&lt;/code&gt;&lt;/a&gt;, a fun one, prevent a child process for flipping rust-analyzer’s stdin into non-blocking mode.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2959&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2959&lt;/code&gt;&lt;/a&gt; fix a bug where diagnostics from &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo check&lt;/code&gt; were obsolete.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;internal-improvements&quot;&gt;Internal Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2872&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2872&lt;/code&gt;&lt;/a&gt; update Chalk.
+This should fix some cases of extremely slow trait checking.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2934&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2934&lt;/code&gt;&lt;/a&gt; log error if the main loop turns takes too long.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2931&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2931&lt;/code&gt;&lt;/a&gt; document &lt;code class=&quot;highlighter-rouge&quot;&gt;test_utils&lt;/code&gt; module.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2940&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2940&lt;/code&gt;&lt;/a&gt;,&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2941&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2941&lt;/code&gt;&lt;/a&gt; update developer documentation.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2943&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2943&lt;/code&gt;&lt;/a&gt; improve memory usage tracking infrastructure.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2895&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2895&lt;/code&gt;&lt;/a&gt; make internal profiling infrastructure more maintainable.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2967&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2967&lt;/code&gt;&lt;/a&gt; speed up the build of rust-analyzer by using profile overrides.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2987&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2987&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2986&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2986&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2989&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2989&lt;/code&gt;&lt;/a&gt; cleanup VS Code extension.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2991&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2991&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2998&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#2998&lt;/code&gt;&lt;/a&gt; unsuccessfully try to improve TypeScript build process.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      </item>
     
       <item>
         <title>Changelog #9</title>
@@ -357,211 +405,6 @@ This should allow more flexible evolution of type representation.&lt;/li&gt;
   &lt;li&gt;Rename “the IDE” crate from &lt;code class=&quot;highlighter-rouge&quot;&gt;ra_ide_api&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;ra_ide&lt;/code&gt;: at 14k lines, it has much more stuff than just an API.&lt;/li&gt;
   &lt;li&gt;A lot of assorted refactorings in the type inference area.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-      </item>
-    
-      <item>
-        <title>Find Usages</title>
-        <pubDate>Wed, 13 Nov 2019 09:00:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//blog/2019/11/13/find-usages.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2019/11/13/find-usages.html</guid>
-        <description>&lt;p&gt;Last month, rust-analyzer gained an exciting new feature: find usages. It was implemented by &lt;a href=&quot;https://github.com/viorina&quot;&gt;@viorina&lt;/a&gt; in &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/1892&quot;&gt;#1892&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This post describes how the feature works under the hood.
-It’s an excellent case study to compare approaches of traditional compilers with IDE-oriented compilers (shortened to IDE from now on).&lt;/p&gt;
-
-&lt;h2 id=&quot;definitions-and-usages&quot;&gt;Definitions and Usages&lt;/h2&gt;
-
-&lt;p&gt;Let’s start with a simple example:&lt;/p&gt;
-
-&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;92&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;62&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Suppose that a user invoked &lt;em&gt;find usages&lt;/em&gt; (also known as &lt;em&gt;reference search&lt;/em&gt;) on &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;.
-An IDE should highlight &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt; as a usage.&lt;/p&gt;
-
-&lt;p&gt;But lets start with a simpler problem: &lt;em&gt;goto definition&lt;/em&gt; (which is the reverse of &lt;em&gt;find usages&lt;/em&gt;).
-How does a compiler or an IDE understands that &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt; refers to &lt;code class=&quot;highlighter-rouge&quot;&gt;let x = 92;&lt;/code&gt;?&lt;/p&gt;
-
-&lt;p&gt;Terminology Note: we will call the &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;let x = 92&lt;/code&gt; a &lt;strong&gt;definition&lt;/strong&gt;, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt; a &lt;strong&gt;reference&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Note: the following presentation is oversimplified and is not based directly on any existing compiler or IDE.
-Consider it a text-book illustration, and not a fossil specimen.&lt;/p&gt;
-
-&lt;h2 id=&quot;compilers-approach&quot;&gt;Compiler’s Approach&lt;/h2&gt;
-
-&lt;p&gt;A typical compiler works by building a symbol table.
-It does a depth-first traversal of the syntax tree of a program, maintaining a hash-map of definitions.
-For the above example, the compiler does the following steps, in order:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Create an empty map.&lt;/li&gt;
-  &lt;li&gt;Visit &lt;code class=&quot;highlighter-rouge&quot;&gt;let x = 92&lt;/code&gt;. Records this definition in the map under the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;x&quot;&lt;/code&gt; key.&lt;/li&gt;
-  &lt;li&gt;Visit &lt;code class=&quot;highlighter-rouge&quot;&gt;let y = 62&lt;/code&gt;. Records this definition in the map under the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;y&quot;&lt;/code&gt; key.&lt;/li&gt;
-  &lt;li&gt;Visit &lt;code class=&quot;highlighter-rouge&quot;&gt;condition&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Visit “then” branch of the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; expression. Lookup &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;y&quot;&lt;/code&gt; in the map and record association between a reference and a definition.&lt;/li&gt;
-  &lt;li&gt;Visit “else” branch of the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; expression. Lookup &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;x&quot;&lt;/code&gt; in the map and record association between a reference and a definition.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;After the end of the traversal, the compiler knows, for each reference, what definition this reference points to.
-If a reference is unresolved, the compiler emits an error.&lt;/p&gt;
-
-&lt;p&gt;We may say that a compiler processes a program &lt;strong&gt;top-down&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;ide-approach&quot;&gt;IDE Approach&lt;/h2&gt;
-
-&lt;p&gt;To figure out where the &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt; points to, a typical IDE does something different.
-Instead of starting from the root of the tree, it starts from the usage, and proceeds upwards.&lt;/p&gt;
-
-&lt;p&gt;So, the IDE would do the following:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Start at &lt;code class=&quot;highlighter-rouge&quot;&gt;x + 2&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Look at the parent “else” branch, notice that there are no definitions there.&lt;/li&gt;
-  &lt;li&gt;Look at the parent “if” expression.&lt;/li&gt;
-  &lt;li&gt;Look at the parent block, notice that it has &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; defined, return this definition as an answer.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The crucial point here is that IDE skips “then” branch completely.
-It doesn’t look like a big deal with this small branch which contains a single expression only.
-However, the real world programs are much more complicated, and an IDE can skip quite a lot of code by only climbing the tree up.&lt;/p&gt;
-
-&lt;p&gt;This is the &lt;strong&gt;bottom-up&lt;/strong&gt; approach.&lt;/p&gt;
-
-&lt;h2 id=&quot;which-way-is-better&quot;&gt;Which Way is Better?&lt;/h2&gt;
-
-&lt;p&gt;It depends!
-Let’s do a quick estimation of work required to find, for each reference, a definition it points to.&lt;/p&gt;
-
-&lt;p&gt;The compiler’s case is easy: we just traverse a program once, doing hashmap operations along the way.
-That would be &lt;code class=&quot;highlighter-rouge&quot;&gt;O(program_size)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The IDE’s case is more tricky: we still need to traverse a program to find all references.
-Then, for each reference, we need to launch the “traverse tree upwards” procedure.
-Which gives us &lt;code class=&quot;highlighter-rouge&quot;&gt;O(program_size + n_references * program_depth)&lt;/code&gt;.
-This is clearly worse!&lt;/p&gt;
-
-&lt;p&gt;But let’s now look at the time we need to resolve one specific reference.
-A compiler still has to construct the symbol table, so it’s still &lt;code class=&quot;highlighter-rouge&quot;&gt;O(program_size)&lt;/code&gt;.
-An IDE, however, can launch only a single upward traversal, and that would be only &lt;code class=&quot;highlighter-rouge&quot;&gt;O(program_depth)&lt;/code&gt;!&lt;/p&gt;
-
-&lt;p&gt;These observations are exactly the reason why compilers prefer the first approach, while IDEs favor the second one.
-A compiler has to check and compile all the code anyway, so it’s important to do all the work as efficiently as possible.
-For IDEs however, the main trick is to ignore as much code as feasible.
-An IDE needs to know only about usages under one specific reference under the cursor in the currently opened file.
-It doesn’t care what is the definition of a &lt;code class=&quot;highlighter-rouge&quot;&gt;spam&lt;/code&gt; variable used in the &lt;code class=&quot;highlighter-rouge&quot;&gt;frobnicate&lt;/code&gt; function somewhere in the guts of the standard library.&lt;/p&gt;
-
-&lt;p&gt;More generally, an IDE would like&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;to know everything about a small droplet of code that is currently on the screen and&lt;/li&gt;
-  &lt;li&gt;to know nothing about the vast ocean of code that is off-screen.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;find-usages&quot;&gt;Find Usages&lt;/h2&gt;
-
-&lt;p&gt;Let’s get back to the original problem, find usages.&lt;/p&gt;
-
-&lt;p&gt;If a compiler has already constructed a symbol table, the solution is trivial: just enumerate all the usages.
-It might need a little bit of extra bookkeeping (storing the list of usages in the symbol table), but basically this is just “print the answer we already have”.&lt;/p&gt;
-
-&lt;p&gt;For an IDE, something else is required.
-The trivial solution of doing a bottom-up traversal from every reference is worse than just launching  the compiler from scratch.&lt;/p&gt;
-
-&lt;p&gt;Instead, IDEs do a cute trick, which can be called a hack even!
-IntelliJ, Type Script, and, since last month, rust-analyzer work like this.&lt;/p&gt;
-
-&lt;p&gt;First thing an IDE does is a &lt;em&gt;text&lt;/em&gt; search across all files, which finds the set of potential matches.
-As text search is much simpler than code analysis, this phase finishes relatively quickly.
-Then the IDE filters out false positives, by doing bottom-up traversal from candidate matches.&lt;/p&gt;
-
-&lt;p&gt;The text-based pre filtering again allows the IDE to skip over most of the code, and complete find-usages in less time than it would the compiler to build a symbol table.&lt;/p&gt;
-
-&lt;h2 id=&quot;incrementality-vs-laziness&quot;&gt;Incrementality vs Laziness&lt;/h2&gt;
-
-&lt;p&gt;Can we make the top-down approach as effective as bottom-up (and maybe even more so), by just making the calculation of symbol table incremental?
-The idea is to maintain a data structure that connects references and definitions and, when a user changes a piece of code, apply the diff to the data structure, instead of re-computing it from scratch.&lt;/p&gt;
-
-&lt;p&gt;The fundamental issue with this approach is that it solves the problem an IDE doesn’t have in the first place.
-From that symbol data structure, only a tiny part is interesting for an IDE at any given moment of time.
-Most of the code is private implementation details of dependencies, and they are completely irrelevant for IDE tasks, unless a user invokes “go to definition” on a symbol from library and actively studies these details.&lt;/p&gt;
-
-&lt;p&gt;On the other hand, building and updating such data structure takes time.
-Specifically, because the data is intricate and depends on the language semantics, small changes to the source code (change of a module name, for example) might necessitate big rearrangement of computed result.&lt;/p&gt;
-
-&lt;p&gt;In general, laziness (ability to ignore most of the code) and incrementality (ability to quickly update derived data based on source changes) are orthogonal features.
-First and foremost, an IDE requires laziness, although incrementality can be used as well to speed some things up.&lt;/p&gt;
-
-&lt;p&gt;In particular, it is possible to make the text-based phase of reference search incremental.
-An IDE can maintain a trigram index: for each three-byte sequence, a list of files and positions where this sequence occurs.
-Unlike symbol tables, such index is easy to maintain, as any change in a file can only affect trigrams from this file.
-The index can then be used to speedup text search.
-The result is the following &lt;em&gt;find usages&lt;/em&gt; funnel:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;First, an IDE finds all positions where identifier’s  trigrams match,&lt;/li&gt;
-  &lt;li&gt;Then, the IDE checks if a trigram match is in fact a full identifier match,&lt;/li&gt;
-  &lt;li&gt;Finally, IDE uses semantic analysis to prune away remaining false-positives.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;This is optimization is not implemented in rust-analyzer yet.
-It definitely is planned, but not for the immediate future.&lt;/p&gt;
-
-&lt;h2 id=&quot;tricks&quot;&gt;Tricks&lt;/h2&gt;
-
-&lt;p&gt;Let’s look at a couple of additional tricks an IDE can employ.&lt;/p&gt;
-
-&lt;p&gt;First, the IDE can add yet another step to the funnel: pruning the set of files worth searching.
-These restrictions can originate from the language semantics: it doesn’t make sense to look for &lt;code class=&quot;highlighter-rouge&quot;&gt;pub(crate)&lt;/code&gt; declaration outside of the current crate or for &lt;code class=&quot;highlighter-rouge&quot;&gt;pub&lt;/code&gt; declaration among crate dependencies.
-They also can originate from the user: it’s often convenient to exclude tests from search results, for example.&lt;/p&gt;
-
-&lt;p&gt;The second trick is about implementing warnings for unused declarations effectively.
-This is a case where a top-down approach is generally better, as an IDE needs to process every declaration, and that would be slow with top-down approach.
-However, with a trigram index the IDE can apply an interesting optimization: only check those declarations which have few textual matches.
-This will miss an used declaration with a popular name, like &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt;, but will work ok for less-popular names, with a relatively good performance.&lt;/p&gt;
-
-&lt;h2 id=&quot;real-world&quot;&gt;Real World&lt;/h2&gt;
-
-&lt;p&gt;Now it’s time to look at what actually happens in rust-analyzer. First of all, I must confess, it doesn’t use the bottom-up approach :)&lt;/p&gt;
-
-&lt;p&gt;Rust type-inference works at a function granularity: statements near the end of a function can affect statements at the beginning.
-So, it doesn’t make sense to do name resolution at the granularity of an expression, and indeed rust-analyzer builds a per-function &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/d523366299c8d4813e9845c9402b8dd7b779856a/crates/ra_hir/src/expr/scope.rs&quot;&gt;symbol table&lt;/a&gt;.
-This is still done lazily though: we don’t look into the function body unless the text search tells us to do so.&lt;/p&gt;
-
-&lt;p&gt;Name resolution on the module/item level in Rust is pretty complex as well.
-The interaction between macros, which can bring new names into the scope, and glob imports, which can tie together namespaces of two modules, requires not only top-down processing, but a repeated top-down processing (until a fixed point is reached).
-For this reason, module-level name resolution in rust-analyzer is also implemented using the top-down approach.
-We use &lt;a href=&quot;https://github.com/salsa-rs/salsa&quot;&gt;salsa&lt;/a&gt; to make this phase of name resolution incremental, as a substitute for laziness (see &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/d523366299c8d4813e9845c9402b8dd7b779856a/crates/ra_hir_def/src/nameres.rs&quot;&gt;this module&lt;/a&gt; for details).
-The results look promising so far: by processing function bodies lazy, we greatly reduce the amount of data the fixed-point iteration algorithm has to look at.
-By adding salsa on-top, we avoid re-running this algorithm most of the time.&lt;/p&gt;
-
-&lt;p&gt;However, the general search funnel is there!&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Here’s the &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/d523366299c8d4813e9845c9402b8dd7b779856a/crates/ra_ide_api/src/lib.rs#L383-L390&quot;&gt;entry point&lt;/a&gt; for find usages.
-Callee can restrict the &lt;code class=&quot;highlighter-rouge&quot;&gt;SearchScope&lt;/code&gt;.
-For example, when the editor asks to highlight all usages of the identifier under the cursor, the scope is restricted to a single file.&lt;/li&gt;
-  &lt;li&gt;The first step of find usages is figuring out what to find in the first place.
-This is handled by &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L106-L120&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find_name&lt;/code&gt;&lt;/a&gt; functions.
-There are two cases to consider: the cursor can be either on the reference, or on the definition.
-We handle the first case by resolving the reference to the definition and converging to the second case.&lt;/li&gt;
-  &lt;li&gt;Once we’ve figured out the definition, we compute it’s search scope and intersect it with the provided scope: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L93-L99&quot;&gt;source&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;After that, we do a simple text search over all files in the scope: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L137&quot;&gt;source&lt;/a&gt;.
-This is the place where trigram index should be added.&lt;/li&gt;
-  &lt;li&gt;If there’s a match, we parse the file, to make sure that it is indeed a reference, and not a comment or a string literal: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L135&quot;&gt;source&lt;/a&gt;.
-Note how we use a local &lt;a href=&quot;https://docs.rs/once_cell/1.2.0/once_cell/unsync/struct.Lazy.html&quot;&gt;Lazy&lt;/a&gt; value to parse only those files, which have at least one match.&lt;/li&gt;
-  &lt;li&gt;Finally, we check that the candidate reference indeed resolves to the definition we have started with: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/c486f8477aca4a42800e81b0b99fd56c14c6219f/crates/ra_ide_api/src/references.rs#L150&quot;&gt;source&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;That’s all for the find usages, thank you for reading!&lt;/p&gt;
 </description>
       </item>
     

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Changelog #10</title>
+  <meta name="description"
+    content="Commit: c57ed0cRelease: 2020-02-03">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rust-analyzer.github.io//thisweek/2020/02/03/changelog-10.html">
+  <link rel="alternate" type="application/rss+xml" title="rust-analyzer"
+    href="https://rust-analyzer.github.io//feed.xml">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/fav/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="mask-icon" href="/assets/fav/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  
+  <header>
+    <div id="header-inner">
+      <a class="site-title" href="/">
+        <img src="/assets/rust-analyzer.svg" alt="rust analyzer" id="header-logo">
+      </a>
+      <a class="nav-link" href="/blog">Blog</a>
+      <a class="nav-link" href="/thisweek">Changelog</a>
+      <a class="nav-link" href="https://opencollective.com/rust-analyzer/">Sponsor</a>
+    </div>
+  </header>
+  
+
+  <main>
+    <article>
+<h1>Changelog #10</h1>
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/c57ed0cfb29bc2b311299eebb4f7820a31068a37"><code class="highlighter-rouge">c57ed0c</code></a>
+Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/tag/2020-02-03"><code class="highlighter-rouge">2020-02-03</code></a></p>
+
+<h2 id="new-features">New Features</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2963"><code class="highlighter-rouge">#2963</code></a> add auto-import support to Emacs.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2978"><code class="highlighter-rouge">#2978</code></a> support auto-import for functions.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2982"><code class="highlighter-rouge">#2982</code></a> merge imports when auto-importing.</li>
+</ul>
+
+<h2 id="fixes">Fixes</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2933"><code class="highlighter-rouge">#2933</code></a> don’t compute diagnostics on the main thread.
+That fixes a long-standing issue with peformance degradation due to <code class="highlighter-rouge">cargo check</code>.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2810"><code class="highlighter-rouge">#2810</code></a> make magical search of struct literals work in more contexts.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2916"><code class="highlighter-rouge">#2916</code></a> fix slow <code class="highlighter-rouge">cargo check</code> performance due to unbuffered reads.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2924"><code class="highlighter-rouge">#2924</code></a> avoid spawning more than one Cargo for <code class="highlighter-rouge">cargo check</code>.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2917"><code class="highlighter-rouge">#2917</code></a> prefer imports starting with <code class="highlighter-rouge">std</code> for auto import.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2937"><code class="highlighter-rouge">#2937</code></a> fix an issue where <code class="highlighter-rouge">cargo check</code> got stuck in an infinite loop if some procedural macro printed to stdout.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2970"><code class="highlighter-rouge">#2970</code></a> fix some clint-side bugs with syntax highlighting.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2972"><code class="highlighter-rouge">#2972</code></a>, a fun one, prevent a child process for flipping rust-analyzer’s stdin into non-blocking mode.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2959"><code class="highlighter-rouge">#2959</code></a> fix a bug where diagnostics from <code class="highlighter-rouge">cargo check</code> were obsolete.</li>
+</ul>
+
+<h2 id="internal-improvements">Internal Improvements</h2>
+
+<ul>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2872"><code class="highlighter-rouge">#2872</code></a> update Chalk.
+This should fix some cases of extremely slow trait checking.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2934"><code class="highlighter-rouge">#2934</code></a> log error if the main loop turns takes too long.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2931"><code class="highlighter-rouge">#2931</code></a> document <code class="highlighter-rouge">test_utils</code> module.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2940"><code class="highlighter-rouge">#2940</code></a>,<a href="https://github.com/rust-analyzer/rust-analyzer/pull/2941"><code class="highlighter-rouge">#2941</code></a> update developer documentation.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2943"><code class="highlighter-rouge">#2943</code></a> improve memory usage tracking infrastructure.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2895"><code class="highlighter-rouge">#2895</code></a> make internal profiling infrastructure more maintainable.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2967"><code class="highlighter-rouge">#2967</code></a> speed up the build of rust-analyzer by using profile overrides.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2987"><code class="highlighter-rouge">#2987</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2986"><code class="highlighter-rouge">#2986</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2989"><code class="highlighter-rouge">#2989</code></a> cleanup VS Code extension.</li>
+  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2991"><code class="highlighter-rouge">#2991</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2998"><code class="highlighter-rouge">#2998</code></a> unsuccessfully try to improve TypeScript build process.</li>
+</ul>
+
+</article>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="/feed.xml" class="footer-link">
+        <i class="fa fa-rss"></i> rss
+      </a>
+      <a href="https://github.com/rust-analyzer/rust-analyzer.github.io" class="footer-link">
+        <i class="fa fa-github"></i> src
+      </a>
+      <a href="https://opencollective.com/rust-analyzer/" class="footer-link">
+        <i class="fa fa-github"></i> sponsor
+      </a>
+    </p>
+  </footer>
+</body>
+
+</html>
