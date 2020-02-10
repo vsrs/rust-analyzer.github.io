@@ -5,9 +5,109 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Feb 2020 11:45:38 +0000</pubDate>
-    <lastBuildDate>Mon, 10 Feb 2020 11:45:38 +0000</lastBuildDate>
+    <pubDate>Mon, 10 Feb 2020 14:54:48 +0000</pubDate>
+    <lastBuildDate>Mon, 10 Feb 2020 14:54:48 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Changelog #11</title>
+        <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+        <link>https://rust-analyzer.github.io//thisweek/2020/02/10/changelog-11.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2020/02/10/changelog-11.html</guid>
+        <description>&lt;div id=&quot;preamble&quot;&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/727dcf52313f3f59c97861284ce8154e1ae03183&quot;&gt;&lt;code&gt;727dcf5&lt;/code&gt;&lt;/a&gt;&lt;br&gt;
+Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/2020-02-10&quot;&gt;&lt;code&gt;2020-02-10&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;new-features&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#new-features&quot;&gt;&lt;/a&gt;New Features&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3053&quot;&gt;&lt;code&gt;#3053&lt;/code&gt;&lt;/a&gt; VS Code extension now tries to automatically download the latest release. Additionally, the extension is now published to the Marketplace:
+&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&quot; class=&quot;bare&quot;&gt;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2981&quot;&gt;&lt;code&gt;#2981&lt;/code&gt;&lt;/a&gt; changed the way &lt;code&gt;onEnter&lt;/code&gt; handler works in VS Code.
+We no longer register a custom &lt;code&gt;ontype&lt;/code&gt; command.
+Instead, we provide a shortcut, bound to kbd::[Enter].
+If you have &lt;code&gt;enableEnhancedTyping: false&lt;/code&gt; in you settings, you&amp;#8217;ll want to disable this shortcut.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3050&quot;&gt;&lt;code&gt;#3050&lt;/code&gt;&lt;/a&gt; implement argument-position &lt;code&gt;impl Trait&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2911&quot;&gt;&lt;code&gt;#2911&lt;/code&gt;&lt;/a&gt; display errors from the lexer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2962&quot;&gt;&lt;code&gt;#2962&lt;/code&gt;&lt;/a&gt; groundwork for &lt;code&gt;use Trait as _&lt;/code&gt; syntax.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2948&quot;&gt;&lt;code&gt;#2948&lt;/code&gt;&lt;/a&gt; &lt;strong&gt;Add Explicit Type&lt;/strong&gt; assist now can replace &lt;code&gt;_&lt;/code&gt; types.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3040&quot;&gt;&lt;code&gt;#3040&lt;/code&gt;&lt;/a&gt; rework value parameter parsing to use 2018 edition syntax.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3054&quot;&gt;&lt;code&gt;#3054&lt;/code&gt;&lt;/a&gt; move Emacs support upstream.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;fixes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#fixes&quot;&gt;&lt;/a&gt;Fixes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3017&quot;&gt;&lt;code&gt;#3017&lt;/code&gt;&lt;/a&gt; correctly handle crates with &lt;code&gt;-&lt;/code&gt; in names.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3044&quot;&gt;&lt;code&gt;#3044&lt;/code&gt;&lt;/a&gt; don&amp;#8217;t crash when receiving unknown file for cargo diagnostics.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3047&quot;&gt;&lt;code&gt;#3047&lt;/code&gt;&lt;/a&gt; fix parsing of &lt;code&gt;async unsafe&lt;/code&gt; functions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;internal-improvements&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#internal-improvements&quot;&gt;&lt;/a&gt;Internal Improvements&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3024&quot;&gt;&lt;code&gt;#3024&lt;/code&gt;&lt;/a&gt; fix leaking observers and promises in VS Code extension.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3001&quot;&gt;&lt;code&gt;#3001&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3003&quot;&gt;&lt;code&gt;#3003&lt;/code&gt;&lt;/a&gt; reduce the number of TypeScript dependencies.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3018&quot;&gt;&lt;code&gt;#3018&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3045&quot;&gt;&lt;code&gt;#3045&lt;/code&gt;&lt;/a&gt; refactor some assists to use type-safe AST editing API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3031&quot;&gt;&lt;code&gt;#3031&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3034&quot;&gt;&lt;code&gt;#3034&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3063&quot;&gt;&lt;code&gt;#3063&lt;/code&gt;&lt;/a&gt; refactor auto-import infrastructure.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3069&quot;&gt;&lt;code&gt;#3069&lt;/code&gt;&lt;/a&gt; refactor interface for creating assists groups.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3081&quot;&gt;&lt;code&gt;#3081&lt;/code&gt;&lt;/a&gt; automate release process.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer.github.io/pull/31&quot;&gt;&lt;code&gt;ust-analyzer.github.io#31&lt;/code&gt;&lt;/a&gt; switch changelogs from markdown to AsciiDoctor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      </item>
     
       <item>
         <title>Changelog #10</title>
@@ -769,84 +869,6 @@ make it easy to plumb stuff through compiler layers&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2499&quot;&gt;&lt;code&gt;#2499&lt;/code&gt;&lt;/a&gt; refactor &lt;code&gt;code_model&lt;/code&gt; module, which is the API for accessing
 compiler&amp;#8217;s data from the IDE.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-      </item>
-    
-      <item>
-        <title>Changelog #1</title>
-        <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//thisweek/2019/12/04/changelog-1.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/12/04/changelog-1.html</guid>
-        <description>&lt;div id=&quot;preamble&quot;&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/c6e4cadfce300d14dccdb74e3d5f0e44008e7985&quot;&gt;&lt;code&gt;c6e4cad&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;new-features&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#new-features&quot;&gt;&lt;/a&gt;New Features&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2388&quot;&gt;&lt;code&gt;#2388&lt;/code&gt;&lt;/a&gt; added a more informative message for &lt;code&gt;missing fields&lt;/code&gt; diagnostics.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2445&quot;&gt;&lt;code&gt;#2445&lt;/code&gt;&lt;/a&gt; added type inference for range expressions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2018&quot;&gt;&lt;code&gt;#2018&lt;/code&gt;&lt;/a&gt; adds an initial version of &lt;strong&gt;add custom impl&lt;/strong&gt; assist, which switches from a &lt;code&gt;#[derive]&lt;/code&gt; to a manual impl.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;fixes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#fixes&quot;&gt;&lt;/a&gt;Fixes&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Update chalk to fix infinite memory usage in some cases.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2406&quot;&gt;&lt;code&gt;#2406&lt;/code&gt;&lt;/a&gt; slightly better hygiene handling in macros.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2453&quot;&gt;&lt;code&gt;#2453&lt;/code&gt;&lt;/a&gt; employed salsa&amp;#8217;s cycle-handling functionality to gracefully handle some error conditions instead of panicking.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2455&quot;&gt;&lt;code&gt;#2455&lt;/code&gt;&lt;/a&gt; add required special-casing for name-resolution of primitive types.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2463&quot;&gt;&lt;code&gt;#2463&lt;/code&gt;&lt;/a&gt; fixed method resolution order.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;internal-improvements&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#internal-improvements&quot;&gt;&lt;/a&gt;Internal Improvements&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Extract &lt;code&gt;hir_ty&lt;/code&gt; crate.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Separate compiler-internal &lt;code&gt;hir_ty::Ty&lt;/code&gt; from IDE-visible &lt;code&gt;hir::Type&lt;/code&gt;.
-This should allow more flexible evolution of type representation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Rename &quot;the IDE&quot; crate from &lt;code&gt;ra_ide_api&lt;/code&gt; to &lt;code&gt;ra_ide&lt;/code&gt;: at 14k lines, it has much more stuff than just an API.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A lot of assorted refactorings in the type inference area.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
