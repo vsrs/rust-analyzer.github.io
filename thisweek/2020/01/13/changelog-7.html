@@ -42,55 +42,111 @@
   <main>
     <article>
 <h1>Changelog #7</h1>
-<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/a30129be5ae8fd3dc698cc035339ed651b30de02"><code class="highlighter-rouge">a30129b</code></a>
-Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/tag/2020-01-13"><code class="highlighter-rouge">2020-01-13</code></a></p>
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/a30129be5ae8fd3dc698cc035339ed651b30de02"><code>a30129b</code></a><br>
+Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/2020-01-13"><code>2020-01-13</code></a></p>
+</div>
+<div class="paragraph">
 <p>We now publish binary releases to GitHub 🎁!
 Note that this is the first release, so things are expected to go wrong.
 Release process is orchestrated by <a href="https://github.com/rust-analyzer/rust-analyzer/blob/ab6e992c8719ed58c66309c5274f8a13807e6afa/.github/workflows/release.yaml">this workflow</a>.</p>
-
-<p>Additionally, the VS Code extension is renamed to <code class="highlighter-rouge">rust-analyzer</code> (the old name was <code class="highlighter-rouge">ra-lsp</code>).
-<code class="highlighter-rouge">cargo xtask install</code> should automatically remove the old extension, but, if you use the binary release, you’d have to uninstall manually.</p>
-
+</div>
+<div class="paragraph">
+<p>Additionally, the VS Code extension is renamed to <code>rust-analyzer</code> (the old name was <code>ra-lsp</code>).
+<code>cargo xtask install</code> should automatically remove the old extension, but, if you use the binary release, you&#8217;d have to uninstall manually.</p>
+</div>
+<div class="paragraph">
 <p>We also got a new sponsor: <a href="https://freiheit.com">freiheit.com</a>!
 If you use rust-analyzer at work, consider asking your company to support its development!</p>
-
-<h2 id="new-features">New Features</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="new-features"><a class="anchor" href="#new-features"></a>New Features</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2724"><code class="highlighter-rouge">#2724</code></a> basic support for const-generic parsing.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2738"><code class="highlighter-rouge">#2738</code></a> invoking reference search on <code class="highlighter-rouge">{</code> searches for struct literals.
-<img src="https://user-images.githubusercontent.com/1711539/72264442-10acd300-361b-11ea-8d2d-0d48eff2f1c1.gif" alt="search-curly" /></li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2698"><code class="highlighter-rouge">#2698</code></a> initial support for call hierarchy.
-<img src="https://user-images.githubusercontent.com/6868531/71634596-6d57c900-2beb-11ea-9957-d1bb1aa92d3b.png" alt="call-hierarchy" /></li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2732"><code class="highlighter-rouge">#2732</code></a> add configuration option to silence the error message about missing Cargo.toml.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2779"><code class="highlighter-rouge">#2779</code></a> support for parsing trait aliases.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2749"><code class="highlighter-rouge">#2749</code></a> initial support for read/write classification of accesses in reference search.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2727"><code class="highlighter-rouge">#2727</code></a> <code class="highlighter-rouge">add impl members</code> assist now correctly qualifies paths.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2712"><code class="highlighter-rouge">#2712</code></a> extend selection works in macro calls.
-<img src="https://user-images.githubusercontent.com/1711539/72265573-025fb680-361d-11ea-82d1-ccf5fe524767.gif" alt="extend-selection" /></li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2724"><code>#2724</code></a> basic support for const-generic parsing.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2738"><code>#2738</code></a> invoking reference search on <code>{</code> searches for struct literals.
+<span class="image"><img src="https://user-images.githubusercontent.com/1711539/72264442-10acd300-361b-11ea-8d2d-0d48eff2f1c1.gif" alt="72264442 10acd300 361b 11ea 8d2d 0d48eff2f1c1"></span></p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2698"><code>#2698</code></a> initial support for call hierarchy.
+<span class="image"><img src="https://user-images.githubusercontent.com/6868531/71634596-6d57c900-2beb-11ea-9957-d1bb1aa92d3b.png" alt="71634596 6d57c900 2beb 11ea 9957 d1bb1aa92d3b"></span></p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2732"><code>#2732</code></a> add configuration option to silence the error message about missing Cargo.toml.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2779"><code>#2779</code></a> support for parsing trait aliases.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2749"><code>#2749</code></a> initial support for read/write classification of accesses in reference search.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2727"><code>#2727</code></a> <code>add impl members</code> assist now correctly qualifies paths.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2712"><code>#2712</code></a> extend selection works in macro calls.
+<span class="image"><img src="https://user-images.githubusercontent.com/1711539/72265573-025fb680-361d-11ea-82d1-ccf5fe524767.gif" alt="72265573 025fb680 361d 11ea 82d1 ccf5fe524767"></span></p>
+</li>
 </ul>
-
-<h2 id="fixes">Fixes</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fixes"><a class="anchor" href="#fixes"></a>Fixes</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2753"><code class="highlighter-rouge">#2753</code></a> epic one-line change by @michalt which enables salsa fast-path for incremental validation of libraries.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2785"><code class="highlighter-rouge">#2785</code></a> fix macro expansion in expression positions.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2786"><code class="highlighter-rouge">#2786</code></a> fix hover for local variables.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2807"><code class="highlighter-rouge">#2807</code></a> fix goto implementation for derived implementations.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2788"><code class="highlighter-rouge">#2788</code></a> outline correctly displays <code class="highlighter-rouge">#[macro_export]</code>ed macro rules.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2816"><code class="highlighter-rouge">#2816</code></a> add <code class="highlighter-rouge">macro_rules</code> snippet.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2753"><code>#2753</code></a> epic one-line change by @michalt which enables salsa fast-path for incremental validation of libraries.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2785"><code>#2785</code></a> fix macro expansion in expression positions.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2786"><code>#2786</code></a> fix hover for local variables.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2807"><code>#2807</code></a> fix goto implementation for derived implementations.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2788"><code>#2788</code></a> outline correctly displays `#[macro_export]`ed macro rules.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2816"><code>#2816</code></a> add <code>macro_rules</code> snippet.</p>
+</li>
 </ul>
-
-<h2 id="internal-improvements">Internal Improvements</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="internal-improvements"><a class="anchor" href="#internal-improvements"></a>Internal Improvements</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2771"><code class="highlighter-rouge">#2771</code></a> make issues like <code class="highlighter-rouge">#2753</code> less likely.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2768"><code class="highlighter-rouge">#2768</code></a> rename VS Code extension to <code class="highlighter-rouge">rust-analyzer</code>.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2820"><code class="highlighter-rouge">#2820</code></a> publish binary releases.</li>
-  <li><a href="https://github.com/rust-lang/compiler-team/issues/237"><code class="highlighter-rouge">compiler-team/#237</code></a> initial research for parser library-ification.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2771"><code>#2771</code></a> make issues like <code>#2753</code> less likely.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2768"><code>#2768</code></a> rename VS Code extension to <code>rust-analyzer</code>.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2820"><code>#2820</code></a> publish binary releases.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-lang/compiler-team/issues/237"><code>compiler-team/#237</code></a> initial research for parser library-ification.</p>
+</li>
 </ul>
-
+</div>
+</div>
+</div>
 </article>
 
   </main>

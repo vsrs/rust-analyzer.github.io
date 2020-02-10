@@ -42,43 +42,100 @@
   <main>
     <article>
 <h1>Changelog #4</h1>
-<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/ce07a2daa9e53aa86a769f8641b14c2878444fbc"><code class="highlighter-rouge">ce07a2d</code></a></p>
-
-<h2 id="new-features">New Features</h2>
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/ce07a2daa9e53aa86a769f8641b14c2878444fbc"><code>ce07a2d</code></a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="new-features"><a class="anchor" href="#new-features"></a>New Features</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2577"><code class="highlighter-rouge">#2577</code></a> by default for VS Code, rely on client-side file watching.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2568"><code class="highlighter-rouge">#2568</code></a> add option to disable <code class="highlighter-rouge">--all-targets</code> flag for <code class="highlighter-rouge">cargo watch</code>.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2594"><code class="highlighter-rouge">#2594</code></a> type hints don’t show default type arguments.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2592"><code class="highlighter-rouge">#2592</code></a> initial type-inference for index expressions.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2616"><code class="highlighter-rouge">#2616</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2619"><code class="highlighter-rouge">#2619</code></a> improve type-inference for closures.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2617"><code class="highlighter-rouge">#2617</code></a> don’t use approximate name resolution when computing hover.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2623"><code class="highlighter-rouge">#2623</code></a> expand macros in impls.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2628"><code class="highlighter-rouge">#2628</code></a> parse macros 2.0.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2641"><code class="highlighter-rouge">#2641</code></a> parse const generics.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2648"><code class="highlighter-rouge">#2648</code></a> rudimentary name resolution for local items.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2577"><code>#2577</code></a> by default for VS Code, rely on client-side file watching.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2568"><code>#2568</code></a> add option to disable <code>--all-targets</code> flag for <code>cargo watch</code>.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2594"><code>#2594</code></a> type hints don&#8217;t show default type arguments.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2592"><code>#2592</code></a> initial type-inference for index expressions.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2616"><code>#2616</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2619"><code>#2619</code></a> improve type-inference for closures.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2617"><code>#2617</code></a> don&#8217;t use approximate name resolution when computing hover.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2623"><code>#2623</code></a> expand macros in impls.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2628"><code>#2628</code></a> parse macros 2.0.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2641"><code>#2641</code></a> parse const generics.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2648"><code>#2648</code></a> rudimentary name resolution for local items.</p>
+</li>
 </ul>
-
-<h2 id="fixes">Fixes</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fixes"><a class="anchor" href="#fixes"></a>Fixes</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2577"><code class="highlighter-rouge">#2577</code></a> better parser recovery for lambdas.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2562"><code class="highlighter-rouge">#2562</code></a> correctly compute goto target range for a target inside a macro.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2575"><code class="highlighter-rouge">#2575</code></a> correctly highlight <code class="highlighter-rouge">cargo watch</code> errors inside macros.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2595"><code class="highlighter-rouge">#2595</code></a> fix parsing of expressions expanded by macros.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2637"><code class="highlighter-rouge">#2637</code></a> optimize inlay hints.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2643"><code class="highlighter-rouge">#2643</code></a> optimize change tracking.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2577"><code>#2577</code></a> better parser recovery for lambdas.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2562"><code>#2562</code></a> correctly compute goto target range for a target inside a macro.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2575"><code>#2575</code></a> correctly highlight <code>cargo watch</code> errors inside macros.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2595"><code>#2595</code></a> fix parsing of expressions expanded by macros.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2637"><code>#2637</code></a> optimize inlay hints.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2643"><code>#2643</code></a> optimize change tracking.</p>
+</li>
 </ul>
-
-<h2 id="internal-improvements">Internal Improvements</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="internal-improvements"><a class="anchor" href="#internal-improvements"></a>Internal Improvements</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2581"><code class="highlighter-rouge">#2581</code></a> refactor <code class="highlighter-rouge">hir::Path</code> to separate paths with and without generic arguments on the type level.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2583"><code class="highlighter-rouge">#2583</code></a> better prettier config for TypeScript extension</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2545"><code class="highlighter-rouge">#2545</code></a> add ids to all tokens (this is groundwork for hygiene and better support for IDE features inside macro calls).</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2629"><code class="highlighter-rouge">#2629</code></a> remove imports from hir.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2581"><code>#2581</code></a> refactor <code>hir::Path</code> to separate paths with and without generic arguments on the type level.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2583"><code>#2583</code></a> better prettier config for TypeScript extension</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2545"><code>#2545</code></a> add ids to all tokens (this is groundwork for hygiene and better support for IDE features inside macro calls).</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2629"><code>#2629</code></a> remove imports from hir.</p>
+</li>
 </ul>
-
+</div>
+</div>
+</div>
 </article>
 
   </main>

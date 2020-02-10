@@ -42,39 +42,84 @@
   <main>
     <article>
 <h1>Changelog #8</h1>
-<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/de2409702ba639f06cf340f5e3f3b7e671021d1b"><code class="highlighter-rouge">de24097</code></a>
-Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/tag/2020-01-20"><code class="highlighter-rouge">2020-01-20</code></a></p>
-
-<h2 id="new-features">New Features</h2>
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/de2409702ba639f06cf340f5e3f3b7e671021d1b"><code>de24097</code></a><br>
+Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/2020-01-20"><code>2020-01-20</code></a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="new-features"><a class="anchor" href="#new-features"></a>New Features</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2824"><code class="highlighter-rouge">#2824</code></a> defer starting <code class="highlighter-rouge">cargo check</code> until workspace is loaded.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2843"><code class="highlighter-rouge">#2843</code></a> display inlay hints for function parameter names.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer.github.io/pull/24"><code class="highlighter-rouge">rust-analyzer.github.io#24</code></a> rust-analyzer has a new logo and a refreshed website.
-Thanks <a href="https://github.com/Aloso">@Aloso</a>!</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2824"><code>#2824</code></a> defer starting <code>cargo check</code> until workspace is loaded.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2843"><code>#2843</code></a> display inlay hints for function parameter names.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer.github.io/pull/24"><code>rust-analyzer.github.io#24</code></a> rust-analyzer has a new logo and a refreshed website.
+Thanks <a href="https://github.com/Aloso">@Aloso</a>!</p>
+</li>
 </ul>
-
-<h2 id="fixes">Fixes</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fixes"><a class="anchor" href="#fixes"></a>Fixes</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2837"><code class="highlighter-rouge">#2837</code></a> syntax highlighting was <a href="https://accidentallyquadratic.tumblr.com/">accidentally quadratic</a>.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2852"><code class="highlighter-rouge">#2852</code></a> don’t parse child modules when computing diagnostics for a module.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2853"><code class="highlighter-rouge">#2853</code></a> reduce the amount of blocking <code class="highlighter-rouge">cargo check</code> does.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2827"><code class="highlighter-rouge">#2827</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2813"><code class="highlighter-rouge">#2813</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2867"><code class="highlighter-rouge">#2867</code></a> fix outer attributes on expressions in some cases.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2877"><code class="highlighter-rouge">#2877</code></a> more precise active range for “add explicit type” assist.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2837"><code>#2837</code></a> syntax highlighting was <a href="https://accidentallyquadratic.tumblr.com/">accidentally quadratic</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2852"><code>#2852</code></a> don&#8217;t parse child modules when computing diagnostics for a module.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2853"><code>#2853</code></a> reduce the amount of blocking <code>cargo check</code> does.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2827"><code>#2827</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2813"><code>#2813</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2867"><code>#2867</code></a> fix outer attributes on expressions in some cases.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2877"><code>#2877</code></a> more precise active range for "add explicit type" assist.</p>
+</li>
 </ul>
-
-<h2 id="internal-improvements">Internal Improvements</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="internal-improvements"><a class="anchor" href="#internal-improvements"></a>Internal Improvements</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2818"><code class="highlighter-rouge">#2818</code></a> recover from panics inside of chalk.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2834"><code class="highlighter-rouge">#2834</code></a> remove code duplication from syntax validation routines.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2841"><code class="highlighter-rouge">#2841</code></a> use consistent style for assist labels.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2856"><code class="highlighter-rouge">#2856</code></a> more orthogonal design for <code class="highlighter-rouge">ast::Path</code> editing API.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2716"><code class="highlighter-rouge">#2716</code></a> groundwork for assists with multiple actions.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2862"><code class="highlighter-rouge">#2862</code></a> new infrastructure for mapping source code to internal hir representation, which should prevent problems like quadratic syntax highlighting.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2818"><code>#2818</code></a> recover from panics inside of chalk.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2834"><code>#2834</code></a> remove code duplication from syntax validation routines.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2841"><code>#2841</code></a> use consistent style for assist labels.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2856"><code>#2856</code></a> more orthogonal design for <code>ast::Path</code> editing API.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2716"><code>#2716</code></a> groundwork for assists with multiple actions.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2862"><code>#2862</code></a> new infrastructure for mapping source code to internal hir representation, which should prevent problems like quadratic syntax highlighting.</p>
+</li>
 </ul>
-
+</div>
+</div>
+</div>
 </article>
 
   </main>

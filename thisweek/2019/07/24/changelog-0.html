@@ -42,50 +42,110 @@
   <main>
     <article>
 <h1>Changelog #0</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
 <p>Hello!</p>
-
+</div>
+<div class="paragraph">
 <p>This is the first instance of a monthly changelog for rust-analyzer. Notable
 changes since last month include:</p>
-
-<h2 id="new-features">New Features</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="new-features"><a class="anchor" href="#new-features"></a>New Features</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li>Initial support for <code class="highlighter-rouge">.await</code> syntax (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1558">#1558</a>).</li>
-  <li>Type inference for <code class="highlighter-rouge">?</code> (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1512">#1512</a>).</li>
-  <li>Completion for type aliases (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1472">#1472</a>).</li>
-  <li>Mutable variables are underlined (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1544">#1544</a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/1550">#1550</a>).</li>
-  <li><code class="highlighter-rouge">add_impl_members</code> adds types (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1476">#1476</a>).</li>
-  <li>Sumbodules with raw names and <code class="highlighter-rouge">#[path]</code> are resolved (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1478">#1478</a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/1499">#1499</a>).</li>
-  <li>Correctly add obligations in function methods (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1496">#1496</a>).</li>
-  <li>Initial type inference for <code class="highlighter-rouge">for</code> loops (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1501">#1501</a>).</li>
-  <li>Use bounds on generic parameters during type inference (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1515">#1515</a>).</li>
-  <li>Completions works for fields of enum variants and in patterns (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1525">#1525</a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/1572">#1572</a>).</li>
-  <li>Show types of local variables in completion (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1582">#1582</a>).</li>
-</ul>
-
-<h2 id="fixes">Fixes</h2>
-
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1558"><code>#1558</code></a> initial support for <code>.await</code> syntax.</p>
+<div class="ulist">
 <ul>
-  <li>Make goto definition work with various Vim clients (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1511">#1511</a>).</li>
-  <li>Diagnostics are collected for a single file (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1494">#1494</a>).</li>
-  <li>Show code lens for <code class="highlighter-rouge">fn main</code> (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1536">#1536</a>).</li>
-  <li>Fix discovery of lang items (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1514">#1514</a>).</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1512"><code>#1512</code></a> type inference for <code>?</code>.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1472"><code>#1472</code></a> completion for type aliases.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1544"><code>#1544</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/1550"><code>#1550</code></a> mutable variables are underlined.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1476"><code>#1476</code></a> <code>add_impl_members</code> adds types.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1478"><code>#1478</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/1499"><code>#1499</code></a> sumbodules with raw names and <code>#[path]</code> are resolved.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1496"><code>#1496</code></a> correctly add obligations in function methods.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1501"><code>#1501</code></a> initial type inference for <code>for</code> loops.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1515"><code>#1515</code></a> use bounds on generic parameters during type inference.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1525"><code>#1525</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/1572"><code>#1572</code></a> completions works for fields of enum variants and in patterns.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1582"><code>#1582</code></a> show types of local variables in completion.</p>
+</li>
 </ul>
-
-<h2 id="internal-improvements">Internal Improvements</h2>
-
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fixes"><a class="anchor" href="#fixes"></a>Fixes</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li>Share the lexer with rustc (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1575">#1575</a>).</li>
-  <li>Migrate to the new version of rowan library, improving memory usage of syntax trees for 60% (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1545">#1545</a>).</li>
-  <li>Pick up floundering work from chalk (<a href="https://github.com/rust-analyzer/rust-analyzer/pull/1532">#1532</a>).</li>
-  <li>Many improvements and cleanups by (@kjeremy).</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1511"><code>#1511</code></a> make goto definition work with various Vim clients.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1494"><code>#1494</code></a> diagnostics are collected for a single file.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1536"><code>#1536</code></a> show code lens for <code>fn main</code>.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1514"><code>#1514</code></a> fix discovery of lang items.</p>
+</li>
 </ul>
-
-<p>The highlight of the month is probably <a href="https://github.com/rust-analyzer/rust-analyzer/pull/1575">#1575</a>.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="internal-improvements"><a class="anchor" href="#internal-improvements"></a>Internal Improvements</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1575"><code>#1575</code></a> s the lexer with rustc.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1545"><code>#1545</code></a> migrate to the new version of rowan library, improving memory usage of syntax trees for 60%.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/1532"><code>#1532</code></a> pick up floundering work from chalk.</p>
+</li>
+<li>
+<p>Many improvements and cleanups by <a href="https://github.com/kjeremy">@kjeremy</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The highlight of the month is probably <a href="https://github.com/rust-analyzer/rust-analyzer/pull/1575"><code>#1575</code></a>.
 The end-game for rust-analyzer is to become a different front-end for the code that rustc itself uses.
 This pull request is the first step on this path: now, rust-analyzer and rustc use the same code for lexing Rust.</p>
-
-
+</div>
+</div>
+</div>
 </article>
 
   </main>
