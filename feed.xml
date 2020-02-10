@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Feb 2020 15:05:04 +0000</pubDate>
-    <lastBuildDate>Mon, 10 Feb 2020 15:05:04 +0000</lastBuildDate>
+    <pubDate>Mon, 10 Feb 2020 15:11:10 +0000</pubDate>
+    <lastBuildDate>Mon, 10 Feb 2020 15:11:10 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -116,6 +116,9 @@ If you have &lt;code&gt;enableEnhancedTyping: false&lt;/code&gt; in you settings
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer.github.io/pull/31&quot;&gt;&lt;code&gt;rust-analyzer.github.io#31&lt;/code&gt;&lt;/a&gt; switch changelogs from markdown to AsciiDoctor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bump NodeJS requirement to 12 (you only need node if you build VS Code extension from source).&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
