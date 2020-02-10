@@ -59,7 +59,7 @@ Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/2020-0
 <p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/3053"><code>#3053</code></a> VS Code extension now tries to automatically download the latest release.
 Additionally, the extension is now published to the Marketplace:
 <a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer" class="bare">https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer</a>.
-Note that if you want to continue using rust-analyzer build from sources, you need to add
+Note that if you want to continue using rust-analyzer built from sources, you need to add
 +
 [source,json]
 ----
@@ -77,7 +77,7 @@ Instead, we provide a shortcut, bound to kbd::[Enter].
 If you have <code>enableEnhancedTyping: false</code> in you settings, you&#8217;ll want to disable this shortcut.</p>
 </li>
 <li>
-<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/3050"><code>#3050</code></a> implement argument-position <code>impl Trait</code>.</p>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/3050"><code>#3050</code></a> implement argument-position <code>impl Trait</code> again (support for <code>impl Trait</code> was removed with the Chalk upgrade last week). Return-position <code>impl Trait</code> support will still have to wait for Chalk.</p>
 </li>
 <li>
 <p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2911"><code>#2911</code></a> display errors from the lexer.</p>

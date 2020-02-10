@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Feb 2020 15:11:10 +0000</pubDate>
-    <lastBuildDate>Mon, 10 Feb 2020 15:11:10 +0000</lastBuildDate>
+    <pubDate>Mon, 10 Feb 2020 15:17:36 +0000</pubDate>
+    <lastBuildDate>Mon, 10 Feb 2020 15:17:36 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -31,7 +31,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3053&quot;&gt;&lt;code&gt;#3053&lt;/code&gt;&lt;/a&gt; VS Code extension now tries to automatically download the latest release.
 Additionally, the extension is now published to the Marketplace:
 &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&quot; class=&quot;bare&quot;&gt;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&lt;/a&gt;.
-Note that if you want to continue using rust-analyzer build from sources, you need to add
+Note that if you want to continue using rust-analyzer built from sources, you need to add
 +
 [source,json]
 ----
@@ -49,7 +49,7 @@ Instead, we provide a shortcut, bound to kbd::[Enter].
 If you have &lt;code&gt;enableEnhancedTyping: false&lt;/code&gt; in you settings, you&amp;#8217;ll want to disable this shortcut.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3050&quot;&gt;&lt;code&gt;#3050&lt;/code&gt;&lt;/a&gt; implement argument-position &lt;code&gt;impl Trait&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3050&quot;&gt;&lt;code&gt;#3050&lt;/code&gt;&lt;/a&gt; implement argument-position &lt;code&gt;impl Trait&lt;/code&gt; again (support for &lt;code&gt;impl Trait&lt;/code&gt; was removed with the Chalk upgrade last week). Return-position &lt;code&gt;impl Trait&lt;/code&gt; support will still have to wait for Chalk.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2911&quot;&gt;&lt;code&gt;#2911&lt;/code&gt;&lt;/a&gt; display errors from the lexer.&lt;/p&gt;
