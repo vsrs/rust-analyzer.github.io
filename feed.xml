@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Feb 2020 15:17:36 +0000</pubDate>
-    <lastBuildDate>Mon, 10 Feb 2020 15:17:36 +0000</lastBuildDate>
+    <pubDate>Mon, 10 Feb 2020 15:44:41 +0000</pubDate>
+    <lastBuildDate>Mon, 10 Feb 2020 15:44:41 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -29,23 +29,23 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3053&quot;&gt;&lt;code&gt;#3053&lt;/code&gt;&lt;/a&gt; VS Code extension now tries to automatically download the latest release.
-Additionally, the extension is now published to the Marketplace:
-&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&quot; class=&quot;bare&quot;&gt;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&lt;/a&gt;.
-Note that if you want to continue using rust-analyzer built from sources, you need to add
-+
-[source,json]
-----
-{
-    &quot;rust-analyzer.raLspServerPath&quot;: &quot;ra_lsp_server&quot;
-}
-----
-+
-to &lt;code&gt;settings.json&lt;/code&gt;&lt;/p&gt;
+Additionally, the extension is now published to the Marketplace (&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&quot;&gt;link&lt;/a&gt;).
+Note that if you want to continue using rust-analyzer build from sources, you need to add&lt;/p&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;{
+      &quot;rust-analyzer.raLspServerPath&quot;: &quot;ra_lsp_server&quot;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;to &lt;code&gt;settings.json&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2981&quot;&gt;&lt;code&gt;#2981&lt;/code&gt;&lt;/a&gt; changed the way &lt;code&gt;onEnter&lt;/code&gt; handler works in VS Code.
 We no longer register a custom &lt;code&gt;ontype&lt;/code&gt; command.
-Instead, we provide a shortcut, bound to kbd::[Enter].
+Instead, we provide a shortcut, bound to kbd:[Enter].
 If you have &lt;code&gt;enableEnhancedTyping: false&lt;/code&gt; in you settings, you&amp;#8217;ll want to disable this shortcut.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;

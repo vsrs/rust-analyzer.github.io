@@ -57,23 +57,23 @@ Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/2020-0
 <ul>
 <li>
 <p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/3053"><code>#3053</code></a> VS Code extension now tries to automatically download the latest release.
-Additionally, the extension is now published to the Marketplace:
-<a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer" class="bare">https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer</a>.
-Note that if you want to continue using rust-analyzer built from sources, you need to add
-+
-[source,json]
-----
-{
-    "rust-analyzer.raLspServerPath": "ra_lsp_server"
-}
-----
-+
-to <code>settings.json</code></p>
+Additionally, the extension is now published to the Marketplace (<a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer">link</a>).
+Note that if you want to continue using rust-analyzer build from sources, you need to add</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+      "rust-analyzer.raLspServerPath": "ra_lsp_server"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to <code>settings.json</code></p>
+</div>
 </li>
 <li>
 <p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2981"><code>#2981</code></a> changed the way <code>onEnter</code> handler works in VS Code.
 We no longer register a custom <code>ontype</code> command.
-Instead, we provide a shortcut, bound to kbd::[Enter].
+Instead, we provide a shortcut, bound to kbd:[Enter].
 If you have <code>enableEnhancedTyping: false</code> in you settings, you&#8217;ll want to disable this shortcut.</p>
 </li>
 <li>
