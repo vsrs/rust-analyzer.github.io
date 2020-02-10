@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Feb 2020 14:54:48 +0000</pubDate>
-    <lastBuildDate>Mon, 10 Feb 2020 14:54:48 +0000</lastBuildDate>
+    <pubDate>Mon, 10 Feb 2020 14:57:01 +0000</pubDate>
+    <lastBuildDate>Mon, 10 Feb 2020 14:57:01 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -17,7 +17,7 @@
         <description>&lt;div id=&quot;preamble&quot;&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/727dcf52313f3f59c97861284ce8154e1ae03183&quot;&gt;&lt;code&gt;727dcf5&lt;/code&gt;&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/5b703bdc582be427ee62d250b3d3290165c36b8c&quot;&gt;&lt;code&gt;5b703bd&lt;/code&gt;&lt;/a&gt;&lt;br&gt;
 Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/2020-02-10&quot;&gt;&lt;code&gt;2020-02-10&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
