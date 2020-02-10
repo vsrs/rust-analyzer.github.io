@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Feb 2020 15:01:51 +0000</pubDate>
-    <lastBuildDate>Mon, 10 Feb 2020 15:01:51 +0000</lastBuildDate>
+    <pubDate>Mon, 10 Feb 2020 15:04:27 +0000</pubDate>
+    <lastBuildDate>Mon, 10 Feb 2020 15:04:27 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -28,8 +28,19 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;div class=&quot;ulist&quot;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3053&quot;&gt;&lt;code&gt;#3053&lt;/code&gt;&lt;/a&gt; VS Code extension now tries to automatically download the latest release. Additionally, the extension is now published to the Marketplace:
-&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&quot; class=&quot;bare&quot;&gt;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3053&quot;&gt;&lt;code&gt;#3053&lt;/code&gt;&lt;/a&gt; VS Code extension now tries to automatically download the latest release.
+Additionally, the extension is now published to the Marketplace:
+&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&quot; class=&quot;bare&quot;&gt;https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer&lt;/a&gt;.
+Note that if you want to continue using rust-analyzer build from sources, you need to add
++
+[source,json]
+----
+{
+    &quot;rust-analyzer.raLspServerPath&quot;: &quot;ra_lsp_server&quot;
+}
+----
++
+to &lt;code&gt;settings.json&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2981&quot;&gt;&lt;code&gt;#2981&lt;/code&gt;&lt;/a&gt; changed the way &lt;code&gt;onEnter&lt;/code&gt; handler works in VS Code.
