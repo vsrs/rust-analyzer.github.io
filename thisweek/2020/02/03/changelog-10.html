@@ -42,47 +42,105 @@
   <main>
     <article>
 <h1>Changelog #10</h1>
-<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/c57ed0cfb29bc2b311299eebb4f7820a31068a37"><code class="highlighter-rouge">c57ed0c</code></a>
-Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/tag/2020-02-03"><code class="highlighter-rouge">2020-02-03</code></a></p>
-
-<h2 id="new-features">New Features</h2>
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commit: <a href="https://github.com/rust-analyzer/rust-analyzer/commit/c57ed0cfb29bc2b311299eebb4f7820a31068a37"><code>c57ed0c</code></a><br>
+Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/2020-02-03"><code>2020-02-03</code></a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="new-features"><a class="anchor" href="#new-features"></a>New Features</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2963"><code class="highlighter-rouge">#2963</code></a> add auto-import support to Emacs.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2978"><code class="highlighter-rouge">#2978</code></a> support auto-import for functions.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2982"><code class="highlighter-rouge">#2982</code></a> merge imports when auto-importing.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2963"><code>#2963</code></a> add auto-import support to Emacs.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2978"><code>#2978</code></a> support auto-import for functions.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2982"><code>#2982</code></a> merge imports when auto-importing.</p>
+</li>
 </ul>
-
-<h2 id="fixes">Fixes</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fixes"><a class="anchor" href="#fixes"></a>Fixes</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2933"><code class="highlighter-rouge">#2933</code></a> don’t compute diagnostics on the main thread.
-That fixes a long-standing issue with peformance degradation due to <code class="highlighter-rouge">cargo check</code>.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2810"><code class="highlighter-rouge">#2810</code></a> make magical search of struct literals work in more contexts.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2916"><code class="highlighter-rouge">#2916</code></a> fix slow <code class="highlighter-rouge">cargo check</code> performance due to unbuffered reads.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2924"><code class="highlighter-rouge">#2924</code></a> avoid spawning more than one Cargo for <code class="highlighter-rouge">cargo check</code>.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2917"><code class="highlighter-rouge">#2917</code></a> prefer imports starting with <code class="highlighter-rouge">std</code> for auto import.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2937"><code class="highlighter-rouge">#2937</code></a> fix an issue where <code class="highlighter-rouge">cargo check</code> got stuck in an infinite loop if some procedural macro printed to stdout.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2970"><code class="highlighter-rouge">#2970</code></a> fix some clint-side bugs with syntax highlighting.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2972"><code class="highlighter-rouge">#2972</code></a>, a fun one, prevent a child process for flipping rust-analyzer’s stdin into non-blocking mode.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2959"><code class="highlighter-rouge">#2959</code></a> fix a bug where diagnostics from <code class="highlighter-rouge">cargo check</code> were obsolete.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2933"><code>#2933</code></a> don&#8217;t compute diagnostics on the main thread.
+That fixes a long-standing issue with peformance degradation due to <code>cargo check</code>.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2810"><code>#2810</code></a> make magical search of struct literals work in more contexts.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2916"><code>#2916</code></a> fix slow <code>cargo check</code> performance due to unbuffered reads.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2924"><code>#2924</code></a> avoid spawning more than one Cargo for <code>cargo check</code>.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2917"><code>#2917</code></a> prefer imports starting with <code>std</code> for auto import.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2937"><code>#2937</code></a> fix an issue where <code>cargo check</code> got stuck in an infinite loop if some procedural macro printed to stdout.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2970"><code>#2970</code></a> fix some clint-side bugs with syntax highlighting.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2972"><code>#2972</code></a>, a fun one, prevent a child process for flipping rust-analyzer&#8217;s stdin into non-blocking mode.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2959"><code>#2959</code></a> fix a bug where diagnostics from <code>cargo check</code> were obsolete.</p>
+</li>
 </ul>
-
-<h2 id="internal-improvements">Internal Improvements</h2>
-
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="internal-improvements"><a class="anchor" href="#internal-improvements"></a>Internal Improvements</h2>
+<div class="sectionbody">
+<div class="ulist">
 <ul>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2872"><code class="highlighter-rouge">#2872</code></a> update Chalk.
-This should fix some cases of extremely slow trait checking.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2934"><code class="highlighter-rouge">#2934</code></a> log error if the main loop turns takes too long.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2931"><code class="highlighter-rouge">#2931</code></a> document <code class="highlighter-rouge">test_utils</code> module.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2940"><code class="highlighter-rouge">#2940</code></a>,<a href="https://github.com/rust-analyzer/rust-analyzer/pull/2941"><code class="highlighter-rouge">#2941</code></a> update developer documentation.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2943"><code class="highlighter-rouge">#2943</code></a> improve memory usage tracking infrastructure.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2895"><code class="highlighter-rouge">#2895</code></a> make internal profiling infrastructure more maintainable.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2967"><code class="highlighter-rouge">#2967</code></a> speed up the build of rust-analyzer by using profile overrides.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2987"><code class="highlighter-rouge">#2987</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2986"><code class="highlighter-rouge">#2986</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2989"><code class="highlighter-rouge">#2989</code></a> cleanup VS Code extension.</li>
-  <li><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2991"><code class="highlighter-rouge">#2991</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2998"><code class="highlighter-rouge">#2998</code></a> unsuccessfully try to improve TypeScript build process.</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2872"><code>#2872</code></a> update Chalk. This should fix some cases of extremely slow trait checking.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2934"><code>#2934</code></a> log error if the main loop turns takes too long.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2931"><code>#2931</code></a> document <code>test_utils</code> module.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2940"><code>#2940</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2941"><code>#2941</code></a> update developer documentation.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2943"><code>#2943</code></a> improve memory usage tracking infrastructure.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2895"><code>#2895</code></a> make internal profiling infrastructure more maintainable.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2967"><code>#2967</code></a> speed up the build of rust-analyzer by using profile overrides.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2987"><code>#2987</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2986"><code>#2986</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2989"><code>#2989</code></a> cleanup VS Code extension.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/2991"><code>#2991</code></a>, <a href="https://github.com/rust-analyzer/rust-analyzer/pull/2998"><code>#2998</code></a> unsuccessfully try to improve TypeScript build process.</p>
+</li>
 </ul>
-
+</div>
+</div>
+</div>
 </article>
 
   </main>
