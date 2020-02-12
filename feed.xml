@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Feb 2020 12:23:14 +0000</pubDate>
-    <lastBuildDate>Wed, 12 Feb 2020 12:23:14 +0000</lastBuildDate>
+    <pubDate>Wed, 12 Feb 2020 13:21:43 +0000</pubDate>
+    <lastBuildDate>Wed, 12 Feb 2020 13:21:43 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -32,8 +32,8 @@ We&amp;#8217;ve rounded that number up to 10000 (using some funds from this year
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Ferrous share went to paying for part of &lt;a href=&quot;https://github.com/matklad/&quot;&gt;@matklad&lt;/a&gt;'s time (thats me!), and for administrative tasks.
-The remaining 2000 EUR were payed to &lt;a href=&quot;https://github.com/flodiebold/&quot;&gt;@flodiebold&lt;/a&gt; for implementing and maintaining type inference infrastructure of rust-analyzer.&lt;/p&gt;
+&lt;p&gt;Ferrous share went to paying for part of &lt;a href=&quot;https://github.com/matklad&quot;&gt;@matklad&lt;/a&gt;'s time (thats me!), and for administrative tasks.
+The remaining 2000 EUR were payed to &lt;a href=&quot;https://github.com/flodiebold&quot;&gt;@flodiebold&lt;/a&gt; for implementing and maintaining type inference infrastructure of rust-analyzer.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Our biggest Open Collective sponsors in 2019 were:&lt;/p&gt;
@@ -41,10 +41,10 @@ The remaining 2000 EUR were payed to &lt;a href=&quot;https://github.com/flodieb
 &lt;div class=&quot;ulist&quot;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.embark-studios.com/&quot;&gt;Embark Studios&lt;/a&gt; (6000EUR)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.embark-studios.com&quot;&gt;Embark Studios&lt;/a&gt; (6000EUR)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://discordapp.com/&quot;&gt;Discord&lt;/a&gt; (1000EUR)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discordapp.com&quot;&gt;Discord&lt;/a&gt; (1000EUR)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
