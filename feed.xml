@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Feb 2020 13:21:43 +0000</pubDate>
-    <lastBuildDate>Wed, 12 Feb 2020 13:21:43 +0000</lastBuildDate>
+    <pubDate>Wed, 12 Feb 2020 13:22:44 +0000</pubDate>
+    <lastBuildDate>Wed, 12 Feb 2020 13:22:44 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -55,7 +55,7 @@ The remaining 2000 EUR were payed to &lt;a href=&quot;https://github.com/flodieb
 &lt;p&gt;If you use rust-analyzer professionally, consider asking your company to sponsor the development of this project.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;As a reminder, we publish &lt;a href=&quot;https://rust-analyzer.github.io/thisweek&quot;&gt;weekly changelog&lt;/a&gt; to report the progress on rust-analyzer.&lt;/p&gt;
+&lt;p&gt;As a reminder, we publish &lt;a href=&quot;https://rust-analyzer.github.io/thisweek&quot;&gt;weekly changelog&lt;/a&gt; to report the progress on rust-analyzer and explain where the money go.&lt;/p&gt;
 &lt;/div&gt;</description>
       </item>
     
