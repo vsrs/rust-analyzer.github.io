@@ -5,9 +5,59 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Feb 2020 13:56:34 +0000</pubDate>
-    <lastBuildDate>Tue, 11 Feb 2020 13:56:34 +0000</lastBuildDate>
+    <pubDate>Wed, 12 Feb 2020 12:23:14 +0000</pubDate>
+    <lastBuildDate>Wed, 12 Feb 2020 12:23:14 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>2019 Financial Report</title>
+        <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+        <link>https://rust-analyzer.github.io//blog/2020/02/11/2019-financial-report.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2020/02/11/2019-financial-report.html</guid>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This is a short financial report for Open Collective money for 2019.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We&amp;#8217;ve got 9933 EUR on open collective after fees.
+We&amp;#8217;ve rounded that number up to 10000 (using some funds from this year) and split it into two buckets:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;80% for Ferrous Systems&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;20% for contributors, not affiliated with Ferrous&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Ferrous share went to paying for part of &lt;a href=&quot;https://github.com/matklad/&quot;&gt;@matklad&lt;/a&gt;'s time (thats me!), and for administrative tasks.
+The remaining 2000 EUR were payed to &lt;a href=&quot;https://github.com/flodiebold/&quot;&gt;@flodiebold&lt;/a&gt; for implementing and maintaining type inference infrastructure of rust-analyzer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Our biggest Open Collective sponsors in 2019 were:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.embark-studios.com/&quot;&gt;Embark Studios&lt;/a&gt; (6000EUR)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://discordapp.com/&quot;&gt;Discord&lt;/a&gt; (1000EUR)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;lt;3&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you use rust-analyzer professionally, consider asking your company to sponsor the development of this project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As a reminder, we publish &lt;a href=&quot;https://rust-analyzer.github.io/thisweek&quot;&gt;weekly changelog&lt;/a&gt; to report the progress on rust-analyzer.&lt;/p&gt;
+&lt;/div&gt;</description>
+      </item>
     
       <item>
         <title>Changelog #11</title>
@@ -813,79 +863,6 @@ If you use rust-analyzer at work, consider asking your company to support its de
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2561&quot;&gt;&lt;code&gt;#2561&lt;/code&gt;&lt;/a&gt; split  &lt;code&gt;Path&lt;/code&gt; into non-generic &lt;code&gt;ModPath&lt;/code&gt; and generic &lt;code&gt;Path&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-      </item>
-    
-      <item>
-        <title>Changelog #2</title>
-        <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//thisweek/2019/12/09/changelog-2.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/12/09/changelog-2.html</guid>
-        <description>&lt;div id=&quot;preamble&quot;&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/e3a9e806bae14fbeb5d7369d7b7871ba87353316&quot;&gt;&lt;code&gt;e3a9e80&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;new-features&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#new-features&quot;&gt;&lt;/a&gt;New Features&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2500&quot;&gt;&lt;code&gt;#2500&lt;/code&gt;&lt;/a&gt; goto definition works inside &lt;code&gt;format!&lt;/code&gt;-like macros.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2477&quot;&gt;&lt;code&gt;#2477&lt;/code&gt;&lt;/a&gt; pass the right &lt;code&gt;--edition&lt;/code&gt; to &lt;code&gt;rustfmt&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2479&quot;&gt;&lt;code&gt;#2479&lt;/code&gt;&lt;/a&gt; support some build-in derives&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2492&quot;&gt;&lt;code&gt;#2492&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2494&quot;&gt;&lt;code&gt;#2494&lt;/code&gt;&lt;/a&gt; goto definition and syntax highlighting work properly for type parameters&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;fixes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#fixes&quot;&gt;&lt;/a&gt;Fixes&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2487&quot;&gt;&lt;code&gt;#2487&lt;/code&gt;&lt;/a&gt; fix type inference for references&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2466&quot;&gt;&lt;code&gt;#2466&lt;/code&gt;&lt;/a&gt; fix imports being considered resolved to early&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;internal-improvements&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#internal-improvements&quot;&gt;&lt;/a&gt;Internal Improvements&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2474&quot;&gt;&lt;code&gt;#2474&lt;/code&gt;&lt;/a&gt; more cleanly separate inline and out-of-line module&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2480&quot;&gt;&lt;code&gt;#2480&lt;/code&gt;&lt;/a&gt; discover the relevant hir for AST more reliably&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2484&quot;&gt;&lt;code&gt;#2484&lt;/code&gt;&lt;/a&gt; implement &lt;code&gt;DynMap&lt;/code&gt;&amp;#8201;&amp;#8212;&amp;#8201;a dynamically typed heterogeneous map to
-make it easy to plumb stuff through compiler layers&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2499&quot;&gt;&lt;code&gt;#2499&lt;/code&gt;&lt;/a&gt; refactor &lt;code&gt;code_model&lt;/code&gt; module, which is the API for accessing
-compiler&amp;#8217;s data from the IDE.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
