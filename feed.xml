@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Feb 2020 14:58:31 +0000</pubDate>
-    <lastBuildDate>Mon, 17 Feb 2020 14:58:31 +0000</lastBuildDate>
+    <pubDate>Mon, 17 Feb 2020 15:35:28 +0000</pubDate>
+    <lastBuildDate>Mon, 17 Feb 2020 15:35:28 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -117,7 +117,7 @@ PRs with improvements are welcome!&lt;/p&gt;
 &lt;div class=&quot;ulist&quot;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3139&quot;&gt;&lt;code&gt;#3139&lt;/code&gt;&lt;/a&gt; bump VS Code requirenment to 1.41.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3139&quot;&gt;&lt;code&gt;#3139&lt;/code&gt;&lt;/a&gt; bump VS Code requirenment to 1.42.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3086&quot;&gt;&lt;code&gt;#3086&lt;/code&gt;&lt;/a&gt; automate publishing of the VS Code extension.&lt;/p&gt;
