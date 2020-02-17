@@ -80,6 +80,15 @@ LSP allows various code editors, like VS Code, Emacs or Vim, to implement semant
 <p>In theory, one should be able to just install the server binary and have it automatically work with any editor.
 We are not there yet, so some editor specific setup is required.</p>
 </div>
+<div class="paragraph">
+<p>Additionally, rust-analyzer needs sources of the standard library.
+This commands adds them:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ rustup component add rust-src</code></pre>
+</div>
+</div>
 <div class="sect2">
 <h3 id="vs-code"><a class="anchor" href="#vs-code"></a>VS Code</h3>
 <div class="paragraph">
@@ -90,7 +99,7 @@ rust-analyzer plugin for VS Code is maintained
 <div class="paragraph">
 <p>You can install the latest release of the plugin from
 <a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer">the marketplace</a>.
-By default, the plugin will download the latest version of the server as well.</p>
+By default, the plugin will download the matching version of the server as well.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -106,9 +115,7 @@ By default, the plugin will download the latest version of the server as well.</
 <div class="sect3">
 <h4 id="updates"><a class="anchor" href="#updates"></a>Updates</h4>
 <div class="paragraph">
-<p>The extension will be updated automatically as new versions become available.
-The server update functionality is in progress.
-For the time being, the workaround is to remove the binary from <code>globalStorage</code> and to restart the extension.</p>
+<p>The extension will be updated automatically as new versions become available. It will ask your permission to download the matching language server version binary if needed.</p>
 </div>
 </div>
 <div class="sect3">
@@ -118,7 +125,7 @@ For the time being, the workaround is to remove the binary from <code>globalStor
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ git clone https://github.com/rust-analyzer/rust-analyzer.git &amp;&amp; cs rust-analyzer
+<pre class="highlight"><code>$ git clone https://github.com/rust-analyzer/rust-analyzer.git &amp;&amp; cd rust-analyzer
 $ cargo xtask install</code></pre>
 </div>
 </div>

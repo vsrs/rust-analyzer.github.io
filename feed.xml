@@ -5,9 +5,152 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 14 Feb 2020 18:17:50 +0000</pubDate>
-    <lastBuildDate>Fri, 14 Feb 2020 18:17:50 +0000</lastBuildDate>
+    <pubDate>Mon, 17 Feb 2020 14:55:43 +0000</pubDate>
+    <lastBuildDate>Mon, 17 Feb 2020 14:55:43 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Changelog #12</title>
+        <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+        <link>https://rust-analyzer.github.io//thisweek/2020/02/17/changelog-12.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2020/02/17/changelog-12.html</guid>
+        <description>&lt;div id=&quot;preamble&quot;&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/94fb9ad6b3167e8b8073a09fcf0cb135f383d3d2&quot;&gt;&lt;code&gt;94fb9ad&lt;/code&gt;&lt;/a&gt;&lt;br&gt;
+Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/2020-02-17&quot;&gt;&lt;code&gt;2020-02-17&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;new-features&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#new-features&quot;&gt;&lt;/a&gt;New Features&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3140] we now have a basic manual: &lt;a href=&quot;https://rust-analyzer.github.io/manual.html&quot; class=&quot;bare&quot;&gt;https://rust-analyzer.github.io/manual.html&lt;/a&gt;.
+PRs with improvements are welcome!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3108] complete default function, types and constants in impl blocks:&lt;/p&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/74660243-0d66b300-5196-11ea-8327-205b1262e7a2.gif&quot; alt=&quot;74660243 0d66b300 5196 11ea 8327 205b1262e7a2&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3169] display fields when completing an enum variant:&lt;/p&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/16367467/74607251-8ce17d00-50d7-11ea-9d4d-38d198a4aec0.png&quot; alt=&quot;74607251 8ce17d00 50d7 11ea 9d4d 38d198a4aec0&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3099] initial implementation of Structural Search &amp;amp; Replace.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3074] initial support for OR-patterns.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3064] rename works inside macros.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3120] support auto-import of traits for unresolved method calls in some cases.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3162] VS Code extension automatically downloads the correct server binary release.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3153] when running a Cargo test, pass &lt;code&gt;--exact&lt;/code&gt; flag.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3181] add ability to pass additional arguments to &lt;code&gt;rustfmt&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;fixes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#fixes&quot;&gt;&lt;/a&gt;Fixes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3084] better error reporting around workspace loading.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3102] better error reporting when deserializing wrong config.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3092] fix error when starting the server immediately after download.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3100] improved error handling when downloading the server binary.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3114] fix type inference for match arms of unknown type.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3121] during auto-import, don&amp;#8217;t insert &lt;code&gt;use&lt;/code&gt; statements before inner attributes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3127] support unnamed arguments in function pointers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3143] fix name resolution for &lt;code&gt;std::sync::atomic::AtomicX&lt;/code&gt; types.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3145] &lt;code&gt;Self&lt;/code&gt; inside trait&amp;#8217;s default methods implements the trait.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3150] increase the limit on the number of iterations the name resolution algorithm can do.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;internal-improvements&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#internal-improvements&quot;&gt;&lt;/a&gt;Internal Improvements&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3139] bump VS Code requirenment to 1.41.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3086] automate publishing of the VS Code extension.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3062] preliminary work on type inference for slice patterns.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3136] rewrite `xtask`s in a more declarative style.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3131] simplify configuration handling in VS Code extension.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3157] add randomization to &lt;code&gt;analysis-stats&lt;/code&gt;, which should help with debugging non-determinism issues.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3171] enable profiling for &lt;code&gt;analysis-bench&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3174], pr:[#3174] improve debugging settings for VS Code extension.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3179] refactor macro expansion.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pr:[3190], pr:[3191] simplify VS Code extension life cycle.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      </item>
     
       <item>
         <title>2019 Financial Report</title>
@@ -777,92 +920,6 @@ If you use rust-analyzer at work, consider asking your company to support its de
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2629&quot;&gt;&lt;code&gt;#2629&lt;/code&gt;&lt;/a&gt; remove imports from hir.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-      </item>
-    
-      <item>
-        <title>Changelog #3</title>
-        <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//thisweek/2019/12/16/changelog-3.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2019/12/16/changelog-3.html</guid>
-        <description>&lt;div id=&quot;preamble&quot;&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/0ef8ace012b19b76ee99b283801d0d17a3b72b4b&quot;&gt;&lt;code&gt;0ef8ace&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;new-features&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#new-features&quot;&gt;&lt;/a&gt;New Features&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2511&quot;&gt;&lt;code&gt;#2511&lt;/code&gt;&lt;/a&gt; implement &lt;code&gt;ra_lsp_server --version&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2523&quot;&gt;&lt;code&gt;#2523&lt;/code&gt;&lt;/a&gt; implement extend selection for tuple patterns.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2550&quot;&gt;&lt;code&gt;#2550&lt;/code&gt;&lt;/a&gt; type inference for unary &lt;code&gt;!&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2548&quot;&gt;&lt;code&gt;#2548&lt;/code&gt;&lt;/a&gt; allow to select cargo features (by default, &lt;code&gt;--all-features&lt;/code&gt; is used).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2559&quot;&gt;&lt;code&gt;#2559&lt;/code&gt;&lt;/a&gt; use more fine-grained tags for syntax highlighting (&lt;code&gt;literal.byte&lt;/code&gt;, &lt;code&gt;literal.char&lt;/code&gt;, &amp;#8230;&amp;#8203;)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;fixes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#fixes&quot;&gt;&lt;/a&gt;Fixes&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2565&quot;&gt;&lt;code&gt;#2565&lt;/code&gt;&lt;/a&gt; fix bug with syntax highlighting not updating on windows.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2519&quot;&gt;&lt;code&gt;#2519&lt;/code&gt;&lt;/a&gt; fix name resolution for types in traits.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2535&quot;&gt;&lt;code&gt;#2535&lt;/code&gt;&lt;/a&gt; don&amp;#8217;t trigger signature help on typing &lt;code&gt;)&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2552&quot;&gt;&lt;code&gt;#2552&lt;/code&gt;&lt;/a&gt; fix goto definition target when the cursor is between tokens.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2567&quot;&gt;&lt;code&gt;#2567&lt;/code&gt;&lt;/a&gt; fix type inference for &lt;code&gt;impl Trait&lt;/code&gt; syntax.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;internal-improvements&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#internal-improvements&quot;&gt;&lt;/a&gt;Internal Improvements&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2510&quot;&gt;&lt;code&gt;#2510&lt;/code&gt;&lt;/a&gt; restore source maps for the typescript extension.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2525&quot;&gt;&lt;code&gt;#2525&lt;/code&gt;&lt;/a&gt; use ES2018 for VS Code extension.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2526&quot;&gt;&lt;code&gt;#2526&lt;/code&gt;&lt;/a&gt; upgrade to LSP 3.15.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2537&quot;&gt;&lt;code&gt;#2537&lt;/code&gt;&lt;/a&gt; lookup hir nodes by their parents, and not only by the source location.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2561&quot;&gt;&lt;code&gt;#2561&lt;/code&gt;&lt;/a&gt; split  &lt;code&gt;Path&lt;/code&gt; into non-generic &lt;code&gt;ModPath&lt;/code&gt; and generic &lt;code&gt;Path&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
