@@ -47,10 +47,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>At it&#8217;s core, rust-analyzer is a <strong>library</strong> for semantic analysis of the Rust code as it changes over time.
+<p>At its core, rust-analyzer is a <strong>library</strong> for semantic analysis of Rust code as it changes over time.
 This manual focuses on a specific usage of the library&#8201;&#8212;&#8201;the implementation of
 <a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a>.
-LSP allows various code editors, like VS Code, Emacs or Vim, to implement semantic feature like completion or goto definition by talking to an external language server process.</p>
+LSP allows various code editors, like VS Code, Emacs or Vim, to implement semantic features like completion or goto definition by talking to an external language server process.</p>
 </div>
 <div class="paragraph">
 <p>To improve this document, send a pull request against
@@ -82,7 +82,10 @@ We are not there yet, so some editor specific setup is required.</p>
 </div>
 <div class="paragraph">
 <p>Additionally, rust-analyzer needs sources of the standard library.
-This commands adds them:</p>
+If the source code is not present, rust-analyzer will attempt to install it automatically.</p>
+</div>
+<div class="paragraph">
+<p>To add the sources manually, run the following command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -99,11 +102,11 @@ rust-analyzer plugin for VS Code is maintained
 <div class="paragraph">
 <p>You can install the latest release of the plugin from
 <a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer">the marketplace</a>.
-By default, the plugin will download the matching version of the server as well.</p>
+By default, the plugin will prompt you to download the matching version of the server as well:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="https://user-images.githubusercontent.com/36276403/74103174-a40df100-4b52-11ea-81f4-372c70797924.png" alt="74103174 a40df100 4b52 11ea 81f4 372c70797924">
+<img src="https://user-images.githubusercontent.com/9021944/75067008-17502500-54ba-11ea-835a-f92aac50e866.png" alt="75067008 17502500 54ba 11ea 835a f92aac50e866">
 </div>
 </div>
 <div class="paragraph">
@@ -131,11 +134,11 @@ $ cargo xtask install</code></pre>
 </div>
 <div class="paragraph">
 <p>You&#8217;ll need Cargo, nodejs and npm for this.
-To make VS Code use the freshly build server, add this to the settings:</p>
+To make VS Code use the freshly built server, add this to the settings:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{ "rust-analyzer.raLspServerPath": "ra_lsp_server" }</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">{ "rust-analyzer.serverPath": "rust-analyzer" }</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -146,9 +149,9 @@ To make VS Code use the freshly build server, add this to the settings:</p>
 <div class="sect2">
 <h3 id="language-server-binary"><a class="anchor" href="#language-server-binary"></a>Language Server Binary</h3>
 <div class="paragraph">
-<p>Other editors generally require <code>ra_lsp_server</code> binary to be in <code>$PATH</code>.
-You can download pre-build binary from
-<a href="https://github.com/rust-analyzer/rust-analyzer/releases">relases</a>
+<p>Other editors generally require <code>rust-analyzer</code> binary to be in <code>$PATH</code>.
+You can download the pre-built binary from
+<a href="https://github.com/rust-analyzer/rust-analyzer/releases">releases</a>
 page, or you can install it from source using the following command:</p>
 </div>
 <div class="listingblock">
@@ -165,7 +168,7 @@ page, or you can install it from source using the following command:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Install recent version of <code>emacs-lsp</code> package by following the instructions <a href="https://github.com/emacs-lsp/lsp-mode">here</a>.</p>
+<p>Install the most recent version of <code>emacs-lsp</code> package by following the instructions <a href="https://github.com/emacs-lsp/lsp-mode">here</a>.</p>
 </li>
 <li>
 <p>Set <code>lsp-rust-server</code> to <code>'rust-analyzer</code>.</p>
@@ -200,7 +203,7 @@ this extension implements <em>most</em> of the features supported in the VSCode 
 <div class="ulist">
 <ul>
 <li>
-<p>same configurations as VSCode extension, <code>rust-analyzer.raLspServerPath</code>, <code>rust-analyzer.enableCargoWatchOnStartup</code> etc.</p>
+<p>same configurations as VSCode extension, <code>rust-analyzer.serverPath</code>, <code>rust-analyzer.enableCargoWatchOnStartup</code> etc.</p>
 </li>
 <li>
 <p>same commands too, <code>rust-analyzer.analyzerStatus</code>, <code>rust-analyzer.startCargoWatch</code> etc.</p>
@@ -230,11 +233,11 @@ this extension implements <em>most</em> of the features supported in the VSCode 
 </div>
 </li>
 <li>
-<p>Configure by adding this to your vim/neovim config file (replacing the existing rust specific line if it exists):</p>
+<p>Configure by adding this to your vim/neovim config file (replacing the existing Rust-specific line if it exists):</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-vim" data-lang="vim">let g:LanguageClient_serverCommands = {
-\ 'rust': ['ra_lsp_server'],
+\ 'rust': ['rust-analyzer'],
 \ }</code></pre>
 </div>
 </div>
@@ -245,7 +248,7 @@ this extension implements <em>most</em> of the features supported in the VSCode 
 <div class="sect3">
 <h4 id="nvim-lsp"><a class="anchor" href="#nvim-lsp"></a>nvim-lsp</h4>
 <div class="paragraph">
-<p>NeoVim 0.5 (not yet released) has built in language server support.
+<p>NeoVim 0.5 (not yet released) has built-in language server support.
 For a quick start configuration of rust-analyzer, use <a href="https://github.com/neovim/nvim-lsp#rust_analyzer">neovim/nvim-lsp</a>.
 Once <code>neovim/nvim-lsp</code> is installed, use <code>lua require&#8217;nvim_lsp'.rust_analyzer.setup({})</code> in your <code>init.vim</code>.</p>
 </div>
@@ -275,7 +278,7 @@ Once <code>neovim/nvim-lsp</code> is installed, use <code>lua require&#8217;nvim
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"rust-analyzer": {
-    "command": ["ra_lsp_server"],
+    "command": ["rust-analyzer"],
     "languageId": "rust",
     "scopes": ["source.rust"],
     "syntaxes": [
