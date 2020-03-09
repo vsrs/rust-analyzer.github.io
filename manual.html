@@ -95,7 +95,7 @@ If the source code is not present, rust-analyzer will attempt to install it auto
 <div class="sect2">
 <h3 id="vs-code"><a class="anchor" href="#vs-code"></a>VS Code</h3>
 <div class="paragraph">
-<p>This the best supported editor at the moment.
+<p>This is the best supported editor at the moment.
 rust-analyzer plugin for VS Code is maintained
 <a href="https://github.com/rust-analyzer/rust-analyzer/tree/master/editors/code">in tree</a>.</p>
 </div>
@@ -108,6 +108,25 @@ By default, the plugin will prompt you to download the matching version of the s
 <div class="content">
 <img src="https://user-images.githubusercontent.com/9021944/75067008-17502500-54ba-11ea-835a-f92aac50e866.png" alt="75067008 17502500 54ba 11ea 835a f92aac50e866">
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">:information_source:</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To disable this notification put the following to <code>settings.json</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{ "rust-analyzer.updates.askBeforeDownload": false }</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The server binary is stored in <code>~/.config/Code/User/globalStorage/matklad.rust-analyzer</code>.</p>
@@ -250,7 +269,7 @@ this extension implements <em>most</em> of the features supported in the VSCode 
 <div class="paragraph">
 <p>NeoVim 0.5 (not yet released) has built-in language server support.
 For a quick start configuration of rust-analyzer, use <a href="https://github.com/neovim/nvim-lsp#rust_analyzer">neovim/nvim-lsp</a>.
-Once <code>neovim/nvim-lsp</code> is installed, use <code>lua require&#8217;nvim_lsp'.rust_analyzer.setup({})</code> in your <code>init.vim</code>.</p>
+Once <code>neovim/nvim-lsp</code> is installed, use <code>lua require'nvim_lsp'.rust_analyzer.setup({})</code> in your <code>init.vim</code>.</p>
 </div>
 </div>
 </div>
