@@ -86,7 +86,8 @@ You can enabled nightly channel by setting</p>
 </div>
 </li>
 <li>
-<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/3549"><code>#3549</code></a> initial support for the <code>env!</code> macro.</p>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/3549"><code>#3549</code></a> initial support for the <code>env!</code> macro. This unlocks preliminary support for <code>include!(concat!(env!("OUT_DIR"), "/foo.rs"))</code> pattern.
+At the moment, value for <code>OUT_DIR</code> should be specified in the settings, using <code>rust-analyzer.additionalOutDirs</code> key.</p>
 </li>
 <li>
 <p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/3543"><code>#3543</code></a> separate options for controlling type and parameter inlay hints:

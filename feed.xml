@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Mar 2020 13:09:08 +0000</pubDate>
-    <lastBuildDate>Mon, 16 Mar 2020 13:09:08 +0000</lastBuildDate>
+    <pubDate>Mon, 16 Mar 2020 13:16:40 +0000</pubDate>
+    <lastBuildDate>Mon, 16 Mar 2020 13:16:40 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -56,7 +56,8 @@ You can enabled nightly channel by setting&lt;/p&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3549&quot;&gt;&lt;code&gt;#3549&lt;/code&gt;&lt;/a&gt; initial support for the &lt;code&gt;env!&lt;/code&gt; macro.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3549&quot;&gt;&lt;code&gt;#3549&lt;/code&gt;&lt;/a&gt; initial support for the &lt;code&gt;env!&lt;/code&gt; macro. This unlocks preliminary support for &lt;code&gt;include!(concat!(env!(&quot;OUT_DIR&quot;), &quot;/foo.rs&quot;))&lt;/code&gt; pattern.
+At the moment, value for &lt;code&gt;OUT_DIR&lt;/code&gt; should be specified in the settings, using &lt;code&gt;rust-analyzer.additionalOutDirs&lt;/code&gt; key.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/3543&quot;&gt;&lt;code&gt;#3543&lt;/code&gt;&lt;/a&gt; separate options for controlling type and parameter inlay hints:
