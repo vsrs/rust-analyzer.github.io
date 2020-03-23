@@ -186,13 +186,7 @@ $ cargo xtask install</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll need Cargo, nodejs and npm for this.
-To make VS Code use the freshly built server, add this to the settings:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{ "rust-analyzer.serverPath": "rust-analyzer" }</code></pre>
-</div>
+<p>You&#8217;ll need Cargo, nodejs and npm for this.</p>
 </div>
 <div class="paragraph">
 <p>Note that installing via <code>xtask install</code> does not work for VS Code Remote, instead you&#8217;ll need to install the <code>.vsix</code> manually.</p>
@@ -210,6 +204,33 @@ page, or you can install it from source using the following command:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ cargo xtask install --server</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="arch-linux"><a class="anchor" href="#arch-linux"></a>Arch Linux</h4>
+<div class="paragraph">
+<p><code>rust-analyzer</code> binary can be installed from AUR (Arch User Repository):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://aur.archlinux.org/packages/rust-analyzer-bin"><code>rust-analyzer-bin</code></a> (binary from GitHub releases)</p>
+</li>
+<li>
+<p><a href="https://aur.archlinux.org/packages/rust-analyzer"><code>rust-analyzer</code></a> (built from latest tagged source)</p>
+</li>
+<li>
+<p><a href="https://aur.archlinux.org/packages/rust-analyzer-git"><code>rust-analyzer-git</code></a> (latest git version)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Install it with AUR helper of your choice, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ yay -S rust-analyzer-bin</code></pre>
+</div>
 </div>
 </div>
 </div>
