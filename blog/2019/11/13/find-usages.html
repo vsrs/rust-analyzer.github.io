@@ -12,6 +12,7 @@
     content="Last month, rust-analyzer gained an exciting new feature: find usages. It was implemented by @viorina in #1892.">
 
   <link rel="stylesheet" href="/css/asciidoctor.css">
+  <link rel="stylesheet" href="/css/rouge-github.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://rust-analyzer.github.io//blog/2019/11/13/find-usages.html">
   <link rel="alternate" type="application/rss+xml" title="rust-analyzer"
@@ -63,16 +64,27 @@ It&#8217;s an excellent case study to compare approaches of traditional compiler
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-rust" data-lang="rust">fn foo() {
-    let x = 92;
-    let y = 62;
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+</pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">92</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">62</span><span class="p">;</span>
 
-    if condition {
-        y + 1
-    } else {
-        x + 2
-    };
-}</code></pre>
+    <span class="k">if</span> <span class="n">condition</span> <span class="p">{</span>
+        <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">

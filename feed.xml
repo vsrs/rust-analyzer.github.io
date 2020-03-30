@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Mar 2020 12:25:54 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Mar 2020 12:25:54 +0000</lastBuildDate>
+    <pubDate>Mon, 30 Mar 2020 15:09:28 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Mar 2020 15:09:28 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -132,6 +132,161 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
       </item>
     
       <item>
+        <title>Macros vs Rename</title>
+        <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+        <link>https://rust-analyzer.github.io//blog/2020/03/30/macros-vs-rename.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2020/03/30/macros-vs-rename.html</guid>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;ve already written before about how precise code completion is impossible to do inside Rust macros:
+&lt;a href=&quot;https://github.com/matklad/proc-caesar&quot; class=&quot;bare&quot;&gt;https://github.com/matklad/proc-caesar&lt;/a&gt;. Today I&amp;#8217;d like to write a short note about another impossibility result:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;exampleblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Correct automatic rename is not possible in a language with rust-style macros.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Consider the following example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;rust&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;macro_rules!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call_foo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;mod&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nd&quot;&gt;call_foo!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;mod&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nd&quot;&gt;call_foo!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What is the expected result for renaming &lt;code&gt;a::foo&lt;/code&gt; to &lt;code&gt;bar&lt;/code&gt;?
+There isn&amp;#8217;t one, as the same macro refers to different &lt;code&gt;foo&lt;/code&gt; at different call-sites!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;But the problem is even deeper than ambiguity.
+Consider this (silly) crate:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;rust&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;#[doc(hidden)]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HELLO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nd&quot;&gt;#[macro_export]&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;macro_rules!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;say_hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$crate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HELLO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In this case, it is pretty clear what we want to get after renaming &lt;code&gt;HELLO&lt;/code&gt; to &lt;code&gt;GREETING&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;rust&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;#[doc(hidden)]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GREETING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nd&quot;&gt;#[macro_export]&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;macro_rules!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;say_hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$crate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GREETING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Unfortunately, it is impossible to formalize this transformation.
+To the human reader, it is &lt;em&gt;obvious&lt;/em&gt; that the right hand side of a macro should be parsed as an expression.
+But this intuition is flawed&amp;#8201;&amp;#8212;&amp;#8201;the right hand side is just a sequence of tokens, and it receives a meaning only when we call the macro.
+And there&amp;#8217;s no guarantee, in general case, that it would be interpreted as an expression:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;rust&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;macro_rules!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;say_hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$crate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GREETING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tt:tt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nd&quot;&gt;stringify!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;crate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;say_hello!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;say_hello!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;92&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;print!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Together this means that the theoretically best definition of &lt;strong&gt;correct automated rename&lt;/strong&gt; we can get in Rust is limited.
+We can handle code outside the macros and code inside macro calls.
+For macro definitions, at best we can give a list of locations that require manual intervention.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It also seems plausible that, with some heuristic, we can infer renames in macro definitions as well.
+For example, we can look at all call sites of the macro, and see if they all agree that a certain token in the macro definition needs change.&lt;/p&gt;
+&lt;/div&gt;</description>
+      </item>
+    
+      <item>
         <title>Changelog #17</title>
         <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
         <link>https://rust-analyzer.github.io//thisweek/2020/03/23/changelog-17.html</link>
@@ -155,7 +310,9 @@ This enables rust-analyzer to work correctly with crates which use compile-time 
 To enable, set:&lt;/p&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&quot;rust-analyzer.cargoFeatures.loadOutDirsFromCheck&quot;: true&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nl&quot;&gt;&quot;rust-analyzer.cargoFeatures.loadOutDirsFromCheck&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
@@ -284,7 +441,9 @@ In general, we only support the latest release of VS Code.&lt;/p&gt;
 You can enabled nightly channel by setting&lt;/p&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;rust-analyzer.updates.channel&quot;: &quot;nightly&quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&quot;rust-analyzer.updates.channel&quot;: &quot;nightly&quot;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -1077,9 +1236,13 @@ Additionally, the extension is now published to the Marketplace (&lt;a href=&quo
 Note that if you want to continue using rust-analyzer build from sources, you need to add&lt;/p&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;{
-      &quot;rust-analyzer.raLspServerPath&quot;: &quot;ra_lsp_server&quot;
-}&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;rust-analyzer.raLspServerPath&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ra_lsp_server&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -1163,112 +1326,6 @@ If you have &lt;code&gt;enableEnhancedTyping: false&lt;/code&gt; in you settings
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Bump NodeJS requirement to 12 (you only need node if you build VS Code extension from source).&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-      </item>
-    
-      <item>
-        <title>Changelog #10</title>
-        <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//thisweek/2020/02/03/changelog-10.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//thisweek/2020/02/03/changelog-10.html</guid>
-        <description>&lt;div id=&quot;preamble&quot;&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/c57ed0cfb29bc2b311299eebb4f7820a31068a37&quot;&gt;&lt;code&gt;c57ed0c&lt;/code&gt;&lt;/a&gt;&lt;br&gt;
-Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/2020-02-03&quot;&gt;&lt;code&gt;2020-02-03&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;new-features&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#new-features&quot;&gt;&lt;/a&gt;New Features&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2963&quot;&gt;&lt;code&gt;#2963&lt;/code&gt;&lt;/a&gt; add auto-import support to Emacs.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2978&quot;&gt;&lt;code&gt;#2978&lt;/code&gt;&lt;/a&gt; support auto-import for functions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2982&quot;&gt;&lt;code&gt;#2982&lt;/code&gt;&lt;/a&gt; merge imports when auto-importing.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;fixes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#fixes&quot;&gt;&lt;/a&gt;Fixes&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2933&quot;&gt;&lt;code&gt;#2933&lt;/code&gt;&lt;/a&gt; don&amp;#8217;t compute diagnostics on the main thread.
-That fixes a long-standing issue with peformance degradation due to &lt;code&gt;cargo check&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2810&quot;&gt;&lt;code&gt;#2810&lt;/code&gt;&lt;/a&gt; make magical search of struct literals work in more contexts.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2916&quot;&gt;&lt;code&gt;#2916&lt;/code&gt;&lt;/a&gt; fix slow &lt;code&gt;cargo check&lt;/code&gt; performance due to unbuffered reads.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2924&quot;&gt;&lt;code&gt;#2924&lt;/code&gt;&lt;/a&gt; avoid spawning more than one Cargo for &lt;code&gt;cargo check&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2917&quot;&gt;&lt;code&gt;#2917&lt;/code&gt;&lt;/a&gt; prefer imports starting with &lt;code&gt;std&lt;/code&gt; for auto import.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2937&quot;&gt;&lt;code&gt;#2937&lt;/code&gt;&lt;/a&gt; fix an issue where &lt;code&gt;cargo check&lt;/code&gt; got stuck in an infinite loop if some procedural macro printed to stdout.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2970&quot;&gt;&lt;code&gt;#2970&lt;/code&gt;&lt;/a&gt; fix some clint-side bugs with syntax highlighting.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2972&quot;&gt;&lt;code&gt;#2972&lt;/code&gt;&lt;/a&gt;, a fun one, prevent a child process for flipping rust-analyzer&amp;#8217;s stdin into non-blocking mode.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2959&quot;&gt;&lt;code&gt;#2959&lt;/code&gt;&lt;/a&gt; fix a bug where diagnostics from &lt;code&gt;cargo check&lt;/code&gt; were obsolete.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;internal-improvements&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#internal-improvements&quot;&gt;&lt;/a&gt;Internal Improvements&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2872&quot;&gt;&lt;code&gt;#2872&lt;/code&gt;&lt;/a&gt; update Chalk. This should fix some cases of extremely slow trait checking.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2934&quot;&gt;&lt;code&gt;#2934&lt;/code&gt;&lt;/a&gt; log error if the main loop turns takes too long.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2931&quot;&gt;&lt;code&gt;#2931&lt;/code&gt;&lt;/a&gt; document &lt;code&gt;test_utils&lt;/code&gt; module.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2940&quot;&gt;&lt;code&gt;#2940&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2941&quot;&gt;&lt;code&gt;#2941&lt;/code&gt;&lt;/a&gt; update developer documentation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2943&quot;&gt;&lt;code&gt;#2943&lt;/code&gt;&lt;/a&gt; improve memory usage tracking infrastructure.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2895&quot;&gt;&lt;code&gt;#2895&lt;/code&gt;&lt;/a&gt; make internal profiling infrastructure more maintainable.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2967&quot;&gt;&lt;code&gt;#2967&lt;/code&gt;&lt;/a&gt; speed up the build of rust-analyzer by using profile overrides.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2987&quot;&gt;&lt;code&gt;#2987&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2986&quot;&gt;&lt;code&gt;#2986&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2989&quot;&gt;&lt;code&gt;#2989&lt;/code&gt;&lt;/a&gt; cleanup VS Code extension.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2991&quot;&gt;&lt;code&gt;#2991&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/2998&quot;&gt;&lt;code&gt;#2998&lt;/code&gt;&lt;/a&gt; unsuccessfully try to improve TypeScript build process.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;

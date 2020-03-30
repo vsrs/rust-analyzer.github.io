@@ -12,6 +12,7 @@
     content="rust-analyzer: building a better Rust IDE">
 
   <link rel="stylesheet" href="/css/asciidoctor.css">
+  <link rel="stylesheet" href="/css/rouge-github.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://rust-analyzer.github.io//manual.html">
   <link rel="alternate" type="application/rss+xml" title="rust-analyzer"
@@ -89,7 +90,9 @@ If the source code is not present, rust-analyzer will attempt to install it auto
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ rustup component add rust-src</code></pre>
+<pre class="rouge highlight"><code data-lang="bash"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nv">$ </span>rustup component add rust-src
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -121,7 +124,9 @@ By default, the plugin will prompt you to download the matching version of the s
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{ "rust-analyzer.updates.askBeforeDownload": false }</code></pre>
+<pre class="rouge highlight"><code data-lang="json"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="nl">"rust-analyzer.updates.askBeforeDownload"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </td>
@@ -146,7 +151,9 @@ By default, the plugin will prompt you to download the matching version of the s
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{ "rust-analyzer.updates.channel": "nightly" }</code></pre>
+<pre class="rouge highlight"><code data-lang="json"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="nl">"rust-analyzer.updates.channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nightly"</span><span class="w"> </span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -157,7 +164,9 @@ By default, the plugin will prompt you to download the matching version of the s
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{ "rust-analyzer.updates.askBeforeDownload": false }</code></pre>
+<pre class="rouge highlight"><code data-lang="json"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="nl">"rust-analyzer.updates.askBeforeDownload"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -181,8 +190,11 @@ Nightly extension should <strong>only</strong> be installed via the <code>Downlo
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ git clone https://github.com/rust-analyzer/rust-analyzer.git &amp;&amp; cd rust-analyzer
-$ cargo xtask install</code></pre>
+<pre class="rouge highlight"><code><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre>$ git clone https://github.com/rust-analyzer/rust-analyzer.git &amp;&amp; cd rust-analyzer
+$ cargo xtask install
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -228,7 +240,9 @@ page, or you can install it from source using the following command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ cargo xtask install --server</code></pre>
+<pre class="rouge highlight"><code data-lang="bash"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nv">$ </span>cargo xtask <span class="nb">install</span> <span class="nt">--server</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -254,7 +268,9 @@ page, or you can install it from source using the following command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ yay -S rust-analyzer-bin</code></pre>
+<pre class="rouge highlight"><code data-lang="bash"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nv">$ </span>yay <span class="nt">-S</span> rust-analyzer-bin
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -335,9 +351,13 @@ this extension implements <em>most</em> of the features supported in the VSCode 
 <p>Configure by adding this to your vim/neovim config file (replacing the existing Rust-specific line if it exists):</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-vim" data-lang="vim">let g:LanguageClient_serverCommands = {
-\ 'rust': ['rust-analyzer'],
-\ }</code></pre>
+<pre class="rouge highlight"><code data-lang="vim"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">let</span> <span class="nv">g:LanguageClient_serverCommands</span> <span class="p">=</span> <span class="p">{</span>
+<span class="se">\</span> <span class="s1">'rust'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'rust-analyzer'</span><span class="p">],</span>
+<span class="se">\</span> <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </li>
@@ -376,19 +396,33 @@ Once <code>neovim/nvim-lsp</code> is installed, use <code>lua require'nvim_lsp'.
 <p>Add the following LSP client definition to your settings:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"rust-analyzer": {
-    "command": ["rust-analyzer"],
-    "languageId": "rust",
-    "scopes": ["source.rust"],
-    "syntaxes": [
-        "Packages/Rust/Rust.sublime-syntax",
-        "Packages/Rust Enhanced/RustEnhanced.sublime-syntax"
-    ],
-    "initializationOptions": {
-      "featureFlags": {
-      }
-    },
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="json"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="nl">"rust-analyzer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"rust-analyzer"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"languageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rust"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"scopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"source.rust"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"syntaxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Packages/Rust/Rust.sublime-syntax"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Packages/Rust Enhanced/RustEnhanced.sublime-syntax"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"initializationOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"featureFlags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </li>
