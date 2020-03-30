@@ -129,7 +129,7 @@ By default, the plugin will prompt you to download the matching version of the s
 </table>
 </div>
 <div class="paragraph">
-<p>The server binary is stored in <code>~/.config/Code/User/globalStorage/matklad.rust-analyzer</code>.</p>
+<p>The server binary is stored in <code>~/.config/Code/User/globalStorage/matklad.rust-analyzer</code> (Linux) or in <code>~/.Library/Application Support/Code/User/globalStorage/matklad.rust-analyzer</code> (macOS) or in <code>%APPDATA%\Code\User\globalStorage</code> (Windows).</p>
 </div>
 <div class="paragraph">
 <p>Note that we only support the latest version of VS Code.</p>
@@ -190,6 +190,31 @@ $ cargo xtask install</code></pre>
 </div>
 <div class="paragraph">
 <p>Note that installing via <code>xtask install</code> does not work for VS Code Remote, instead you&#8217;ll need to install the <code>.vsix</code> manually.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="troubleshooting"><a class="anchor" href="#troubleshooting"></a>Troubleshooting</h4>
+<div class="paragraph">
+<p>Here are some useful self-diagnostic commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Rust Analyzer: Show RA Version</strong> shows the version of <code>rust-analyzer</code> binary</p>
+</li>
+<li>
+<p><strong>Rust Analyzer: Status</strong> prints some statistics about the server, like the few latest LSP requests</p>
+</li>
+<li>
+<p>To enable server-side logging, run with <code>env RUST_LOG=info</code> and see <code>Output &gt; Rust Analyzer Language Server</code> in VS Code&#8217;s panel.</p>
+</li>
+<li>
+<p>To log all LSP requests, add <code>"rust-analyzer.trace.server": "verbose"</code> to the settings and look for <code>Server Trace</code> in the panel.</p>
+</li>
+<li>
+<p>To enable client-side logging, add <code>"rust-analyzer.trace.extension": true</code> to the settings and open the <code>Console</code> tab of VS Code developer tools.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
