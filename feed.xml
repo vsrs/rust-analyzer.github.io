@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Apr 2020 13:03:47 +0000</pubDate>
-    <lastBuildDate>Mon, 06 Apr 2020 13:03:47 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Apr 2020 14:08:29 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Apr 2020 14:08:29 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -79,7 +79,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;run vscode as &lt;code&gt;code-insiders  matklad.rust-analyzer&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;run vscode as &lt;code&gt;code-insiders --enabled-proposed-api matklad.rust-analyzer&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;make sure to use a color theme with support for syntax highlighitng.&lt;/p&gt;
