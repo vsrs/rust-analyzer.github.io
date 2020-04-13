@@ -382,54 +382,7 @@ Once <code>neovim/nvim-lsp</code> is installed, use <code>lua require'nvim_lsp'.
 <p><code>LSP</code> package.</p>
 </div>
 <div class="paragraph">
-<p>Installation:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Invoke the command palette with &lt;kbd&gt;Ctrl+Shift+P&lt;/kbd&gt;</p>
-</li>
-<li>
-<p>Type <code>LSP Settings</code> to open the LSP preferences editor</p>
-</li>
-<li>
-<p>Add the following LSP client definition to your settings:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="json"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-</pre></td><td class="code"><pre><span class="nl">"rust-analyzer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"rust-analyzer"</span><span class="p">],</span><span class="w">
-    </span><span class="nl">"languageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rust"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"scopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"source.rust"</span><span class="p">],</span><span class="w">
-    </span><span class="nl">"syntaxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"Packages/Rust/Rust.sublime-syntax"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Packages/Rust Enhanced/RustEnhanced.sublime-syntax"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"initializationOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"featureFlags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-</span><span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>You can now invoke the command palette and type LSP enable to locally/globally enable the rust-analyzer LSP (type LSP enable, then choose either locally or globally, then select rust-analyzer)</p>
-</li>
-</ol>
+<p>Invoke the command palette (<code>ctrl+shift+p</code>) and type LSP enable to locally/globally enable the rust-analyzer LSP (type LSP enable, then choose either locally or globally, then select rust-analyzer)</p>
 </div>
 </div>
 </div>
