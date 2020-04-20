@@ -68,19 +68,20 @@ Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/2020-0
 <div class="paragraph">
 <p>To enable it, set the following settings:</p>
 </div>
-</li>
-</ul>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre>{
-    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
-    "rust-analyzer.procMacro.enabled": true
-}</pre>
+<pre class="rouge highlight"><code data-lang="json"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w">
+    </span><span class="nl">"rust-analyzer.cargo.loadOutDirsFromCheck"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rust-analyzer.procMacro.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/3990"><code>#3990</code></a> switch to Chalk recursive solver.
 This significantly improves type inference when associated types are involved,
