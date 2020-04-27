@@ -49,9 +49,9 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>At its core, rust-analyzer is a <strong>library</strong> for semantic analysis of Rust code as it changes over time.
-This manual focuses on a specific usage of the library&#8201;&#8212;&#8201;the implementation of
-<a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a>.
-LSP allows various code editors, like VS Code, Emacs or Vim, to implement semantic features like completion or goto definition by talking to an external language server process.</p>
+This manual focuses on a specific usage of the library&#8201;&#8212;&#8201;running it as part of a server that implements the
+<a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a> (LSP).
+The LSP allows various code editors, like VS Code, Emacs or Vim, to implement semantic features like completion or goto definition by talking to an external language server process.</p>
 </div>
 <div class="paragraph">
 <p>To improve this document, send a pull request against
@@ -64,7 +64,7 @@ LSP allows various code editors, like VS Code, Emacs or Vim, to implement semant
 <li><a href="#installation">Installation</a>
 <ul class="sectlevel2">
 <li><a href="#vs-code">VS Code</a></li>
-<li><a href="#language-server-binary">Language Server Binary</a></li>
+<li><a href="#rust-analyzer-language-server-binary">rust-analyzer Language Server Binary</a></li>
 <li><a href="#emacs">Emacs</a></li>
 <li><a href="#vim">Vim</a></li>
 <li><a href="#sublime-text-3">Sublime Text 3</a></li>
@@ -78,11 +78,11 @@ LSP allows various code editors, like VS Code, Emacs or Vim, to implement semant
 <h2 id="installation"><a class="anchor" href="#installation"></a>Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In theory, one should be able to just install the server binary and have it automatically work with any editor.
+<p>In theory, one should be able to just install the <a href="#rust-analyzer-language-server-binary"><code>rust-analyzer</code> binary</a> and have it automatically work with any editor.
 We are not there yet, so some editor specific setup is required.</p>
 </div>
 <div class="paragraph">
-<p>Additionally, rust-analyzer needs sources of the standard library.
+<p>Additionally, rust-analyzer needs the sources of the standard library.
 If the source code is not present, rust-analyzer will attempt to install it automatically.</p>
 </div>
 <div class="paragraph">
@@ -99,7 +99,7 @@ If the source code is not present, rust-analyzer will attempt to install it auto
 <h3 id="vs-code"><a class="anchor" href="#vs-code"></a>VS Code</h3>
 <div class="paragraph">
 <p>This is the best supported editor at the moment.
-rust-analyzer plugin for VS Code is maintained
+The rust-analyzer plugin for VS Code is maintained
 <a href="https://github.com/rust-analyzer/rust-analyzer/tree/master/editors/code">in tree</a>.</p>
 </div>
 <div class="paragraph">
@@ -157,7 +157,7 @@ By default, the plugin will prompt you to download the matching version of the s
 </div>
 </div>
 <div class="paragraph">
-<p>You will be prompted to install the <code>nightly</code> extension version. Just click <code>Download now</code> and from that moment you will get automatic updates each 24 hours.</p>
+<p>You will be prompted to install the <code>nightly</code> extension version. Just click <code>Download now</code> and from that moment you will get automatic updates every 24 hours.</p>
 </div>
 <div class="paragraph">
 <p>If you don&#8217;t want to be asked for <code>Download now</code> every day when the new nightly version is released add the following to your <code>settings.json</code>:</p>
@@ -231,24 +231,45 @@ $ cargo xtask install
 </div>
 </div>
 <div class="sect2">
-<h3 id="language-server-binary"><a class="anchor" href="#language-server-binary"></a>Language Server Binary</h3>
+<h3 id="rust-analyzer-language-server-binary"><a class="anchor" href="#rust-analyzer-language-server-binary"></a>rust-analyzer Language Server Binary</h3>
 <div class="paragraph">
-<p>Other editors generally require <code>rust-analyzer</code> binary to be in <code>$PATH</code>.
-You can download the pre-built binary from
-<a href="https://github.com/rust-analyzer/rust-analyzer/releases">releases</a>
-page, or you can install it from source using the following command:</p>
+<p>Other editors generally require the <code>rust-analyzer</code> binary to be in <code>$PATH</code>.
+You can download the pre-built binary from the <a href="https://github.com/rust-analyzer/rust-analyzer/releases">releases</a> page. Typically, you then need to rename the binary for your platform, e.g. <code>rust-analyzer-mac</code> if you&#8217;re on Mac OS, to <code>rust-analzyer</code> and make it executable in addition to moving it into a directory in your <code>$PATH</code>.</p>
+</div>
+<div class="paragraph">
+<p>On Linux to install the <code>rust-analyzer</code> binary into <code>~/.local/bin</code>, this commands could be used</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="bash"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre><span class="nv">$ </span>cargo xtask <span class="nb">install</span> <span class="nt">--server</span>
+2
+</pre></td><td class="code"><pre><span class="nv">$ </span>curl <span class="nt">-L</span> https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux <span class="nt">-o</span> ~/.local/bin/rust-analyzer
+<span class="nv">$ </span><span class="nb">chmod</span> +x ~/.local/bin/rust-analyzer
 </pre></td></tr></tbody></table></code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Ensure <code>~/.local/bin</code> is listed in the <code>$PATH</code> variable.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can install it from source using the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="nv">$ </span>git clone https://github.com/rust-analyzer/rust-analyzer.git <span class="o">&amp;&amp;</span> <span class="nb">cd </span>rust-analyzer
+<span class="nv">$ </span>cargo xtask <span class="nb">install</span> <span class="nt">--server</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If your editor can&#8217;t find the binary even though the binary is on your <code>$PATH</code>, the likely explanation is that it doesn&#8217;t see the same <code>$PATH</code> as the shell, see <a href="https://github.com/rust-analyzer/rust-analyzer/issues/1811">this issue</a>. On Unix, running the editor from a shell or changing the <code>.desktop</code> file to set the environment should help.</p>
 </div>
 <div class="sect3">
 <h4 id="arch-linux"><a class="anchor" href="#arch-linux"></a>Arch Linux</h4>
 <div class="paragraph">
-<p><code>rust-analyzer</code> binary can be installed from AUR (Arch User Repository):</p>
+<p>The <code>rust-analyzer</code> binary can be installed from AUR (Arch User Repository):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -278,12 +299,15 @@ page, or you can install it from source using the following command:</p>
 <div class="sect2">
 <h3 id="emacs"><a class="anchor" href="#emacs"></a>Emacs</h3>
 <div class="paragraph">
-<p>Emacs support is maintained <a href="https://github.com/emacs-lsp/lsp-mode/blob/master/lsp-rust.el">upstream</a>.</p>
+<p>Prerequisites: You have installed the <a href="#rust-analyzer-language-server-binary"><code>rust-analyzer</code> binary</a>.</p>
+</div>
+<div class="paragraph">
+<p>Emacs support is maintained as part of the <a href="https://github.com/emacs-lsp/lsp-mode">Emacs-LSP</a> package in <a href="https://github.com/emacs-lsp/lsp-mode/blob/master/lsp-rust.el">lsp-rust.el</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Install the most recent version of <code>emacs-lsp</code> package by following the instructions <a href="https://github.com/emacs-lsp/lsp-mode">here</a>.</p>
+<p>Install the most recent version of <code>emacs-lsp</code> package by following the <a href="https://github.com/emacs-lsp/lsp-mode">Emacs-LSP instructions</a>.</p>
 </li>
 <li>
 <p>Set <code>lsp-rust-server</code> to <code>'rust-analyzer</code>.</p>
@@ -299,6 +323,9 @@ page, or you can install it from source using the following command:</p>
 </div>
 <div class="sect2">
 <h3 id="vim"><a class="anchor" href="#vim"></a>Vim</h3>
+<div class="paragraph">
+<p>Prerequisites: You have installed the <a href="#rust-analyzer-language-server-binary"><code>rust-analyzer</code> binary</a>.</p>
+</div>
 <div class="paragraph">
 <p>The are several LSP client implementations for vim:</p>
 </div>
@@ -318,10 +345,10 @@ this extension implements <em>most</em> of the features supported in the VSCode 
 <div class="ulist">
 <ul>
 <li>
-<p>same configurations as VSCode extension, <code>rust-analyzer.serverPath</code>, <code>rust-analyzer.enableCargoWatchOnStartup</code> etc.</p>
+<p>same configurations as VSCode extension, <code>rust-analyzer.serverPath</code>, <code>rust-analyzer.cargo.features</code> etc.</p>
 </li>
 <li>
-<p>same commands too, <code>rust-analyzer.analyzerStatus</code>, <code>rust-analyzer.startCargoWatch</code> etc.</p>
+<p>same commands too, <code>rust-analyzer.analyzerStatus</code>, <code>rust-analyzer.ssr</code> etc.</p>
 </li>
 <li>
 <p>highlighting and inlay_hints are not implemented yet</p>
@@ -365,6 +392,43 @@ this extension implements <em>most</em> of the features supported in the VSCode 
 </div>
 </div>
 <div class="sect3">
+<h4 id="youcompleteme"><a class="anchor" href="#youcompleteme"></a>YouCompleteMe</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install YouCompleteMe by following the instructions
+<a href="https://ycm-core.github.io/YouCompleteMe/#rust-semantic-completion">here</a></p>
+</li>
+<li>
+<p>Configure by adding this to your vim/neovim config file (replacing the existing Rust-specific line if it exists):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="vim"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="k">let</span> <span class="nv">g:ycm_language_server</span> <span class="p">=</span>
+<span class="se">\</span> <span class="p">[</span>
+<span class="se">\</span>   <span class="p">{</span>
+<span class="se">\</span>     <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'rust'</span><span class="p">,</span>
+<span class="se">\</span>     <span class="s1">'cmdline'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'rust-analyzer'</span><span class="p">],</span>
+<span class="se">\</span>     <span class="s1">'filetypes'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'rust'</span><span class="p">],</span>
+<span class="se">\</span>     <span class="s1">'project_root_files'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Cargo.toml'</span><span class="p">]</span>
+<span class="se">\</span>   <span class="p">}</span>
+<span class="se">\</span> <span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
 <h4 id="nvim-lsp"><a class="anchor" href="#nvim-lsp"></a>nvim-lsp</h4>
 <div class="paragraph">
 <p>NeoVim 0.5 (not yet released) has built-in language server support.
@@ -376,13 +440,39 @@ Once <code>neovim/nvim-lsp</code> is installed, use <code>lua require'nvim_lsp'.
 <div class="sect2">
 <h3 id="sublime-text-3"><a class="anchor" href="#sublime-text-3"></a>Sublime Text 3</h3>
 <div class="paragraph">
-<p>Prerequisites:</p>
+<p>Prerequisites: You have installed the <a href="#rust-analyzer-language-server-binary"><code>rust-analyzer</code> binary</a>.</p>
 </div>
 <div class="paragraph">
-<p><code>LSP</code> package.</p>
+<p>You also need the <code>LSP</code> package. To install it:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you&#8217;ve never installed a Sublime Text package, install Package Control:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Open the command palette (Win/Linux: <code>ctrl+shift+p</code>, Mac: <code>cmd+shift+p</code>)</p>
+</li>
+<li>
+<p>Type <code>Install Package Control</code>, press enter</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the command palette, run <code>Package control: Install package</code>, and in the list that pops up, type <code>LSP</code> and press enter.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Invoke the command palette (<code>ctrl+shift+p</code>) and type LSP enable to locally/globally enable the rust-analyzer LSP (type LSP enable, then choose either locally or globally, then select rust-analyzer)</p>
+<p>Finally, with your Rust project open, in the command palette, run <code>LSP: Enable Language Server In Project</code> or <code>LSP: Enable Language Server Globally</code>, then select <code>rust-analyzer</code> in the list that pops up to enable the rust-analyzer LSP. The latter means that rust-analzyer is enabled by default in Rust projects.</p>
+</div>
+<div class="paragraph">
+<p>If it worked, you should see "rust-analzyer, Line X, Column Y" on the left side of the bottom bar, and after waiting a bit, functionality like tooltips on hovering over variables should become available.</p>
+</div>
+<div class="paragraph">
+<p>If you get an error saying <code>No such file or directory: 'rust-analyzer'</code>, see the <a href="#rust-analyzer-language-server-binary"><code>rust-analyzer</code> binary</a> section on installing the language server binary.</p>
 </div>
 </div>
 </div>
