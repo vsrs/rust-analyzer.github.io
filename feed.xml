@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Apr 2020 12:37:20 +0000</pubDate>
-    <lastBuildDate>Mon, 27 Apr 2020 12:37:20 +0000</lastBuildDate>
+    <pubDate>Tue, 28 Apr 2020 15:39:21 +0000</pubDate>
+    <lastBuildDate>Tue, 28 Apr 2020 15:39:21 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -108,7 +108,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4136&quot;&gt;&lt;code&gt;#4136&lt;/code&gt;&lt;/a&gt; support &lt;code&gt;#[cfg]&lt;/code&gt; on expressions.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4154&quot;&gt;&lt;code&gt;#4154&lt;/code&gt;&lt;/a&gt; add &lt;code&gt;cargo test&lt;/code&gt; to the lits of &lt;strong&gt;Run&lt;/strong&gt; commands.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4154&quot;&gt;&lt;code&gt;#4154&lt;/code&gt;&lt;/a&gt; add &lt;code&gt;cargo test&lt;/code&gt; to the list of &lt;strong&gt;Run&lt;/strong&gt; commands.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
