@@ -66,7 +66,7 @@ The LSP allows various code editors, like VS Code, Emacs or Vim, to implement se
 <li><a href="#vs-code">VS Code</a></li>
 <li><a href="#rust-analyzer-language-server-binary">rust-analyzer Language Server Binary</a></li>
 <li><a href="#emacs">Emacs</a></li>
-<li><a href="#vim">Vim</a></li>
+<li><a href="#vimneovim">Vim/NeoVim</a></li>
 <li><a href="#sublime-text-3">Sublime Text 3</a></li>
 <li><a href="#gnome-builder">Gnome Builder</a></li>
 </ul>
@@ -135,7 +135,20 @@ By default, the plugin will prompt you to download the matching version of the s
 </table>
 </div>
 <div class="paragraph">
-<p>The server binary is stored in <code>~/.config/Code/User/globalStorage/matklad.rust-analyzer</code> (Linux) or in <code>~/.Library/Application Support/Code/User/globalStorage/matklad.rust-analyzer</code> (macOS) or in <code>%APPDATA%\Code\User\globalStorage</code> (Windows).</p>
+<p>The server binary is stored in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Linux: <code>~/.config/Code/User/globalStorage/matklad.rust-analyzer</code></p>
+</li>
+<li>
+<p>macOS: <code>~/Library/Application Support/Code/User/globalStorage/matklad.rust-analyzer</code></p>
+</li>
+<li>
+<p>Windows: <code>%APPDATA%\Code\User\globalStorage\matklad.rust-analyzer</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Note that we only support the latest version of VS Code.</p>
@@ -270,28 +283,25 @@ You can download the pre-built binary from the <a href="https://github.com/rust-
 <div class="sect3">
 <h4 id="arch-linux"><a class="anchor" href="#arch-linux"></a>Arch Linux</h4>
 <div class="paragraph">
-<p>The <code>rust-analyzer</code> binary can be installed from AUR (Arch User Repository):</p>
+<p>The <code>rust-analyzer</code> binary can be installed from the repos or AUR (Arch User Repository):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://aur.archlinux.org/packages/rust-analyzer-bin"><code>rust-analyzer-bin</code></a> (binary from GitHub releases)</p>
+<p><a href="https://www.archlinux.org/packages/community/x86_64/rust-analyzer/"><code>rust-analyzer</code></a> (built from latest tagged source)</p>
 </li>
 <li>
-<p><a href="https://aur.archlinux.org/packages/rust-analyzer"><code>rust-analyzer</code></a> (built from latest tagged source)</p>
-</li>
-<li>
-<p><a href="https://aur.archlinux.org/packages/rust-analyzer-git"><code>rust-analyzer-git</code></a> (latest git version)</p>
+<p><a href="https://aur.archlinux.org/packages/rust-analyzer-git"><code>rust-analyzer-git</code></a> (latest Git version)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Install it with AUR helper of your choice, for example:</p>
+<p>Install it with pacman, for example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="bash"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre><span class="nv">$ </span>yay <span class="nt">-S</span> rust-analyzer-bin
+</pre></td><td class="code"><pre><span class="nv">$ </span>pacman <span class="nt">-S</span> rust-analyzer
 </pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
@@ -323,12 +333,12 @@ You can download the pre-built binary from the <a href="https://github.com/rust-
 </div>
 </div>
 <div class="sect2">
-<h3 id="vim"><a class="anchor" href="#vim"></a>Vim</h3>
+<h3 id="vimneovim"><a class="anchor" href="#vimneovim"></a>Vim/NeoVim</h3>
 <div class="paragraph">
-<p>Prerequisites: You have installed the <a href="#rust-analyzer-language-server-binary"><code>rust-analyzer</code> binary</a>.</p>
+<p>Prerequisites: You have installed the <a href="#rust-analyzer-language-server-binary"><code>rust-analyzer</code> binary</a>. Not needed if the extension can install/update it on its own, coc-rust-analyzer is one example.</p>
 </div>
 <div class="paragraph">
-<p>The are several LSP client implementations for vim:</p>
+<p>The are several LSP client implementations for vim or neovim:</p>
 </div>
 <div class="sect3">
 <h4 id="coc-rust-analyzer"><a class="anchor" href="#coc-rust-analyzer"></a>coc-rust-analyzer</h4>
@@ -376,7 +386,7 @@ this extension implements <em>most</em> of the features supported in the VSCode 
 <div class="ulist">
 <ul>
 <li>
-<p>The github project wiki has extra tips on configuration</p>
+<p>The GitHub project wiki has extra tips on configuration</p>
 </li>
 </ul>
 </div>
@@ -438,24 +448,12 @@ this extension implements <em>most</em> of the features supported in the VSCode 
 <div class="sect3">
 <h4 id="ale"><a class="anchor" href="#ale"></a>ALE</h4>
 <div class="paragraph">
-<p>To add the LSP server to <a href="https://github.com/dense-analysis/ale">ale</a>:</p>
+<p>To use the LSP server in <a href="https://github.com/dense-analysis/ale">ale</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="vim"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="k">call</span> ale#linter#Define<span class="p">(</span><span class="s1">'rust'</span><span class="p">,</span> <span class="p">{</span>
-<span class="se">\</span>   <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'rust-analyzer'</span><span class="p">,</span>
-<span class="se">\</span>   <span class="s1">'lsp'</span><span class="p">:</span> <span class="s1">'stdio'</span><span class="p">,</span>
-<span class="se">\</span>   <span class="s1">'executable'</span><span class="p">:</span> <span class="s1">'rust-analyzer'</span><span class="p">,</span>
-<span class="se">\</span>   <span class="s1">'command'</span><span class="p">:</span> <span class="s1">'%e'</span><span class="p">,</span>
-<span class="se">\</span>   <span class="s1">'project_root'</span><span class="p">:</span> <span class="s1">'.'</span><span class="p">,</span>
-<span class="se">\</span><span class="p">})</span>
+</pre></td><td class="code"><pre><span class="k">let</span> <span class="nv">g:ale_linters</span> <span class="p">=</span> <span class="p">{</span><span class="s1">'rust'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'analyzer'</span><span class="p">]}</span>
 </pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
