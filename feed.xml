@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 May 2020 08:24:19 +0000</pubDate>
-    <lastBuildDate>Mon, 11 May 2020 08:24:19 +0000</lastBuildDate>
+    <pubDate>Mon, 11 May 2020 09:44:14 +0000</pubDate>
+    <lastBuildDate>Mon, 11 May 2020 09:44:14 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -157,7 +157,7 @@ You can use [these custom types](&lt;a href=&quot;https://github.com/rust-analyz
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4366&quot;&gt;&lt;code&gt;#4366&lt;/code&gt;&lt;/a&gt; unify lldb and native windows debugger handling.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4175&quot;&gt;&lt;code&gt;#4175&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4389&quot;&gt;&lt;code&gt;#4389&lt;/code&gt;&lt;/a&gt; introduce `HirDisplay`ko method for rendering source code &amp;amp; use it in &lt;strong&gt;Add Function&lt;/strong&gt; and &lt;strong&gt;*Specify Type Explicitly&lt;/strong&gt; *assists&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4175&quot;&gt;&lt;code&gt;#4175&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4389&quot;&gt;&lt;code&gt;#4389&lt;/code&gt;&lt;/a&gt; introduce `HirDisplay`ko method for rendering source code &amp;amp; use it in &lt;strong&gt;Add Function&lt;/strong&gt; and &lt;strong&gt;Specify Type Explicitly&lt;/strong&gt; assists&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4418&quot;&gt;&lt;code&gt;#4418&lt;/code&gt;&lt;/a&gt; refactor conversion between LSP and rust-analyzer native types.&lt;/p&gt;
