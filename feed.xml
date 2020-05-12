@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 May 2020 09:44:14 +0000</pubDate>
-    <lastBuildDate>Mon, 11 May 2020 09:44:14 +0000</lastBuildDate>
+    <pubDate>Tue, 12 May 2020 11:24:25 +0000</pubDate>
+    <lastBuildDate>Tue, 12 May 2020 11:24:25 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -97,7 +97,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4295&quot;&gt;&lt;code&gt;#4295&lt;/code&gt;&lt;/a&gt; specify all rust-analyzer specific tokens and modifiers in package.json.
-You can use [these custom types](&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/eb892d707c379eff514df9c2a6b2203f38874b14/editors/code/package.json#L537-L587&quot; class=&quot;bare&quot;&gt;https://github.com/rust-analyzer/rust-analyzer/blob/eb892d707c379eff514df9c2a6b2203f38874b14/editors/code/package.json#L537-L587&lt;/a&gt;) to tweak syntax highlighting for Rust.&lt;/p&gt;
+You can use &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/eb892d707c379eff514df9c2a6b2203f38874b14/editors/code/package.json#L537-L587&quot;&gt;these custom types&lt;/a&gt; to tweak syntax highlighting for Rust.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4305&quot;&gt;&lt;code&gt;#4305&lt;/code&gt;&lt;/a&gt; correctly handle namespaces for structs in name resolution.&lt;/p&gt;
