@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 May 2020 13:39:04 +0000</pubDate>
-    <lastBuildDate>Mon, 18 May 2020 13:39:04 +0000</lastBuildDate>
+    <pubDate>Mon, 18 May 2020 14:09:03 +0000</pubDate>
+    <lastBuildDate>Mon, 18 May 2020 14:09:03 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -197,7 +197,7 @@ We have some initial support for this already, but there&amp;#8217;s a bunch of 
 &lt;h2 id=&quot;dangers-of-accidental-architecture&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#dangers-of-accidental-architecture&quot;&gt;&lt;/a&gt;Dangers of Accidental Architecture&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The main danger I see is that rust-analyzer can ossify in it&amp;#8217;s present state.
+&lt;p&gt;The main danger I see is that rust-analyzer can ossify in its present state.
 This would be bad, because, although current rust-analyzer architecture is right in broad strokes, a lot of important and hard-to-change details are wrong.
 After we push rust-analyzer to the general public, we should focus on boring implementation &amp;amp; design work, with relatively few shiny gifs and a lot of foundational work for the next decade.&lt;/p&gt;
 &lt;/div&gt;
@@ -386,7 +386,7 @@ If we just don&amp;#8217;t lose performance here and there, and throw the work o
 &lt;p&gt;The first step here would be establishing the culture of continuous benchmarking and performance tuning.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;We&amp;#8217;ve already successfully used rust-analyzer for figuring an architecture which works in IDE at all.
+&lt;p&gt;We&amp;#8217;ve already successfully used rust-analyzer for forging an architecture which works in IDE at all.
 Now it&amp;#8217;s time to experiment with architecture which works, &lt;em&gt;fast&lt;/em&gt;, just as all Rust code should :-)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -408,9 +408,9 @@ Now it&amp;#8217;s time to experiment with architecture which works, &lt;em&gt;f
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;I am very happy with test speed in rust-analyzer.
-One of my mistakes in IntelliJ aws adding a lot of tests that use Rust standard library and are slow for that reason.
-In rust-analyzer, there&amp;#8217;s only three uber-integrated tests that need the real libstd, all others work from in-memory fixtures which contain only the relevant bits of std.&lt;/p&gt;
+&lt;p&gt;I am very happy with the testing speed of rust-analyzer.
+One of my mistakes in IntelliJ aws adding a lot of tests that use Rust&amp;#8217;s standard library and are slow for that reason.
+In rust-analyzer, there are only three uber-integrated tests that need the real libstd, all others work from in-memory fixtures which contain only the relevant bits of std.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;But the build times leave a lot to be desired.
@@ -421,7 +421,7 @@ I was trying to do some compile-time optimizations in rust-analyzer recently, an
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;The biggest problem here is that Rust, as a language, is hard to compile fast.
 One specific issue I hit constantly is that changing a deep dependency recompiles the world.
-This is in contrast to C/C++ where, if you don&amp;#8217;t touch a &lt;code&gt;.h&lt;/code&gt; files, changing a dependency requires only re-linking.
+This is in contrast to C/C++ where, if you don&amp;#8217;t touch any &lt;code&gt;.h&lt;/code&gt; files, changing a dependency requires only re-linking.
 In theory, we can have something like this in Rust, by automatically deriving public headers from crates.
 Though I fear that without explicit, physical &amp;#8220;this is ABI&amp;#8221; boundary, it will be much less effective at keeping compile times under control.&lt;/p&gt;
 &lt;/div&gt;
@@ -438,13 +438,13 @@ Though I fear that without explicit, physical &amp;#8220;this is ABI&amp;#8221; 
 I believe there&amp;#8217;s a lot we can do for rustc build as well.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;I&amp;#8217;ve written at length about this at length on &lt;a href=&quot;https://internals.rust-lang.org/t/experience-report-contributing-to-rust-lang-rust/12012/17?u=matklad&quot;&gt;irlo&lt;/a&gt;.
-The gist is that I think we can split rustc into front-end &quot;text-processing&quot; part, and backend &quot;LLVM, linkers and real world&quot; part.
-The front bit than could in theory be a bog standard Rust project, which doesn&amp;#8217;t depend on IO, external tools and C++ code at all.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve written at length about this on &lt;a href=&quot;https://internals.rust-lang.org/t/experience-report-contributing-to-rust-lang-rust/12012/17?u=matklad&quot;&gt;irlo&lt;/a&gt;.
+The gist is that I think we can split rustc into a front-end &quot;text-processing&quot; part, and backend &quot;LLVM, linkers and real world&quot; part.
+The front bit then could, in theory, be a bog standard Rust project, which doesn&amp;#8217;t depend on IO, external tools or C++ code at all.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;One wrinkle here is that rustc test suite at the moment consists predominantly of UI and run-pass tests integration, which work by building the whole compiler.
-Such test suite is ideal for testing conformance and catching regressions, but is not really well suited for rapid TDD.
+Such a test suite is ideal for testing conformance and catching regressions, but is not really well suited for rapid TDD.
 I think we should make an effort to build a unit test suite a-la rust-analyzer, such that it&amp;#8217;s easy, for example, to test name resolution without building the type checker, and which doesn&amp;#8217;t require stdlib.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -455,7 +455,7 @@ I think we should make an effort to build a unit test suite a-la rust-analyzer, 
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Finally, all changes here represent deep cuts into an existing body of software.
 Pushing such ambitious projects to completion require people, who can dedicate significant amounts of their time and energy.
-To put it bluntly, we need more dedicated folks working on the IDE tooling as a full time, payed job.
+To put it bluntly, we need more dedicated folks working on the IDE tooling as a full time, paid job.
 I am grateful to my colleagues at &lt;a href=&quot;https://ferrous-systems.com/&quot;&gt;Ferrous Systems&lt;/a&gt; who put a lot of energy into making this a reality.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;

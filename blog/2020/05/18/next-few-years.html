@@ -99,7 +99,7 @@ We have some initial support for this already, but there&#8217;s a bunch of deta
 <h2 id="dangers-of-accidental-architecture"><a class="anchor" href="#dangers-of-accidental-architecture"></a>Dangers of Accidental Architecture</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The main danger I see is that rust-analyzer can ossify in it&#8217;s present state.
+<p>The main danger I see is that rust-analyzer can ossify in its present state.
 This would be bad, because, although current rust-analyzer architecture is right in broad strokes, a lot of important and hard-to-change details are wrong.
 After we push rust-analyzer to the general public, we should focus on boring implementation &amp; design work, with relatively few shiny gifs and a lot of foundational work for the next decade.</p>
 </div>
@@ -288,7 +288,7 @@ If we just don&#8217;t lose performance here and there, and throw the work onto 
 <p>The first step here would be establishing the culture of continuous benchmarking and performance tuning.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve already successfully used rust-analyzer for figuring an architecture which works in IDE at all.
+<p>We&#8217;ve already successfully used rust-analyzer for forging an architecture which works in IDE at all.
 Now it&#8217;s time to experiment with architecture which works, <em>fast</em>, just as all Rust code should :-)</p>
 </div>
 </div>
@@ -310,9 +310,9 @@ Now it&#8217;s time to experiment with architecture which works, <em>fast</em>, 
 </ul>
 </div>
 <div class="paragraph">
-<p>I am very happy with test speed in rust-analyzer.
-One of my mistakes in IntelliJ aws adding a lot of tests that use Rust standard library and are slow for that reason.
-In rust-analyzer, there&#8217;s only three uber-integrated tests that need the real libstd, all others work from in-memory fixtures which contain only the relevant bits of std.</p>
+<p>I am very happy with the testing speed of rust-analyzer.
+One of my mistakes in IntelliJ aws adding a lot of tests that use Rust&#8217;s standard library and are slow for that reason.
+In rust-analyzer, there are only three uber-integrated tests that need the real libstd, all others work from in-memory fixtures which contain only the relevant bits of std.</p>
 </div>
 <div class="paragraph">
 <p>But the build times leave a lot to be desired.
@@ -323,7 +323,7 @@ I was trying to do some compile-time optimizations in rust-analyzer recently, an
 <div class="paragraph">
 <p>The biggest problem here is that Rust, as a language, is hard to compile fast.
 One specific issue I hit constantly is that changing a deep dependency recompiles the world.
-This is in contrast to C/C++ where, if you don&#8217;t touch a <code>.h</code> files, changing a dependency requires only re-linking.
+This is in contrast to C/C++ where, if you don&#8217;t touch any <code>.h</code> files, changing a dependency requires only re-linking.
 In theory, we can have something like this in Rust, by automatically deriving public headers from crates.
 Though I fear that without explicit, physical &#8220;this is ABI&#8221; boundary, it will be much less effective at keeping compile times under control.</p>
 </div>
@@ -340,13 +340,13 @@ Though I fear that without explicit, physical &#8220;this is ABI&#8221; boundary
 I believe there&#8217;s a lot we can do for rustc build as well.</p>
 </div>
 <div class="paragraph">
-<p>I&#8217;ve written at length about this at length on <a href="https://internals.rust-lang.org/t/experience-report-contributing-to-rust-lang-rust/12012/17?u=matklad">irlo</a>.
-The gist is that I think we can split rustc into front-end "text-processing" part, and backend "LLVM, linkers and real world" part.
-The front bit than could in theory be a bog standard Rust project, which doesn&#8217;t depend on IO, external tools and C++ code at all.</p>
+<p>I&#8217;ve written at length about this on <a href="https://internals.rust-lang.org/t/experience-report-contributing-to-rust-lang-rust/12012/17?u=matklad">irlo</a>.
+The gist is that I think we can split rustc into a front-end "text-processing" part, and backend "LLVM, linkers and real world" part.
+The front bit then could, in theory, be a bog standard Rust project, which doesn&#8217;t depend on IO, external tools or C++ code at all.</p>
 </div>
 <div class="paragraph">
 <p>One wrinkle here is that rustc test suite at the moment consists predominantly of UI and run-pass tests integration, which work by building the whole compiler.
-Such test suite is ideal for testing conformance and catching regressions, but is not really well suited for rapid TDD.
+Such a test suite is ideal for testing conformance and catching regressions, but is not really well suited for rapid TDD.
 I think we should make an effort to build a unit test suite a-la rust-analyzer, such that it&#8217;s easy, for example, to test name resolution without building the type checker, and which doesn&#8217;t require stdlib.</p>
 </div>
 </div>
@@ -357,7 +357,7 @@ I think we should make an effort to build a unit test suite a-la rust-analyzer, 
 <div class="paragraph">
 <p>Finally, all changes here represent deep cuts into an existing body of software.
 Pushing such ambitious projects to completion require people, who can dedicate significant amounts of their time and energy.
-To put it bluntly, we need more dedicated folks working on the IDE tooling as a full time, payed job.
+To put it bluntly, we need more dedicated folks working on the IDE tooling as a full time, paid job.
 I am grateful to my colleagues at <a href="https://ferrous-systems.com/">Ferrous Systems</a> who put a lot of energy into making this a reality.</p>
 </div>
 <div class="paragraph">
