@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 May 2020 13:07:36 +0000</pubDate>
-    <lastBuildDate>Mon, 18 May 2020 13:07:36 +0000</lastBuildDate>
+    <pubDate>Mon, 18 May 2020 13:21:04 +0000</pubDate>
+    <lastBuildDate>Mon, 18 May 2020 13:21:04 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -34,7 +34,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4358&quot;&gt;&lt;code&gt;#4358&lt;/code&gt;&lt;/a&gt; &lt;code&gt;ifl&lt;/code&gt; postfix template for &lt;code&gt;Result&lt;/code&gt; and &lt;code&gt;Option&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;todo&quot; alt=&quot;todo&quot;&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/82217445-b7331880-991a-11ea-8e9a-698e3dc07106.gif&quot; alt=&quot;82217445 b7331880 991a 11ea 8e9a 698e3dc07106&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
@@ -42,7 +42,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4423&quot;&gt;&lt;code&gt;#4423&lt;/code&gt;&lt;/a&gt; &lt;code&gt;tmod&lt;/code&gt; item-level snippet.&lt;/p&gt;
 &lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;todo&quot; alt=&quot;todo&quot;&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/82217447-b8644580-991a-11ea-87e1-a8c61d21583f.gif&quot; alt=&quot;82217447 b8644580 991a 11ea 87e1 a8c61d21583f&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
@@ -50,7 +50,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4273&quot;&gt;&lt;code&gt;#4273&lt;/code&gt;&lt;/a&gt; &lt;strong&gt;Add Visibility&lt;/strong&gt; assist now works on paths, meaning that&lt;/p&gt;
 &lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;todo&quot; alt=&quot;todo&quot;&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/82217439-b39f9180-991a-11ea-92e9-f162c41debc6.gif&quot; alt=&quot;82217439 b39f9180 991a 11ea 92e9 f162c41debc6&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
@@ -58,7 +58,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4448&quot;&gt;&lt;code&gt;#4448&lt;/code&gt;&lt;/a&gt; &lt;strong&gt;Generate Launch Configuration&lt;/strong&gt; command to save debug configurations for specific tests:&lt;/p&gt;
 &lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;todo&quot; alt=&quot;todo&quot;&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/82217442-b601eb80-991a-11ea-99dd-b0c2bba786c8.gif&quot; alt=&quot;82217442 b601eb80 991a 11ea 99dd b0c2bba786c8&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
