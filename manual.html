@@ -151,7 +151,7 @@ By default, the plugin will prompt you to download the matching version of the s
 </ul>
 </div>
 <div class="paragraph">
-<p>Note that we only support the latest version of VS Code.</p>
+<p>Note that we only support two most recent versions of VS Code.</p>
 </div>
 <div class="sect3">
 <h4 id="updates"><a class="anchor" href="#updates"></a>Updates</h4>
@@ -232,7 +232,7 @@ $ cargo xtask install
 <p><strong>Rust Analyzer: Status</strong> prints some statistics about the server, like the few latest LSP requests</p>
 </li>
 <li>
-<p>To enable server-side logging, run with <code>env RUST_LOG=info</code> and see <code>Output &gt; Rust Analyzer Language Server</code> in VS Code&#8217;s panel.</p>
+<p>To enable server-side logging, run with <code>env RA_LOG=info</code> and see <code>Output &gt; Rust Analyzer Language Server</code> in VS Code&#8217;s panel.</p>
 </li>
 <li>
 <p>To log all LSP requests, add <code>"rust-analyzer.trace.server": "verbose"</code> to the settings and look for <code>Server Trace</code> in the panel.</p>
