@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 May 2020 14:09:03 +0000</pubDate>
-    <lastBuildDate>Mon, 18 May 2020 14:09:03 +0000</lastBuildDate>
+    <pubDate>Mon, 18 May 2020 15:13:09 +0000</pubDate>
+    <lastBuildDate>Mon, 18 May 2020 15:13:09 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -409,7 +409,7 @@ Now it&amp;#8217;s time to experiment with architecture which works, &lt;em&gt;f
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;I am very happy with the testing speed of rust-analyzer.
-One of my mistakes in IntelliJ aws adding a lot of tests that use Rust&amp;#8217;s standard library and are slow for that reason.
+One of my mistakes in IntelliJ was adding a lot of tests that use Rust&amp;#8217;s standard library and are slow for that reason.
 In rust-analyzer, there are only three uber-integrated tests that need the real libstd, all others work from in-memory fixtures which contain only the relevant bits of std.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
