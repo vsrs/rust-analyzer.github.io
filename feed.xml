@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 May 2020 13:37:59 +0000</pubDate>
-    <lastBuildDate>Mon, 18 May 2020 13:37:59 +0000</lastBuildDate>
+    <pubDate>Mon, 18 May 2020 13:39:04 +0000</pubDate>
+    <lastBuildDate>Mon, 18 May 2020 13:39:04 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -47,7 +47,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4273&quot;&gt;&lt;code&gt;#4273&lt;/code&gt;&lt;/a&gt; &lt;strong&gt;Add Visibility&lt;/strong&gt; assist now works on paths, meaning that&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4273&quot;&gt;&lt;code&gt;#4273&lt;/code&gt;&lt;/a&gt; &lt;strong&gt;Add Visibility&lt;/strong&gt; assist now works on paths, adding a visibility to an item in other module:&lt;/p&gt;
 &lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
 &lt;img src=&quot;https://user-images.githubusercontent.com/1711539/82217439-b39f9180-991a-11ea-92e9-f162c41debc6.gif&quot; alt=&quot;82217439 b39f9180 991a 11ea 92e9 f162c41debc6&quot;&gt;
