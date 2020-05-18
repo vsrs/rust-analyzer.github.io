@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 May 2020 13:21:04 +0000</pubDate>
-    <lastBuildDate>Mon, 18 May 2020 13:21:04 +0000</lastBuildDate>
+    <pubDate>Mon, 18 May 2020 13:37:59 +0000</pubDate>
+    <lastBuildDate>Mon, 18 May 2020 13:37:59 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -133,6 +133,334 @@ Please avoid randomized hash maps when writing procedural macros :-)&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4405&quot;&gt;&lt;code&gt;#4405&lt;/code&gt;&lt;/a&gt; make some internal types public so that rust-analyzer is easier to use as a library.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      </item>
+    
+      <item>
+        <title>Next Few Years</title>
+        <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+        <link>https://rust-analyzer.github.io//blog/2020/05/18/next-few-years.html</link>
+        <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2020/05/18/next-few-years.html</guid>
+        <description>&lt;div id=&quot;preamble&quot;&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;rust-analyzer is a new &quot;IDE backend&quot; for the &lt;a href=&quot;https://www.rust-lang.org/&quot;&gt;Rust&lt;/a&gt; programming language.
+Support rust-analyzer on &lt;a href=&quot;https://opencollective.com/rust-analyzer/&quot;&gt;Open Collective&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;During the past several months, I&amp;#8217;ve been swamped with in-the-trenches rust-analyzer work.
+Today, I spontaneously decided to take a step back and think about longer-term &quot;road map&quot; for rust-analyzer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What follows is my (&lt;a href=&quot;https://github.com/matklad/&quot;&gt;@matklad&lt;/a&gt;) personal thoughts on the matter, they not necessary reflect the consensus view of ide or compiler teams :-)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;unexpected-success&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#unexpected-success&quot;&gt;&lt;/a&gt;Unexpected Success&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One of the most surprising aspects of rust-analyzer for me is how useful it already is.
+Today, I write Rust code enjoying fast code-completion, mostly correct go to definition and plethora of assists.
+Even syntax highlighting inside macros works!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;My original plan for rust-analyzer was to write a quick one-to-two-year hack to demonstrate a proof-of-concept IDE support, something to strive for rather than a finished product.
+Obviously, we have massively overshot this goal: people depend on rust-analyzer for productive Rust programming today.
+This creates its own opportunities and dangers, which inform this planning document.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;official-lsp-server&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#official-lsp-server&quot;&gt;&lt;/a&gt;Official LSP Server&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;People write a ton of Rust today, and they deserve at least a baseline level of IDE support.
+I think our immediate goal is to make rust-analyzer easier to use in its current state, effectively implementing &lt;a href=&quot;https://github.com/rust-lang/rfcs/pull/2912&quot;&gt;RFC2912&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The amount of programming work on rust-analyzer side is relatively small here:
+we need to fix various protocol conformance issues,
+clean up various defaults to be less experimental,
+write documentation which doesn&amp;#8217;t require a lot of enthusiasm to understand, etc.
+The amount of org stuff is much bigger&amp;#8201;&amp;#8212;&amp;#8201;we need to package rust-analyzer with rustup, merge the RLS and rust-analyzer VS Code extensions, figure out repository structure, etc.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Separately, I want to make sure that rust-analyzer is usable inside large non-Cargo based monorepos.
+We have some initial support for this already, but there&amp;#8217;s a bunch of details we need to iron out.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;dangers-of-accidental-architecture&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#dangers-of-accidental-architecture&quot;&gt;&lt;/a&gt;Dangers of Accidental Architecture&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The main danger I see is that rust-analyzer can ossify in it&amp;#8217;s present state.
+This would be bad, because, although current rust-analyzer architecture is right in broad strokes, a lot of important and hard-to-change details are wrong.
+After we push rust-analyzer to the general public, we should focus on boring implementation &amp;amp; design work, with relatively few shiny gifs and a lot of foundational work for the next decade.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;bringing-chalk-to-rustc&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#bringing-chalk-to-rustc&quot;&gt;&lt;/a&gt;Bringing Chalk to Rustc&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;rust-analyzer has been using chalk as its trait solver for a long time now.
+It would be good to finish the work, and integrate it into rustc as well, &lt;span class=&quot;line-through&quot;&gt;and give people their GATs&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;single-parser-and-syntax-tree&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#single-parser-and-syntax-tree&quot;&gt;&lt;/a&gt;Single Parser and Syntax Tree&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We should share the parser between rustc and rust-analyzer already.
+Parsing is one of the most interesting bits of the compiler, from the IDE point of view.
+By transitioning rustc to a lossless syntax we&amp;#8217;ll cross the most important barrier, and it will be a downhill road from that point on.
+The design space here I think is well-understood, but the amount of work to do is large.
+At some point, I should take a break from actively hacking on rust-analyzer and focus on sharing the parser.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;virtual-file-system&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#virtual-file-system&quot;&gt;&lt;/a&gt;Virtual File System&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The most fundamental data structure in rust-analyzer, even more fundamental than a syntax tree, is the VFS, or Virtual File System.
+It serves two dual goals:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;providing consistent immutable snapshots of the file system,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;applying transactional changes to the state of the file system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This abstraction is the boundary between the pure-functional universe of rust-analyzer, and the messiness of the external world.
+It needs to bridge case-insensitive file systems, symlinks and cycles to a simpler model of &quot;tree with utf8 paths&quot; we want inside.
+Additionally it should work with non-path files: there are use-cases where we want to do analysis of Rust code, which doesn&amp;#8217;t really reside on the file system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One specific aspect I am struggling with is dynamism.
+On the one hand, it seems that a good design is to require to specify the set of files in VFS upfront, as a set of globs.
+This is important because, to properly register file watchers without losing updates, you need to crawl the file-system eagerly.
+However, specifying a set of globs up-front makes changing this set later messy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I would be curious to hear about existing solutions in this area.
+One specific question I have is: &quot;How does watchman handle dynamic addition/removal of projects?&quot;.
+If you have any experience to share, please comment on the VFS issue in rust-analyzer.
+Ideally, we turn VFS into just a crates.io crate, as it seems generally useful, and can encapsulate quite a bit of complexity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The current VFS is &amp;#8230;&amp;#8203; not great, I don&amp;#8217;t feel comfortable building rust-analyzer on top of it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;wasm-proc-macros&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#wasm-proc-macros&quot;&gt;&lt;/a&gt;WASM proc macros&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;At the moment, proc-macros are implemented as dynamic libraries, loadable into the compiler process.
+This works ok-enough for the compiler, but is a pretty bad fit for an IDE:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;if a proc-macro crashes, it brings down the whole process,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;it&amp;#8217;s hard to limit execution time of proc-macro,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;proc-macros can be non-deterministic, which breaks internal IDE invariants.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;At the moment, we paper over this by running proc-macros in a separate process and never invalidating proc-macro caches, but this feels like a hack and has high implementation complexity.
+it would be much better if proc-macros were deterministic and controllable by definition, and WASM can give us that.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I am slightly worried that this will get push-back from folks who want to connect to databases over TCP at compile time :)
+Long term, I believe that guaranteeing deterministic compilation is hugely important, irrespective of IDE story.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;language-design-for-locality&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#language-design-for-locality&quot;&gt;&lt;/a&gt;Language Design for Locality&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There&amp;#8217;s a very important language property that an IDE can leverage to massively improve performance:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;em&gt;What happens inside a function, stays inside the function&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If it is possible to type-check the body of a function without looking at the bodies of other functions, you can speed up an IDE by drastically reducing the amount of work it needs to do.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Rust mostly conforms to this property, but there are a couple of annoying violations:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;local inherent impls with publicly visible methods.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;local trait impls for non-local types.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;#[macro_export]&lt;/code&gt; local macros.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;local out-of-line modules.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If we want to have fast &amp;amp; correct IDE support, we should phase out those from the language via edition mechanism.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Note that auto-trait leakage of impl Trait is not nearly as problematic, as you only need to inspect a function&amp;#8217;s body if you call the function.
+Of course, as an IDE author I&amp;#8217;d love to require specifying auto-traits, but, as a language user, I much prefer the current design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;compact-data-structures&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#compact-data-structures&quot;&gt;&lt;/a&gt;Compact Data Structures&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;rust-analyzer uses a novel and rather high-tech query-based architecture for incremental computation.
+Today, it is clear that this general approach fits an IDE use-case really well.
+However, I have a lot of doubts about specific details.
+I feel that today rust-analyzer lacks mechanical sympathy and leaves a ton of performance on the table.
+A lot of internal data structures are heap-allocated &lt;code&gt;Arc&lt;/code&gt;-droplets, we overuse hashing and underuse indexing, we don&amp;#8217;t even intern identifiers!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;To get a feeling of how blazingly fast compiler front-ends can be, I highly recommend checking out Sorbet, type checker for Ruby.
+You can start with these two links:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.nelhage.com/post/why-sorbet-is-fast/&quot; class=&quot;bare&quot;&gt;https://blog.nelhage.com/post/why-sorbet-is-fast/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Gdx6by6tcvw&quot; class=&quot;bare&quot;&gt;https://www.youtube.com/watch?v=Gdx6by6tcvw&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I am very inspired by this work, but also embarrassed by how far rust-analyzer is from that kind of raw performance and simplicity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Part of that I think is essential complexity&amp;#8201;&amp;#8212;&amp;#8201;Rust&amp;#8217;s name resolution and macro expansion are &lt;strong&gt;hard&lt;/strong&gt;.
+But I also wonder if we can change salsa to use &lt;code&gt;Vec&lt;/code&gt;-based arenas, rather than &lt;code&gt;Arc&lt;/code&gt;s in &lt;code&gt;HashMap&lt;/code&gt;s.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;parallel-and-fast-persistence&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#parallel-and-fast-persistence&quot;&gt;&lt;/a&gt;Parallel and Fast &amp;gt; Persistence&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One of the current peculiarities of rust-analyzer is that it doesn&amp;#8217;t persist caches to disk.
+Opening project in rust-analyzer means waiting a dozen seconds while we process standard library and dependencies.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I think this &quot;limitation&quot; is actually a very valuable asset!
+It forces us to keep the non-incremental code-path reasonably fast.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I think it is plausible that we don&amp;#8217;t actually need persistent caches at all.
+rust-analyzer is basically text processing, and the size of input is in tens of megabytes (&lt;em&gt;and&lt;/em&gt; we ignore most of those megabytes anyway).
+If we just don&amp;#8217;t lose performance here and there, and throw the work onto all the cores, we should be able to load projects from scratch within a reasonable time budget.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The first step here would be establishing the culture of continuous benchmarking and performance tuning.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We&amp;#8217;ve already successfully used rust-analyzer for figuring an architecture which works in IDE at all.
+Now it&amp;#8217;s time to experiment with architecture which works, &lt;em&gt;fast&lt;/em&gt;, just as all Rust code should :-)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;optimizing-build-times&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#optimizing-build-times&quot;&gt;&lt;/a&gt;Optimizing Build Times&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In my opinion the two important characteristics that determine long-term success of a project are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;How long does it take to execute most of the tests?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How long does it take to build a release version of the project for testing?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I am very happy with test speed in rust-analyzer.
+One of my mistakes in IntelliJ aws adding a lot of tests that use Rust standard library and are slow for that reason.
+In rust-analyzer, there&amp;#8217;s only three uber-integrated tests that need the real libstd, all others work from in-memory fixtures which contain only the relevant bits of std.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;But the build times leave a lot to be desired.
+And this is hugely important&amp;#8201;&amp;#8212;&amp;#8201;the faster you can build the code, the faster you can do everything else.
+Heck, even for improving build times you need fast build times!
+I was trying to do some compile-time optimizations in rust-analyzer recently, and measuring &amp;#8220;is it faster to compile now?&amp;#8221; takes a lot of time, so one has to try fewer different optimizations!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The biggest problem here is that Rust, as a language, is hard to compile fast.
+One specific issue I hit constantly is that changing a deep dependency recompiles the world.
+This is in contrast to C/C++ where, if you don&amp;#8217;t touch a &lt;code&gt;.h&lt;/code&gt; files, changing a dependency requires only re-linking.
+In theory, we can have something like this in Rust, by automatically deriving public headers from crates.
+Though I fear that without explicit, physical &amp;#8220;this is ABI&amp;#8221; boundary, it will be much less effective at keeping compile times under control.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As an aside, if Rust stuck with &lt;code&gt;.crate&lt;/code&gt; files, implementing IDE support would have been much easier :-)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;optimizing-rustc-build&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#optimizing-rustc-build&quot;&gt;&lt;/a&gt;Optimizing rustc Build&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Nonetheless, rust-analyzer is much easier to build than rustc.
+I believe there&amp;#8217;s a lot we can do for rustc build as well.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;ve written at length about this at length on &lt;a href=&quot;https://internals.rust-lang.org/t/experience-report-contributing-to-rust-lang-rust/12012/17?u=matklad&quot;&gt;irlo&lt;/a&gt;.
+The gist is that I think we can split rustc into front-end &quot;text-processing&quot; part, and backend &quot;LLVM, linkers and real world&quot; part.
+The front bit than could in theory be a bog standard Rust project, which doesn&amp;#8217;t depend on IO, external tools and C++ code at all.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One wrinkle here is that rustc test suite at the moment consists predominantly of UI and run-pass tests integration, which work by building the whole compiler.
+Such test suite is ideal for testing conformance and catching regressions, but is not really well suited for rapid TDD.
+I think we should make an effort to build a unit test suite a-la rust-analyzer, such that it&amp;#8217;s easy, for example, to test name resolution without building the type checker, and which doesn&amp;#8217;t require stdlib.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;scaling-maintainance&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#scaling-maintainance&quot;&gt;&lt;/a&gt;Scaling Maintainance&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Finally, all changes here represent deep cuts into an existing body of software.
+Pushing such ambitious projects to completion require people, who can dedicate significant amounts of their time and energy.
+To put it bluntly, we need more dedicated folks working on the IDE tooling as a full time, payed job.
+I am grateful to my colleagues at &lt;a href=&quot;https://ferrous-systems.com/&quot;&gt;Ferrous Systems&lt;/a&gt; who put a lot of energy into making this a reality.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you find rust-analyzer useful and use it professionally, please consider asking your company to sponsor rust-analyzer via our &lt;a href=&quot;https://opencollective.com/rust-analyzer/&quot;&gt;Open Collective&lt;/a&gt;.
+Sponsorships from individuals are also accepted (and greatly appreciated!).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -1695,163 +2023,6 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
-      </item>
-    
-      <item>
-        <title>Macros vs Rename</title>
-        <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
-        <link>https://rust-analyzer.github.io//blog/2020/03/30/macros-vs-rename.html</link>
-        <guid isPermaLink="true">https://rust-analyzer.github.io//blog/2020/03/30/macros-vs-rename.html</guid>
-        <description>&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;I&amp;#8217;ve already written before about how precise code completion is impossible to do inside Rust macros:
-&lt;a href=&quot;https://github.com/matklad/proc-caesar&quot; class=&quot;bare&quot;&gt;https://github.com/matklad/proc-caesar&lt;/a&gt;. Today I&amp;#8217;d like to write a short note about another impossibility result:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;exampleblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Correct automatic rename is not possible in a language with rust-style macros.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Consider the following example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;rust&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;macro_rules!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call_foo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;mod&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nd&quot;&gt;call_foo!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;mod&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nd&quot;&gt;call_foo!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;What is the expected result for renaming &lt;code&gt;a::foo&lt;/code&gt; to &lt;code&gt;bar&lt;/code&gt;?
-There isn&amp;#8217;t one, as the same macro refers to different &lt;code&gt;foo&lt;/code&gt; at different call-sites!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;But the problem is even deeper than ambiguity.
-Consider this (silly) crate:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;rust&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;#[doc(hidden)]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HELLO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;#[macro_export]&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;macro_rules!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;say_hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$crate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HELLO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;In this case, it is pretty clear what we want to get after renaming &lt;code&gt;HELLO&lt;/code&gt; to &lt;code&gt;GREETING&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;rust&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;#[doc(hidden)]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GREETING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;#[macro_export]&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;macro_rules!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;say_hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$crate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GREETING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Unfortunately, it is impossible to formalize this transformation.
-To the human reader, it is &lt;em&gt;obvious&lt;/em&gt; that the right hand side of a macro should be parsed as an expression.
-But this intuition is flawed&amp;#8201;&amp;#8212;&amp;#8201;the right hand side is just a sequence of tokens, and it receives a meaning only when we call the macro.
-And there&amp;#8217;s no guarantee, in general case, that it would be interpreted as an expression:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;rust&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nd&quot;&gt;#[doc(hidden)]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HELLO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;macro_rules!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tt:tt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$crate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HELLO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;m!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;identity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;m!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;stringify!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;expr = {},tt = {}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Together this means that the theoretically best definition of &lt;strong&gt;correct automated rename&lt;/strong&gt; we can get in Rust is limited.
-We can handle code outside the macros and code inside macro calls.
-For macro definitions, at best we can give a list of locations that require manual intervention.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;It also seems plausible that, with some heuristic, we can infer renames in macro definitions as well.
-For example, we can look at all call sites of the macro, and see if they all agree that a certain token in the macro definition needs change.&lt;/p&gt;
 &lt;/div&gt;</description>
       </item>
     
