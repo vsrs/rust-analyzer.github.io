@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 May 2020 11:37:26 +0000</pubDate>
-    <lastBuildDate>Mon, 25 May 2020 11:37:26 +0000</lastBuildDate>
+    <pubDate>Mon, 25 May 2020 11:44:23 +0000</pubDate>
+    <lastBuildDate>Mon, 25 May 2020 11:44:23 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -24,11 +24,11 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;p&gt;In the effort to improve support for all editors, and to speedup acceptance of rust-analyzer extensions to the Language Server Protocol, all extensions are now documented:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;[&lt;code&gt;lsp-extensions.md&lt;/code&gt;](&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/1527feb744c7911b6ca482554f0399d3ef0ebfdc/docs/dev/lsp-extensions.md&quot; class=&quot;bare&quot;&gt;https://github.com/rust-analyzer/rust-analyzer/blob/1527feb744c7911b6ca482554f0399d3ef0ebfdc/docs/dev/lsp-extensions.md&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/blob/1527feb744c7911b6ca482554f0399d3ef0ebfdc/docs/dev/lsp-extensions.md&quot;&gt;&lt;code&gt;lsp-extensions.md&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;If you maintain rust-analyzer plugin for some editor, consider implementing these extensions and giving feedback for the corresponding upstream issue at &lt;a href=&quot;https://github.com/Microsoft/language-server-protocol/&quot; class=&quot;bare&quot;&gt;https://github.com/Microsoft/language-server-protocol/&lt;/a&gt;.
-Additionally, consider subscribing to [#4604](&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/issues/4604&quot; class=&quot;bare&quot;&gt;https://github.com/rust-analyzer/rust-analyzer/issues/4604&lt;/a&gt;), which will announce all future extensions and changes.
+&lt;p&gt;If you maintain rust-analyzer plugin for some editor, consider implementing these extensions and giving feedback for the corresponding upstream issue at &lt;a href=&quot;https://github.com/Microsoft/language-server-protocol/&quot;&gt;Microsoft/language-server-protocol&lt;/a&gt;.
+Additionally, consider subscribing to &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/issues/4604&quot;&gt;#4604&lt;/a&gt;, which will announce all future extensions and changes.
 Note that we don&amp;#8217;t have any compatibility guarantees yet&amp;#8201;&amp;#8212;&amp;#8201;all our extensions are subject to change on a short notice.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
