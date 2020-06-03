@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Jun 2020 14:05:49 +0000</pubDate>
-    <lastBuildDate>Mon, 01 Jun 2020 14:05:49 +0000</lastBuildDate>
+    <pubDate>Wed, 03 Jun 2020 05:30:55 +0000</pubDate>
+    <lastBuildDate>Wed, 03 Jun 2020 05:30:55 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -32,8 +32,8 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4664&quot;&gt;&lt;code&gt;#4664&lt;/code&gt;&lt;/a&gt; add most of the features of rust-analyzer to the manual.
-Each feature includes link to the source code, which implements the feature.
-If something does not work exactly as you want it to, you know, what to do ;)&lt;/p&gt;
+Each feature includes a link to the source code which implements the feature.
+If something does not work exactly as you want it to, you know what to do ;)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4602&quot;&gt;&lt;code&gt;#4602&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4603&quot;&gt;&lt;code&gt;#4603&lt;/code&gt;&lt;/a&gt; add semantic token types for boolean literals and self keyword.&lt;/p&gt;
