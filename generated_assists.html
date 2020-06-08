@@ -570,53 +570,6 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
-<h3 id="change_lifetime_anon_to_named" class="discrete"><code>change_lifetime_anon_to_named</code></h3>
-<div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_lifetime_anon_to_named.rs#L9">change_lifetime_anon_to_named.rs</a></p>
-</div>
-<div class="paragraph">
-<p>Change an anonymous lifetime to a named lifetime.</p>
-</div>
-<div class="listingblock">
-<div class="title">Before</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="k">impl</span> <span class="n">Cursor</span><span class="o">&lt;</span><span class="nv">'_</span><span class="err">┃</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">fn</span> <span class="nf">node</span><span class="p">(</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="n">SyntaxNode</span> <span class="p">{</span>
-        <span class="k">match</span> <span class="k">self</span> <span class="p">{</span>
-            <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Replace</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">|</span> <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Before</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">node</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">After</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="k">impl</span><span class="o">&lt;</span><span class="nv">'a</span><span class="o">&gt;</span> <span class="n">Cursor</span><span class="o">&lt;</span><span class="nv">'a</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">fn</span> <span class="nf">node</span><span class="p">(</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="n">SyntaxNode</span> <span class="p">{</span>
-        <span class="k">match</span> <span class="k">self</span> <span class="p">{</span>
-            <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Replace</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">|</span> <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Before</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">node</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
 <h3 id="change_return_type_to_result" class="discrete"><code>change_return_type_to_result</code></h3>
 <div class="paragraph">
 <p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_return_type_to_result.rs#L8">change_return_type_to_result.rs</a></p>
@@ -914,6 +867,53 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 3
 </pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+<h3 id="introduce_named_lifetime" class="discrete"><code>introduce_named_lifetime</code></h3>
+<div class="paragraph">
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/introduce_named_lifetime.rs#L12">introduce_named_lifetime.rs</a></p>
+</div>
+<div class="paragraph">
+<p>Change an anonymous lifetime to a named lifetime.</p>
+</div>
+<div class="listingblock">
+<div class="title">Before</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="k">impl</span> <span class="n">Cursor</span><span class="o">&lt;</span><span class="nv">'_</span><span class="err">┃</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">node</span><span class="p">(</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="n">SyntaxNode</span> <span class="p">{</span>
+        <span class="k">match</span> <span class="k">self</span> <span class="p">{</span>
+            <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Replace</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">|</span> <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Before</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">node</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">After</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="k">impl</span><span class="o">&lt;</span><span class="nv">'a</span><span class="o">&gt;</span> <span class="n">Cursor</span><span class="o">&lt;</span><span class="nv">'a</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">node</span><span class="p">(</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="n">SyntaxNode</span> <span class="p">{</span>
+        <span class="k">match</span> <span class="k">self</span> <span class="p">{</span>
+            <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Replace</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">|</span> <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Before</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">node</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre>
 </div>
