@@ -65,30 +65,38 @@ Release: <a href="https://github.com/rust-analyzer/rust-analyzer/releases/2020-0
 </li>
 <li>
 <p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/4720"><code>#4720</code></a> highlight unsafe operations inside unsafe blocks. In VS Code, you can use <code>editor.semanticTokenColorCustomizations</code> to customize the actual coloring</p>
-</li>
-</ul>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre>"editor.semanticTokenColorCustomizations": {
-    "[Theme Name]": {
-        "rules": {
-            "operator.unsafe": "#f00",
-            "function.unsafe": "#f00"
-        },
-    }
-}</pre>
+<pre class="rouge highlight"><code data-lang="json"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nl">"editor.semanticTokenColorCustomizations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"[Theme Name]"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"operator.unsafe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#f00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"function.unsafe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#f00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>+
-image::https://user-images.githubusercontent.com/1711539/84034187-48d1fb00-a99a-11ea-960b-e6b3f73e7db1.png[]
-* <a href="https://github.com/rust-analyzer/rust-analyzer/pull/4382"><code>#4382</code></a> allow specifying key-value cfg options in JsonProject.
-* <a href="https://github.com/rust-analyzer/rust-analyzer/pull/4726"><code>#4726</code></a> allow to override build-in project discovery with explicit list of `Cargo.toml`s to import:</p>
+<div class="imageblock">
+<div class="content">
+<img src="https://user-images.githubusercontent.com/1711539/84034187-48d1fb00-a99a-11ea-960b-e6b3f73e7db1.png" alt="84034187 48d1fb00 a99a 11ea 960b e6b3f73e7db1">
 </div>
-<div class="paragraph">
-<p>+</p>
 </div>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/4382"><code>#4382</code></a> allow specifying key-value cfg options in JsonProject.</p>
+</li>
+<li>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/4726"><code>#4726</code></a> allow to override build-in project discovery with explicit list of `Cargo.toml`s to import:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="json"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
@@ -96,8 +104,7 @@ image::https://user-images.githubusercontent.com/1711539/84034187-48d1fb00-a99a-
 </pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p><a href="https://github.com/rust-analyzer/rust-analyzer/pull/4730"><code>#4730</code></a> document <code>rust-project.json</code> file format, which can be used with non-Cargo based build systems.
 Docs: <a href="https://rust-analyzer.github.io/manual.html#non-cargo-based-projects">#non-cargo-based-projects</a>.</p>

@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Jun 2020 13:45:25 +0000</pubDate>
-    <lastBuildDate>Mon, 08 Jun 2020 13:45:25 +0000</lastBuildDate>
+    <pubDate>Mon, 08 Jun 2020 13:52:42 +0000</pubDate>
+    <lastBuildDate>Mon, 08 Jun 2020 13:52:42 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -32,30 +32,38 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4720&quot;&gt;&lt;code&gt;#4720&lt;/code&gt;&lt;/a&gt; highlight unsafe operations inside unsafe blocks. In VS Code, you can use &lt;code&gt;editor.semanticTokenColorCustomizations&lt;/code&gt; to customize the actual coloring&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre&gt;&quot;editor.semanticTokenColorCustomizations&quot;: {
-    &quot;[Theme Name]&quot;: {
-        &quot;rules&quot;: {
-            &quot;operator.unsafe&quot;: &quot;#f00&quot;,
-            &quot;function.unsafe&quot;: &quot;#f00&quot;
-        },
-    }
-}&lt;/pre&gt;
+&lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nl&quot;&gt;&quot;editor.semanticTokenColorCustomizations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;[Theme Name]&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;operator.unsafe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#f00&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;function.unsafe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#f00&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;+
-image::https://user-images.githubusercontent.com/1711539/84034187-48d1fb00-a99a-11ea-960b-e6b3f73e7db1.png[]
-* &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4382&quot;&gt;&lt;code&gt;#4382&lt;/code&gt;&lt;/a&gt; allow specifying key-value cfg options in JsonProject.
-* &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4726&quot;&gt;&lt;code&gt;#4726&lt;/code&gt;&lt;/a&gt; allow to override build-in project discovery with explicit list of `Cargo.toml`s to import:&lt;/p&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/1711539/84034187-48d1fb00-a99a-11ea-960b-e6b3f73e7db1.png&quot; alt=&quot;84034187 48d1fb00 a99a 11ea 960b e6b3f73e7db1&quot;&gt;
 &lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;+&lt;/p&gt;
 &lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4382&quot;&gt;&lt;code&gt;#4382&lt;/code&gt;&lt;/a&gt; allow specifying key-value cfg options in JsonProject.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4726&quot;&gt;&lt;code&gt;#4726&lt;/code&gt;&lt;/a&gt; allow to override build-in project discovery with explicit list of `Cargo.toml`s to import:&lt;/p&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
 &lt;pre class=&quot;rouge highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;&lt;table class=&quot;linenotable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;linenos gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
@@ -63,8 +71,7 @@ image::https://user-images.githubusercontent.com/1711539/84034187-48d1fb00-a99a-
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
+&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4730&quot;&gt;&lt;code&gt;#4730&lt;/code&gt;&lt;/a&gt; document &lt;code&gt;rust-project.json&lt;/code&gt; file format, which can be used with non-Cargo based build systems.
 Docs: &lt;a href=&quot;https://rust-analyzer.github.io/manual.html#non-cargo-based-projects&quot;&gt;#non-cargo-based-projects&lt;/a&gt;.&lt;/p&gt;
