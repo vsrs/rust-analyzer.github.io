@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Jun 2020 13:02:37 +0000</pubDate>
-    <lastBuildDate>Mon, 15 Jun 2020 13:02:37 +0000</lastBuildDate>
+    <pubDate>Mon, 15 Jun 2020 13:13:29 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Jun 2020 13:13:29 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -19,6 +19,15 @@
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/017331a53c1eeaa1253d2829165627bfa27dc124&quot;&gt;&lt;code&gt;017331a&lt;/code&gt;&lt;/a&gt;&lt;br&gt;
 Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/2020-06-15&quot;&gt;&lt;code&gt;2020-06-15&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;sponsors&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#sponsors&quot;&gt;&lt;/a&gt;Sponsors&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This week, we welcome one of our oldest sponsors:
+&lt;a href=&quot;https://embark-studios.com/&quot;&gt;Embark Studios&lt;/a&gt;, a Stockholm-based game studio building a platform for the future of gamemaking and striving to support a thriving open-source ecosystem for game development in Rust.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
