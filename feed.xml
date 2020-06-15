@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Jun 2020 13:15:03 +0000</pubDate>
-    <lastBuildDate>Mon, 15 Jun 2020 13:15:03 +0000</lastBuildDate>
+    <pubDate>Mon, 15 Jun 2020 13:19:13 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Jun 2020 13:19:13 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -71,7 +71,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4775&quot;&gt;&lt;code&gt;#4775&lt;/code&gt;&lt;/a&gt; goto definition work correctly for fields of enum variants.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4784&quot;&gt;&lt;code&gt;#4784&lt;/code&gt;&lt;/a&gt; correctly handle &lt;code&gt;cfg`s from `rust-project.json&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4784&quot;&gt;&lt;code&gt;#4784&lt;/code&gt;&lt;/a&gt; correctly handle &lt;code&gt;cfg&lt;/code&gt;s from &lt;code&gt;rust-project.json&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/4803&quot;&gt;&lt;code&gt;#4803&lt;/code&gt;&lt;/a&gt; parse default unsafe fn.&lt;/p&gt;
