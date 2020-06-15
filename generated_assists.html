@@ -661,6 +661,33 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
+<h3 id="extract_struct_from_enum_variant" class="discrete"><code>extract_struct_from_enum_variant</code></h3>
+<div class="paragraph">
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/extract_struct_from_enum_variant.rs#L16">extract_struct_from_enum_variant.rs</a></p>
+</div>
+<div class="paragraph">
+<p>Extracts a struct from enum variant.</p>
+</div>
+<div class="listingblock">
+<div class="title">Before</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="k">enum</span> <span class="n">A</span> <span class="p">{</span> <span class="err">┃</span><span class="nf">One</span><span class="p">(</span><span class="nb">u32</span><span class="p">,</span> <span class="nb">u32</span><span class="p">)</span> <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">After</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">struct</span> <span class="nf">One</span><span class="p">(</span><span class="k">pub</span> <span class="nb">u32</span><span class="p">,</span> <span class="k">pub</span> <span class="nb">u32</span><span class="p">);</span>
+
+<span class="k">enum</span> <span class="n">A</span> <span class="p">{</span> <span class="nf">One</span><span class="p">(</span><span class="n">One</span><span class="p">)</span> <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
 <h3 id="fill_match_arms" class="discrete"><code>fill_match_arms</code></h3>
 <div class="paragraph">
 <p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/fill_match_arms.rs#L14">fill_match_arms.rs</a></p>
@@ -1570,7 +1597,7 @@ the definition.</p>
 </div>
 <h3 id="unwrap_block" class="discrete"><code>unwrap_block</code></h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/unwrap_block.rs#L9">unwrap_block.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/unwrap_block.rs#L12">unwrap_block.rs</a></p>
 </div>
 <div class="paragraph">
 <p>This assist removes if&#8230;&#8203;else, for, while and loop control statements to just keep the body.</p>

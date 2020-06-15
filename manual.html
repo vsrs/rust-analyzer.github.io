@@ -863,7 +863,7 @@ Specifically, the <code>roots</code> setup will be different eventually.</p>
 <div class="sect2">
 <h3 id="hover"><a class="anchor" href="#hover"></a>Hover</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/hover.rs#L97">hover.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/hover.rs#L106">hover.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Shows additional information, like type of an expression or documentation for definition when "focusing" code.
@@ -949,7 +949,7 @@ This approach has limitations, the caret movement and bracket highlighting near 
 <div class="sect2">
 <h3 id="magic-completions"><a class="anchor" href="#magic-completions"></a>Magic Completions</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/completion.rs#L38">completion.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/completion.rs#L39">completion.rs</a></p>
 </div>
 <div class="paragraph">
 <p>In addition to usual reference completion, rust-analyzer provides some ✨magic✨
@@ -1071,7 +1071,7 @@ braces, so it won&#8217;t confuse generics with comparisons.</p>
 <div class="sect2">
 <h3 id="on-typing-assists"><a class="anchor" href="#on-typing-assists"></a>On Typing Assists</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/typing.rs#L35">typing.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/typing.rs#L37">typing.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Some features trigger on typing certain characters:</p>
@@ -1120,7 +1120,7 @@ braces, so it won&#8217;t confuse generics with comparisons.</p>
 <div class="sect2">
 <h3 id="run"><a class="anchor" href="#run"></a>Run</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/runnables.rs#L45">runnables.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/runnables.rs#L81">runnables.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Shows a popup suggesting to run a test/benchmark/binary <strong>at the current cursor
@@ -1149,7 +1149,7 @@ to a shortcut!</p>
 <div class="sect2">
 <h3 id="semantic-syntax-highlighting"><a class="anchor" href="#semantic-syntax-highlighting"></a>Semantic Syntax Highlighting</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/syntax_highlighting.rs#L33">syntax_highlighting.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/syntax_highlighting.rs#L34">syntax_highlighting.rs</a></p>
 </div>
 <div class="paragraph">
 <p>rust-analyzer highlights the code semantically.
@@ -1269,7 +1269,7 @@ Available via the command <code>rust-analyzer.ssr</code>.</p>
 <div class="sect2">
 <h3 id="workspace-symbol"><a class="anchor" href="#workspace-symbol"></a>Workspace Symbol</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide_db/src/symbol_index.rs#L113">symbol_index.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide_db/src/symbol_index.rs#L122">symbol_index.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Uses fuzzy-search to find types, modules and functions by name across your
@@ -1940,6 +1940,33 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
     <span class="nf">foo</span><span class="p">();</span>
     <span class="nf">bar</span><span class="p">();</span>
 <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+<h3 id="extract_struct_from_enum_variant" class="discrete"><code>extract_struct_from_enum_variant</code></h3>
+<div class="paragraph">
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/extract_struct_from_enum_variant.rs#L16">extract_struct_from_enum_variant.rs</a></p>
+</div>
+<div class="paragraph">
+<p>Extracts a struct from enum variant.</p>
+</div>
+<div class="listingblock">
+<div class="title">Before</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="k">enum</span> <span class="n">A</span> <span class="p">{</span> <span class="err">┃</span><span class="nf">One</span><span class="p">(</span><span class="nb">u32</span><span class="p">,</span> <span class="nb">u32</span><span class="p">)</span> <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">After</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">struct</span> <span class="nf">One</span><span class="p">(</span><span class="k">pub</span> <span class="nb">u32</span><span class="p">,</span> <span class="k">pub</span> <span class="nb">u32</span><span class="p">);</span>
+
+<span class="k">enum</span> <span class="n">A</span> <span class="p">{</span> <span class="nf">One</span><span class="p">(</span><span class="n">One</span><span class="p">)</span> <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
@@ -2852,7 +2879,7 @@ the definition.</p>
 </div>
 <h3 id="unwrap_block" class="discrete"><code>unwrap_block</code></h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/unwrap_block.rs#L9">unwrap_block.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/unwrap_block.rs#L12">unwrap_block.rs</a></p>
 </div>
 <div class="paragraph">
 <p>This assist removes if&#8230;&#8203;else, for, while and loop control statements to just keep the body.</p>
