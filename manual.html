@@ -863,7 +863,7 @@ Specifically, the <code>roots</code> setup will be different eventually.</p>
 <div class="sect2">
 <h3 id="hover"><a class="anchor" href="#hover"></a>Hover</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/hover.rs#L106">hover.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/hover.rs#L117">hover.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Shows additional information, like type of an expression or documentation for definition when "focusing" code.
@@ -1193,7 +1193,7 @@ rust-analyzer itself.</p>
 <div class="sect2">
 <h3 id="status"><a class="anchor" href="#status"></a>Status</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/status.rs#L27">status.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/status.rs#L28">status.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Shows internal statistic about memory usage of rust-analyzer.</p>
@@ -1225,7 +1225,7 @@ rust-analyzer itself.</p>
 <div class="paragraph">
 <p>Search and replace with named wildcards that will match any expression.
 The syntax for a structural search replace command is <code>&lt;search_pattern&gt; =&#8658;&gt; &lt;replace_pattern&gt;</code>.
-A <code>$&lt;name&gt;:expr</code> placeholder in the search pattern will match any expression and <code>$&lt;name&gt;</code> will reference it in the replacement.
+A <code>$&lt;name&gt;</code> placeholder in the search pattern will match any AST node and <code>$&lt;name&gt;</code> will reference it in the replacement.
 Available via the command <code>rust-analyzer.ssr</code>.</p>
 </div>
 <div class="listingblock">
@@ -1237,7 +1237,7 @@ Available via the command <code>rust-analyzer.ssr</code>.</p>
 5
 6
 7
-</pre></td><td class="code"><pre><span class="c">// Using structural search replace command [foo($a:expr, $b:expr) ==&gt;&gt; ($a).foo($b)]</span>
+</pre></td><td class="code"><pre><span class="c">// Using structural search replace command [foo($a, $b) ==&gt;&gt; ($a).foo($b)]</span>
 
 <span class="c">// BEFORE</span>
 <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="nf">foo</span><span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
@@ -1269,7 +1269,7 @@ Available via the command <code>rust-analyzer.ssr</code>.</p>
 <div class="sect2">
 <h3 id="workspace-symbol"><a class="anchor" href="#workspace-symbol"></a>Workspace Symbol</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide_db/src/symbol_index.rs#L122">symbol_index.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide_db/src/symbol_index.rs#L145">symbol_index.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Uses fuzzy-search to find types, modules and functions by name across your
@@ -2784,7 +2784,7 @@ the definition.</p>
 </div>
 <h3 id="replace_qualified_name_with_use" class="discrete"><code>replace_qualified_name_with_use</code></h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/replace_qualified_name_with_use.rs#L6">replace_qualified_name_with_use.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/replace_qualified_name_with_use.rs#L9">replace_qualified_name_with_use.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Adds a use statement for a given fully-qualified name.</p>
