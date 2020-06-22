@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Jun 2020 13:01:22 +0000</pubDate>
-    <lastBuildDate>Mon, 22 Jun 2020 13:01:22 +0000</lastBuildDate>
+    <pubDate>Mon, 22 Jun 2020 13:11:03 +0000</pubDate>
+    <lastBuildDate>Mon, 22 Jun 2020 13:11:03 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -19,6 +19,17 @@
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Commit: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/commit/3370c81525c89c4f3229180f83520de29b7ee8a0&quot;&gt;&lt;code&gt;3370c81&lt;/code&gt;&lt;/a&gt;&lt;br&gt;
 Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/releases/2020-06-22&quot;&gt;&lt;code&gt;2020-06-22&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;sponsors&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#sponsors&quot;&gt;&lt;/a&gt;Sponsors&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This week, we&amp;#8217;d like to thank another long-time sponsor:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://discord.com&quot;&gt;Discord&lt;/a&gt;, a place to talk with your communities and friends, built using &lt;a href=&quot;https://discord.gg/rust-lang&quot;&gt;Rust&lt;/a&gt; and other best-in-class tools.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
