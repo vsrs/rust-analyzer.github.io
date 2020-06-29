@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Jun 2020 13:24:08 +0000</pubDate>
-    <lastBuildDate>Mon, 29 Jun 2020 13:24:08 +0000</lastBuildDate>
+    <pubDate>Mon, 29 Jun 2020 14:12:12 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Jun 2020 14:12:12 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -116,7 +116,7 @@ Theme authors can use it to dim injected code.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/5015&quot;&gt;&lt;code&gt;#5015&lt;/code&gt;&lt;/a&gt; account for updated module ids when determining whether a resolution is changed.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/5033&quot;&gt;&lt;code&gt;#5033&lt;/code&gt;&lt;/a&gt; o of glob imports does not affect import shadowing.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/pull/5033&quot;&gt;&lt;code&gt;#5033&lt;/code&gt;&lt;/a&gt; ordero of glob imports does not affect import shadowing.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
