@@ -173,7 +173,7 @@ By default, the plugin will prompt you to download the matching version of the s
 <p>Linux: <code>~/.config/Code/User/globalStorage/matklad.rust-analyzer</code></p>
 </li>
 <li>
-<p>macOS: <code>~/Library/Application Support/Code/User/globalStorage/matklad.rust-analyzer</code></p>
+<p>macOS: <code>~/Library/Application\ Support/Code/User/globalStorage/matklad.rust-analyzer</code></p>
 </li>
 <li>
 <p>Windows: <code>%APPDATA%\Code\User\globalStorage\matklad.rust-analyzer</code></p>
@@ -579,6 +579,12 @@ Once <code>neovim/nvim-lsp</code> is installed, use <code>lua require'nvim_lsp'.
 </li>
 </ol>
 </div>
+<div class="sect3">
+<h4 id="gnome-builder-nightly"><a class="anchor" href="#gnome-builder-nightly"></a>GNOME Builder (Nightly)</h4>
+<div class="paragraph">
+<p><a href="https://nightly.gnome.org/repo/appstream/org.gnome.Builder.flatpakref">GNOME Builder (Nightly)</a> has now native support for <code>rust-analyzer</code> out of the box. If the <code>rust-analyzer</code> binary is not available, GNOME Builder can install it when opening a Rust source file.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -675,6 +681,9 @@ Specifically, the <code>roots</code> setup will be different eventually.</p>
 <p>Specify <code>"rust-analyzer.linkedProjects": [ { "roots": [&#8230;&#8203;], "crates": [&#8230;&#8203;] }]</code> inline.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Relative paths are interpreted relative to <code>rust-project.json</code> file location or (for inline JSON) relative to <code>rootUri</code>.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="https://github.com/rust-analyzer/rust-project.json-example" class="bare">https://github.com/rust-analyzer/rust-project.json-example</a> for a small example.</p>
@@ -1042,10 +1051,10 @@ takes arguments, the cursor is positioned inside the parenthesis.</p>
 <div class="sect2">
 <h3 id="matching-brace"><a class="anchor" href="#matching-brace"></a>Matching Brace</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/matching_brace.rs#L3">matching_brace.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/matching_brace.rs#L7">matching_brace.rs</a></p>
 </div>
 <div class="paragraph">
-<p>If the cursor is on any brace (<code>&lt;&gt;(){}[]</code>) which is a part of a brace-pair,
+<p>If the cursor is on any brace (<code>&lt;&gt;(){}[]||</code>) which is a part of a brace-pair,
 moves cursor to the matching brace. It uses the actual parser to determine
 braces, so it won&#8217;t confuse generics with comparisons.</p>
 </div>
@@ -1220,12 +1229,13 @@ rust-analyzer itself.</p>
 <div class="sect2">
 <h3 id="structural-seach-and-replace"><a class="anchor" href="#structural-seach-and-replace"></a>Structural Seach and Replace</h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/ssr.rs#L26">ssr.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_ide/src/ssr.rs#L7">ssr.rs</a></p>
 </div>
 <div class="paragraph">
-<p>Search and replace with named wildcards that will match any expression.
+<p>Search and replace with named wildcards that will match any expression, type, path, pattern or item.
 The syntax for a structural search replace command is <code>&lt;search_pattern&gt; =&#8658;&gt; &lt;replace_pattern&gt;</code>.
 A <code>$&lt;name&gt;</code> placeholder in the search pattern will match any AST node and <code>$&lt;name&gt;</code> will reference it in the replacement.
+Within a macro call, a placeholder will match up until whatever token follows the placeholder.
 Available via the command <code>rust-analyzer.ssr</code>.</p>
 </div>
 <div class="listingblock">
@@ -1854,7 +1864,7 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </div>
 <h3 id="change_return_type_to_result" class="discrete"><code>change_return_type_to_result</code></h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_return_type_to_result.rs#L8">change_return_type_to_result.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_return_type_to_result.rs#L9">change_return_type_to_result.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Change the function&#8217;s return type to Result.</p>
@@ -1877,7 +1887,7 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </div>
 <h3 id="change_visibility" class="discrete"><code>change_visibility</code></h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_visibility.rs#L14">change_visibility.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_visibility.rs#L11">change_visibility.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Adds or changes existing visibility specifier.</p>
@@ -1970,6 +1980,39 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
+<h3 id="extract_variable" class="discrete"><code>extract_variable</code></h3>
+<div class="paragraph">
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/extract_variable.rs#L14">extract_variable.rs</a></p>
+</div>
+<div class="paragraph">
+<p>Extracts subexpression into a variable.</p>
+</div>
+<div class="listingblock">
+<div class="title">Before</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="err">┃</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="err">┃</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">After</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="err">$</span><span class="mi">0</span><span class="n">var_name</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">var_name</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
 <h3 id="fill_match_arms" class="discrete"><code>fill_match_arms</code></h3>
 <div class="paragraph">
 <p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/fill_match_arms.rs#L14">fill_match_arms.rs</a></p>
@@ -2021,7 +2064,7 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </div>
 <h3 id="fix_visibility" class="discrete"><code>fix_visibility</code></h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/fix_visibility.rs#L13">fix_visibility.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/fix_visibility.rs#L9">fix_visibility.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Makes inaccessible item public.</p>
@@ -2223,39 +2266,6 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
             <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Replace</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">|</span> <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Before</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">node</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
-<h3 id="introduce_variable" class="discrete"><code>introduce_variable</code></h3>
-<div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/introduce_variable.rs#L14">introduce_variable.rs</a></p>
-</div>
-<div class="paragraph">
-<p>Extracts subexpression into a variable.</p>
-</div>
-<div class="listingblock">
-<div class="title">Before</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="err">┃</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="err">┃</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">After</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="err">$</span><span class="mi">0</span><span class="n">var_name</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="n">var_name</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre>
 </div>

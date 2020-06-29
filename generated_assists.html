@@ -572,7 +572,7 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </div>
 <h3 id="change_return_type_to_result" class="discrete"><code>change_return_type_to_result</code></h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_return_type_to_result.rs#L8">change_return_type_to_result.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_return_type_to_result.rs#L9">change_return_type_to_result.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Change the function&#8217;s return type to Result.</p>
@@ -595,7 +595,7 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </div>
 <h3 id="change_visibility" class="discrete"><code>change_visibility</code></h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_visibility.rs#L14">change_visibility.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/change_visibility.rs#L11">change_visibility.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Adds or changes existing visibility specifier.</p>
@@ -688,6 +688,39 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
+<h3 id="extract_variable" class="discrete"><code>extract_variable</code></h3>
+<div class="paragraph">
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/extract_variable.rs#L14">extract_variable.rs</a></p>
+</div>
+<div class="paragraph">
+<p>Extracts subexpression into a variable.</p>
+</div>
+<div class="listingblock">
+<div class="title">Before</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="err">┃</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="err">┃</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">After</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="err">$</span><span class="mi">0</span><span class="n">var_name</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">var_name</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
 <h3 id="fill_match_arms" class="discrete"><code>fill_match_arms</code></h3>
 <div class="paragraph">
 <p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/fill_match_arms.rs#L14">fill_match_arms.rs</a></p>
@@ -739,7 +772,7 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
 </div>
 <h3 id="fix_visibility" class="discrete"><code>fix_visibility</code></h3>
 <div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/fix_visibility.rs#L13">fix_visibility.rs</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/fix_visibility.rs#L9">fix_visibility.rs</a></p>
 </div>
 <div class="paragraph">
 <p>Makes inaccessible item public.</p>
@@ -941,39 +974,6 @@ This means something of the form <code>!x</code> or <code>x != y</code>.</p>
             <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Replace</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">|</span> <span class="nn">Cursor</span><span class="p">::</span><span class="nf">Before</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">node</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
-<h3 id="introduce_variable" class="discrete"><code>introduce_variable</code></h3>
-<div class="paragraph">
-<p><strong>Source:</strong> <a href="https://github.com/rust-analyzer/rust-analyzer/blob/master/crates/ra_assists/src/handlers/introduce_variable.rs#L14">introduce_variable.rs</a></p>
-</div>
-<div class="paragraph">
-<p>Extracts subexpression into a variable.</p>
-</div>
-<div class="listingblock">
-<div class="title">Before</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="err">┃</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="err">┃</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">After</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="rust"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="err">$</span><span class="mi">0</span><span class="n">var_name</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="n">var_name</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre>
 </div>
