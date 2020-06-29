@@ -5,8 +5,8 @@
     <description>rust-analyzer: building a better Rust IDE</description>
     <link>https://rust-analyzer.github.io//</link>
     <atom:link href="https://rust-analyzer.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Jun 2020 13:10:29 +0000</pubDate>
-    <lastBuildDate>Mon, 29 Jun 2020 13:10:29 +0000</lastBuildDate>
+    <pubDate>Mon, 29 Jun 2020 13:24:08 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Jun 2020 13:24:08 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -29,7 +29,7 @@ Release: &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer/release
 &lt;p&gt;This week, we&amp;#8217;d like to thank another long-time sponsor:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;[Parity](&lt;a href=&quot;https://www.parity.io/&quot; class=&quot;bare&quot;&gt;https://www.parity.io/&lt;/a&gt;) is building tooling and infrastructure for the decentralised, trustless Web in Rust.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.parity.io/&quot;&gt;Parity&lt;/a&gt; is building tooling and infrastructure for the decentralised, trustless Web in Rust.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
